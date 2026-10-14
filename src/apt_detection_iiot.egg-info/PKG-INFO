@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: apt-detection-iiot
+Version: 0.1.0
+Summary: Combined multi-signal APT detection research prototype
+Requires-Python: >=3.10
+Provides-Extra: dev
+Requires-Dist: pytest<10,>=8; extra == "dev"

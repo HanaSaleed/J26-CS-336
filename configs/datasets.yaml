@@ -1,0 +1,5 @@
+# Dataset choices and column mappings must be documented and verified.
+network_flow:
+  primary: Edge-IIoTset
+  validation_candidates: [ToN-IoT, X-IIoTID, CICAPT-IIoT2024]
+# Dataset roles for the other modules are pending team confirmation.

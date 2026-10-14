@@ -1,0 +1,3 @@
+# Install local package and basic test tooling:
+-e .[dev]
+# Add pinned or constrained ML dependencies after model selection.
