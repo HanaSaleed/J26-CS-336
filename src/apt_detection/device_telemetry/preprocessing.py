@@ -22,7 +22,7 @@ def process_nodes(df):
     return procs
 
 
-def fix_labels(procs, gap_s=300, window_s=3600):
+def fix_labels(procs, gap_s=300, window_s=3600, pid_margin=2):
     """Pass attack labels to child processes, including through missing parents
     inside an attack step's PID block. Adds label_fixed and tactic_fixed."""
     procs["label_fixed"] = procs["label"].eq("1")
@@ -35,7 +35,7 @@ def fix_labels(procs, gap_s=300, window_s=3600):
     known = set(procs["pid_n"])
     for _, b in bursts.iterrows():
         hit = (~procs["label_fixed"] & ~procs["ppid_n"].isin(known)
-               & procs["ppid_n"].between(b.pid_min, b.pid_max)
+               & procs["ppid_n"].between(b.pid_min - pid_margin, b.pid_max + pid_margin)
                & procs["t"].between(b.t0, b.t0 + window_s))
         procs.loc[hit, "label_fixed"] = True
         procs.loc[hit, "tactic_fixed"] = b.tactic
