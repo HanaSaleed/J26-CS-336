@@ -1,0 +1,30 @@
+{
+  "project_id": "J26-CS-336",
+  "model": "ToN-IoT Decision Tree flow-level baseline v1",
+  "validation_only": true,
+  "created_utc": "2026-10-16T16:54:09+00:00",
+  "validation_csv_sha256": "571a77acc34171709e27e1564df942e66dbe5b99723166545d99e7af61201f7f",
+  "model_sha256": "c948feb8f3c274d5df613ba9cc6cd8825d400fcade5c80f56bcae99344267eaf",
+  "evaluation_report_sha256": "02def6e405473b75d43276dcccd0be2118387df0ee1134d031dfab341db00477",
+  "validation_records": 30685,
+  "confusion_matrix": {
+    "TN": 6710,
+    "FP": 44,
+    "FN": 176,
+    "TP": 23755
+  },
+  "figures": [
+    "confusion_matrix.png",
+    "validation_metrics.png",
+    "roc_curve.png",
+    "precision_recall_curve.png",
+    "feature_importance.png",
+    "attack_type_recall.png",
+    "decision_tree_overview.png"
+  ],
+  "table": "reports\\tables\\ton_iot_decision_tree_v1\\attack_type_performance.csv",
+  "libraries": {
+    "matplotlib": "3.11.2"
+  },
+  "interpretation_note": "Validation only. Generic network flow attack labels, not confirmed APT/window detection. First tree levels plotted; not full tree."
+}

@@ -1,0 +1,613 @@
+{
+  "audit_version": "1.0",
+  "created_utc": "20261015T144232_670412Z",
+  "files": [
+    {
+      "file": "D:\\IIoT-APT-Research\\data\\raw\\cicapt_IIOT_phase1_NetworkData.csv",
+      "size_bytes": 5472798114,
+      "size_gib": 5.097,
+      "requested_limit": 100000,
+      "scope": "first_N_records",
+      "records_read": 100000,
+      "valid_width_records": 100000,
+      "invalid_width_records": 0,
+      "invalid_width_examples": [],
+      "complete_to_eof": false,
+      "error": null,
+      "notes": [
+        "No source files modified. No training, relabelling or deduplication.",
+        "No session grouping, clock alignment or feature semantics validated.",
+        "Timestamp values are numeric as stored; units/timezone are not assumed.",
+        "Label counters are capped at 1000 distinct values per column.",
+        "Numeric checks cover only the listed CHECK_FIELDS."
+      ],
+      "columns": [
+        "ts",
+        "flow_duration",
+        "Header_Length",
+        "Source IP",
+        "Destination IP",
+        "Source Port",
+        "Destination Port",
+        "Protocol Type",
+        "Protocol_name",
+        "Duration",
+        "Rate",
+        "Srate",
+        "Drate",
+        "fin_flag_number",
+        "syn_flag_number",
+        "rst_flag_number",
+        "psh_flag_number",
+        "ack_flag_number",
+        "urg_flag_number",
+        "ece_flag_number",
+        "cwr_flag_number",
+        "ack_count",
+        "syn_count",
+        "fin_count",
+        "urg_count",
+        "rst_count",
+        "max_duration",
+        "min_duration",
+        "sum_duration",
+        "average_duration",
+        "std_duration",
+        "CoAP",
+        "HTTP",
+        "HTTPS",
+        "DNS",
+        "Telnet",
+        "SMTP",
+        "SSH",
+        "IRC",
+        "TCP",
+        "UDP",
+        "DHCP",
+        "ARP",
+        "ICMP",
+        "IGMP",
+        "IPv",
+        "LLC",
+        "Tot sum",
+        "Min",
+        "Max",
+        "AVG",
+        "Std",
+        "Tot size",
+        "IAT",
+        "Number",
+        "MAC",
+        "Magnitue",
+        "Radius",
+        "Covariance",
+        "Variance",
+        "Weight",
+        "DS status",
+        "Fragments",
+        "Sequence number",
+        "Protocol Version",
+        "flow_idle_time",
+        "flow_active_time",
+        "label",
+        "subLabel",
+        "subLabelCat"
+      ],
+      "column_count": 70,
+      "label_counts_raw_values": {
+        "label": {
+          "0": 100000
+        },
+        "subLabel": {
+          "0": 100000
+        },
+        "subLabelCat": {
+          "0": 100000
+        }
+      },
+      "label_overflow_records": {
+        "label": 0,
+        "subLabel": 0,
+        "subLabelCat": 0
+      },
+      "numeric_checks": {
+        "ts": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 0,
+          "minimum": "1701426437.323588",
+          "maximum": "1701429405.346764",
+          "first_values": [
+            "1701426437.323588",
+            "1701426437.3257",
+            "1701426437.325916",
+            "1701426437.327917",
+            "1701426437.333083"
+          ]
+        },
+        "flow_duration": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 1944,
+          "minimum": "0.0",
+          "maximum": "2967.5135810375214",
+          "first_values": [
+            "0.0",
+            "0.0021121501922607",
+            "0.0023281574249267",
+            "0.0043292045593261",
+            "0.0094950199127197"
+          ]
+        },
+        "IAT": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 856,
+          "minimum": "0.0",
+          "maximum": "1701429405.346764",
+          "first_values": [
+            "1701426437.323588",
+            "0.0021121501922607",
+            "0.000216007232666",
+            "0.0020010471343994",
+            "0.0051658153533935"
+          ]
+        },
+        "flow_idle_time": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 1161,
+          "minimum": "0.0",
+          "maximum": "1701429405.339982",
+          "first_values": [
+            "1701426437.323588",
+            "0.0021121501922607",
+            "0.000216007232666",
+            "0.0020010471343994",
+            "0.0051658153533935"
+          ]
+        },
+        "flow_active_time": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 1944,
+          "minimum": "0.0",
+          "maximum": "2967.5135810375214",
+          "first_values": [
+            "0.0",
+            "0.0021121501922607",
+            "0.0023281574249267",
+            "0.0043292045593261",
+            "0.0094950199127197"
+          ]
+        },
+        "Number": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 5000,
+          "minimum": "0",
+          "maximum": "19",
+          "first_values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        "rst_flag_number": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 99984,
+          "minimum": "0",
+          "maximum": "1",
+          "first_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "rst_count": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 9275,
+          "minimum": "0",
+          "maximum": "36176",
+          "first_values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        }
+      },
+      "timestamp_order": {
+        "present": true,
+        "adjacent_decreases": 0,
+        "adjacent_equal": 908,
+        "interpretation": "File-order checks only; not proof of bad clocks or duplicate events."
+      },
+      "source_unchanged_size_and_mtime": true,
+      "elapsed_seconds": 3.19
+    },
+    {
+      "file": "D:\\IIoT-APT-Research\\data\\raw\\cicapt_IIOT_phase2_NetworkData.csv",
+      "size_bytes": 4336376799,
+      "size_gib": 4.039,
+      "requested_limit": 100000,
+      "scope": "first_N_records",
+      "records_read": 100000,
+      "valid_width_records": 100000,
+      "invalid_width_records": 0,
+      "invalid_width_examples": [],
+      "complete_to_eof": false,
+      "error": null,
+      "notes": [
+        "No source files modified. No training, relabelling or deduplication.",
+        "No session grouping, clock alignment or feature semantics validated.",
+        "Timestamp values are numeric as stored; units/timezone are not assumed.",
+        "Label counters are capped at 1000 distinct values per column.",
+        "Numeric checks cover only the listed CHECK_FIELDS."
+      ],
+      "columns": [
+        "ts",
+        "flow_duration",
+        "Header_Length",
+        "Source IP",
+        "Destination IP",
+        "Source Port",
+        "Destination Port",
+        "Protocol Type",
+        "Protocol_name",
+        "Duration",
+        "Rate",
+        "Srate",
+        "Drate",
+        "fin_flag_number",
+        "syn_flag_number",
+        "rst_flag_number",
+        "psh_flag_number",
+        "ack_flag_number",
+        "urg_flag_number",
+        "ece_flag_number",
+        "cwr_flag_number",
+        "ack_count",
+        "syn_count",
+        "fin_count",
+        "urg_count",
+        "rst_count",
+        "max_duration",
+        "min_duration",
+        "sum_duration",
+        "average_duration",
+        "std_duration",
+        "CoAP",
+        "HTTP",
+        "HTTPS",
+        "DNS",
+        "Telnet",
+        "SMTP",
+        "SSH",
+        "IRC",
+        "TCP",
+        "UDP",
+        "DHCP",
+        "ARP",
+        "ICMP",
+        "IGMP",
+        "IPv",
+        "LLC",
+        "Tot sum",
+        "Min",
+        "Max",
+        "AVG",
+        "Std",
+        "Tot size",
+        "IAT",
+        "Number",
+        "MAC",
+        "Magnitue",
+        "Radius",
+        "Covariance",
+        "Variance",
+        "Weight",
+        "DS status",
+        "Fragments",
+        "Sequence number",
+        "Protocol Version",
+        "flow_idle_time",
+        "flow_active_time",
+        "label",
+        "subLabel",
+        "subLabelCat"
+      ],
+      "column_count": 70,
+      "label_counts_raw_values": {
+        "label": {
+          "0": 99986,
+          "1": 14
+        },
+        "subLabel": {
+          "0": 99986,
+          "discovery": 14
+        },
+        "subLabelCat": {
+          "0": 99986,
+          "permission groups discovery": 14
+        }
+      },
+      "label_overflow_records": {
+        "label": 0,
+        "subLabel": 0,
+        "subLabelCat": 0
+      },
+      "numeric_checks": {
+        "ts": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 0,
+          "minimum": "1701558100.317517",
+          "maximum": "1701727748.953407",
+          "first_values": [
+            "1701727699.416573",
+            "1701727699.417121",
+            "1701727699.419101",
+            "1701727699.421454",
+            "1701727699.424128"
+          ]
+        },
+        "flow_duration": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 1700,
+          "minimum": "0.0",
+          "maximum": "2237.377604007721",
+          "first_values": [
+            "0.0",
+            "0.0005478858947753",
+            "0.0025279521942138",
+            "0.0048809051513671",
+            "0.0075550079345703"
+          ]
+        },
+        "IAT": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 2,
+          "minimum": "0.0",
+          "maximum": "1701727748.92718",
+          "first_values": [
+            "1701727699.416573",
+            "0.0005478858947753",
+            "0.0019800662994384",
+            "0.0023529529571533",
+            "0.0026741027832031"
+          ]
+        },
+        "flow_idle_time": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 372,
+          "minimum": "0.0",
+          "maximum": "1701727748.656843",
+          "first_values": [
+            "1701727699.416573",
+            "0.0005478858947753",
+            "0.0019800662994384",
+            "0.0023529529571533",
+            "0.0026741027832031"
+          ]
+        },
+        "flow_active_time": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 1700,
+          "minimum": "0.0",
+          "maximum": "2237.377604007721",
+          "first_values": [
+            "0.0",
+            "0.0005478858947753",
+            "0.0025279521942138",
+            "0.0048809051513671",
+            "0.0075550079345703"
+          ]
+        },
+        "Number": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 4999,
+          "minimum": "0",
+          "maximum": "19",
+          "first_values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        "rst_flag_number": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 99963,
+          "minimum": "0",
+          "maximum": "1",
+          "first_values": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "rst_count": {
+          "finite": 100000,
+          "missing": 0,
+          "invalid": 0,
+          "nonfinite": 0,
+          "negative": 0,
+          "zero": 9956,
+          "minimum": "0",
+          "maximum": "27147",
+          "first_values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        }
+      },
+      "timestamp_order": {
+        "present": true,
+        "adjacent_decreases": 1,
+        "adjacent_equal": 2,
+        "interpretation": "File-order checks only; not proof of bad clocks or duplicate events."
+      },
+      "source_unchanged_size_and_mtime": true,
+      "elapsed_seconds": 2.64
+    },
+    {
+      "file": "D:\\IIoT-APT-Research\\data\\raw\\ton_iot_train_test_network.csv",
+      "size_bytes": 29902775,
+      "size_gib": 0.028,
+      "requested_limit": 100000,
+      "scope": "first_N_records",
+      "records_read": 100000,
+      "valid_width_records": 100000,
+      "invalid_width_records": 0,
+      "invalid_width_examples": [],
+      "complete_to_eof": false,
+      "error": null,
+      "notes": [
+        "No source files modified. No training, relabelling or deduplication.",
+        "No session grouping, clock alignment or feature semantics validated.",
+        "Timestamp values are numeric as stored; units/timezone are not assumed.",
+        "Label counters are capped at 1000 distinct values per column.",
+        "Numeric checks cover only the listed CHECK_FIELDS."
+      ],
+      "columns": [
+        "src_ip",
+        "src_port",
+        "dst_ip",
+        "dst_port",
+        "proto",
+        "service",
+        "duration",
+        "src_bytes",
+        "dst_bytes",
+        "conn_state",
+        "missed_bytes",
+        "src_pkts",
+        "src_ip_bytes",
+        "dst_pkts",
+        "dst_ip_bytes",
+        "dns_query",
+        "dns_qclass",
+        "dns_qtype",
+        "dns_rcode",
+        "dns_AA",
+        "dns_RD",
+        "dns_RA",
+        "dns_rejected",
+        "ssl_version",
+        "ssl_cipher",
+        "ssl_resumed",
+        "ssl_established",
+        "ssl_subject",
+        "ssl_issuer",
+        "http_trans_depth",
+        "http_method",
+        "http_uri",
+        "http_version",
+        "http_request_body_len",
+        "http_response_body_len",
+        "http_status_code",
+        "http_user_agent",
+        "http_orig_mime_types",
+        "http_resp_mime_types",
+        "weird_name",
+        "weird_addl",
+        "weird_notice",
+        "label",
+        "type"
+      ],
+      "column_count": 44,
+      "label_counts_raw_values": {
+        "label": {
+          "1": 81043,
+          "0": 18957
+        },
+        "type": {
+          "backdoor": 20000,
+          "ddos": 20000,
+          "dos": 20000,
+          "injection": 20000,
+          "mitm": 1043,
+          "normal": 18957
+        }
+      },
+      "label_overflow_records": {
+        "label": 0,
+        "type": 0
+      },
+      "numeric_checks": {},
+      "timestamp_order": {
+        "present": false,
+        "adjacent_decreases": 0,
+        "adjacent_equal": 0,
+        "interpretation": "File-order checks only; not proof of bad clocks or duplicate events."
+      },
+      "source_unchanged_size_and_mtime": true,
+      "elapsed_seconds": 0.52
+    }
+  ]
+}

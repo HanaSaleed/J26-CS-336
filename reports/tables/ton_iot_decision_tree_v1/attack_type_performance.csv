@@ -1,0 +1,11 @@
+dataset_type,validation_records,detected_attack,missed_attack,attack_recall,false_alerts
+backdoor,2907,2905,2,0.99931201,
+ddos,2956,2914,42,0.98579161,
+dos,2545,2526,19,0.99253438,
+injection,3012,3010,2,0.99933599,
+mitm,162,133,29,0.82098765,
+normal,6754,,,,44
+password,3049,3044,5,0.99836012,
+ransomware,3244,3193,51,0.98427867,
+scanning,3016,3002,14,0.99535809,
+xss,3040,3028,12,0.99605263,

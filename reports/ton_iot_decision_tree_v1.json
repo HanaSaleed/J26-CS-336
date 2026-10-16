@@ -1,0 +1,192 @@
+{
+  "project_id": "J26-CS-336",
+  "phase": "6.1 / ToN-IoT flow-level Decision Tree initial baseline",
+  "created_utc": "2026-10-16T16:43:41+00:00",
+  "problem": "binary normal (0) vs ToN-IoT attack (1), not verified APT attribution",
+  "split": "fixed-seed bidirectional-5-tuple-group-disjoint v1; not session/campaign-disjoint",
+  "source_sha256": {
+    "train": "d2662300dd53e043d9c299e178c2402824cca02286b2196ec10e2b7f2059f86b",
+    "validation": "571a77acc34171709e27e1564df942e66dbe5b99723166545d99e7af61201f7f",
+    "split_manifest": "a5b5f65484f9eff700207acae1d1d72774dddb9821ef86fba307332183da30e3",
+    "preprocessor_joblib": "b7bb3a73ebff98e4d744ad79d17d7a7dc6378c119617bd17abb92396b83a4ad4"
+  },
+  "test_partition": "NOT OPENED, TRANSFORMED, OR EVALUATED",
+  "training_records": 147684,
+  "validation_records": 30685,
+  "training_labels": {
+    "1": 112060,
+    "0": 35624
+  },
+  "validation_labels": {
+    "1": 23931,
+    "0": 6754
+  },
+  "input_feature_names": [
+    "src_port",
+    "dst_port",
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "dst_pkts"
+  ],
+  "encoded_feature_count": 32,
+  "decision_tree_hyperparameters": {
+    "max_depth": 10,
+    "min_samples_leaf": 20,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "decision_tree_validation": {
+    "accuracy": 0.9928303731464885,
+    "balanced_accuracy": 0.9930654322817623,
+    "attack_precision": 0.9981511828228077,
+    "attack_recall": 0.9926455225439806,
+    "attack_f1": 0.9953907395767861,
+    "normal_recall_specificity": 0.993485342019544,
+    "false_positive_rate": 0.006514657980456026,
+    "confusion_matrix": {
+      "TN": 6710,
+      "FP": 44,
+      "FN": 176,
+      "TP": 23755
+    },
+    "roc_auc": 0.9990103475485308,
+    "average_precision": 0.9994958233432952
+  },
+  "majority_class_baseline_validation": {
+    "accuracy": 0.7798924555971973,
+    "balanced_accuracy": 0.5,
+    "attack_precision": 0.7798924555971973,
+    "attack_recall": 1.0,
+    "attack_f1": 0.8763366046579757,
+    "normal_recall_specificity": 0.0,
+    "false_positive_rate": 1.0,
+    "confusion_matrix": {
+      "TN": 0,
+      "FP": 6754,
+      "FN": 0,
+      "TP": 23931
+    },
+    "roc_auc": 0.5,
+    "average_precision": 0.7798924555971973
+  },
+  "validation_detection_by_dataset_type": {
+    "backdoor": {
+      "rows": 2907,
+      "attack_detected": 2905,
+      "attack_recall": 0.9993120055039559
+    },
+    "ddos": {
+      "rows": 2956,
+      "attack_detected": 2914,
+      "attack_recall": 0.9857916102841678
+    },
+    "dos": {
+      "rows": 2545,
+      "attack_detected": 2526,
+      "attack_recall": 0.9925343811394892
+    },
+    "injection": {
+      "rows": 3012,
+      "attack_detected": 3010,
+      "attack_recall": 0.99933598937583
+    },
+    "mitm": {
+      "rows": 162,
+      "attack_detected": 133,
+      "attack_recall": 0.8209876543209876
+    },
+    "normal": {
+      "rows": 6754,
+      "false_alerts": 44
+    },
+    "password": {
+      "rows": 3049,
+      "attack_detected": 3044,
+      "attack_recall": 0.9983601180714988
+    },
+    "ransomware": {
+      "rows": 3244,
+      "attack_detected": 3193,
+      "attack_recall": 0.9842786683107275
+    },
+    "scanning": {
+      "rows": 3016,
+      "attack_detected": 3002,
+      "attack_recall": 0.9953580901856764
+    },
+    "xss": {
+      "rows": 3040,
+      "attack_detected": 3028,
+      "attack_recall": 0.9960526315789474
+    }
+  },
+  "training_seconds": 0.8476811000145972,
+  "validation_predict_seconds_batch": 0.0056155999773181975,
+  "validation_predict_microseconds_per_row_batch_average": 0.18300798361799567,
+  "tree_depth": 10,
+  "tree_leaf_count": 127,
+  "tree_node_count": 253,
+  "top_features_gini_importance_not_causal": [
+    {
+      "feature": "categorical__proto_tcp",
+      "importance": 0.3141495702698873
+    },
+    {
+      "feature": "numeric__dst_port",
+      "importance": 0.30987708190516233
+    },
+    {
+      "feature": "numeric__src_port",
+      "importance": 0.22160323478324714
+    },
+    {
+      "feature": "numeric__dst_pkts",
+      "importance": 0.041461083523053145
+    },
+    {
+      "feature": "numeric__dst_bytes",
+      "importance": 0.03879102291690217
+    },
+    {
+      "feature": "categorical__conn_state_SF",
+      "importance": 0.03150116940857219
+    },
+    {
+      "feature": "numeric__src_pkts",
+      "importance": 0.027223423214953746
+    },
+    {
+      "feature": "numeric__duration",
+      "importance": 0.007121401820195034
+    },
+    {
+      "feature": "numeric__src_bytes",
+      "importance": 0.0053638160487506055
+    },
+    {
+      "feature": "categorical__service_ssl",
+      "importance": 0.0025589396612071573
+    }
+  ],
+  "libraries": {
+    "python_sklearn": "1.9.1",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "joblib": "1.6.0"
+  },
+  "limitations": [
+    "Validation-only baseline. No final held-out test evaluation performed.",
+    "Distinct 5-tuples can share exact input signatures, host pairs or attack campaigns.",
+    "ToN-IoT network file has no timestamps; results are not 5/10/15/20s window detection.",
+    "Dataset generic attack labels are not proof of APT or MITRE technique identification.",
+    "Batch mean time per row on Windows PC is NOT Raspberry Pi latency, memory or throughput.",
+    "Impurity-based feature importances are descriptions of splits, not causal explanation.",
+    "A fixed threshold of 0.5 is used; class-weight balancing may shift precision/recall."
+  ],
+  "saved_model_bytes": 24835
+}

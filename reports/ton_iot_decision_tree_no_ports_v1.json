@@ -1,0 +1,156 @@
+{
+  "project_id": "J26-CS-336",
+  "phase": "6.3 port-feature ablation",
+  "timestamp_utc": "2026-10-16T17:11:38.228789+00:00",
+  "experiment": "Decision Tree without source and destination port inputs",
+  "training_rows": 147684,
+  "validation_rows": 30685,
+  "input_features": [
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "dst_pkts"
+  ],
+  "excluded_features": [
+    "src_port",
+    "dst_port"
+  ],
+  "encoded_feature_count": 30,
+  "hyperparameters": {
+    "max_depth": 10,
+    "min_samples_leaf": 20,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "training_seconds": 0.6590672000311315,
+  "ablation_validation": {
+    "accuracy": 0.9908424311552876,
+    "balanced_accuracy": 0.990675061916424,
+    "attack_precision": 0.9972666105971405,
+    "attack_recall": 0.9909740503948853,
+    "attack_f1": 0.994110372869988,
+    "false_positive_rate": 0.00962392656203731,
+    "roc_auc": 0.9980345075103458,
+    "average_precision": 0.9990016906463814,
+    "confusion_matrix": {
+      "TN": 6689,
+      "FP": 65,
+      "FN": 216,
+      "TP": 23715
+    }
+  },
+  "original_validation_reference": {
+    "accuracy": 0.9928303731464885,
+    "balanced_accuracy": 0.9930654322817623,
+    "attack_precision": 0.9981511828228077,
+    "attack_recall": 0.9926455225439806,
+    "attack_f1": 0.9953907395767861,
+    "normal_recall_specificity": 0.993485342019544,
+    "false_positive_rate": 0.006514657980456026,
+    "confusion_matrix": {
+      "TN": 6710,
+      "FP": 44,
+      "FN": 176,
+      "TP": 23755
+    },
+    "roc_auc": 0.9990103475485308,
+    "average_precision": 0.9994958233432952
+  },
+  "per_type_validation": [
+    {
+      "type": "backdoor",
+      "rows": 2907,
+      "detected": 2906,
+      "missed": 1,
+      "recall": 0.999656002751978,
+      "false_alerts": null
+    },
+    {
+      "type": "ddos",
+      "rows": 2956,
+      "detected": 2902,
+      "missed": 54,
+      "recall": 0.9817320703653586,
+      "false_alerts": null
+    },
+    {
+      "type": "dos",
+      "rows": 2545,
+      "detected": 2530,
+      "missed": 15,
+      "recall": 0.9941060903732809,
+      "false_alerts": null
+    },
+    {
+      "type": "injection",
+      "rows": 3012,
+      "detected": 2998,
+      "missed": 14,
+      "recall": 0.9953519256308101,
+      "false_alerts": null
+    },
+    {
+      "type": "mitm",
+      "rows": 162,
+      "detected": 121,
+      "missed": 41,
+      "recall": 0.7469135802469136,
+      "false_alerts": null
+    },
+    {
+      "type": "normal",
+      "rows": 6754,
+      "detected": null,
+      "missed": null,
+      "recall": null,
+      "false_alerts": 65
+    },
+    {
+      "type": "password",
+      "rows": 3049,
+      "detected": 3044,
+      "missed": 5,
+      "recall": 0.9983601180714988,
+      "false_alerts": null
+    },
+    {
+      "type": "ransomware",
+      "rows": 3244,
+      "detected": 3193,
+      "missed": 51,
+      "recall": 0.9842786683107275,
+      "false_alerts": null
+    },
+    {
+      "type": "scanning",
+      "rows": 3016,
+      "detected": 3008,
+      "missed": 8,
+      "recall": 0.9973474801061007,
+      "false_alerts": null
+    },
+    {
+      "type": "xss",
+      "rows": 3040,
+      "detected": 3013,
+      "missed": 27,
+      "recall": 0.9911184210526316,
+      "false_alerts": null
+    }
+  ],
+  "source_sha256": {
+    "train": "d2662300dd53e043d9c299e178c2402824cca02286b2196ec10e2b7f2059f86b",
+    "validation": "571a77acc34171709e27e1564df942e66dbe5b99723166545d99e7af61201f7f"
+  },
+  "test_partition": "NOT OPENED OR USED",
+  "limitations": [
+    "Flow-level ToN-IoT experiment, not proof of APT or 5/10/15/20s window accuracy.",
+    "Same validation set used for comparison; not independent final performance.",
+    "5-tuple group disjoint does not guarantee campaign/session disjointness.",
+    "Protocol and service may still encode dataset-specific shortcuts."
+  ]
+}

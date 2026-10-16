@@ -1,0 +1,118 @@
+{
+  "project_id": "J26-CS-336",
+  "phase": "5.17 / train-only flow preprocessing",
+  "created_utc": "2026-10-16T16:17:18+00:00",
+  "input_split_version": "ton_iot_group_holdout_v1",
+  "input_files_sha256": {
+    "train": "d2662300dd53e043d9c299e178c2402824cca02286b2196ec10e2b7f2059f86b",
+    "validation": "571a77acc34171709e27e1564df942e66dbe5b99723166545d99e7af61201f7f",
+    "split_manifest": "a5b5f65484f9eff700207acae1d1d72774dddb9821ef86fba307332183da30e3"
+  },
+  "test_partition": "FILE PRESENCE VERIFIED ONLY; test.csv was NOT opened or transformed",
+  "preprocessing_fit_on": "train.csv exclusively",
+  "features_in_order": [
+    "src_port",
+    "dst_port",
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "dst_pkts"
+  ],
+  "numeric_features": [
+    "src_port",
+    "dst_port",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "src_pkts",
+    "dst_pkts"
+  ],
+  "categorical_features": [
+    "proto",
+    "service",
+    "conn_state"
+  ],
+  "categorical_policy": "Training-only one-hot fit, ignore unseen validation/test categories; '-' is kept as an observed service category",
+  "numeric_policy": "Training-only median imputer; no scaling for tree-based baseline",
+  "label_and_type_as_predictors": false,
+  "rows": {
+    "train": 147684,
+    "validation": 30685
+  },
+  "labels": {
+    "train": {
+      "1": 112060,
+      "0": 35624
+    },
+    "validation": {
+      "1": 23931,
+      "0": 6754
+    }
+  },
+  "encoded_feature_count": 32,
+  "encoded_feature_names": [
+    "numeric__src_port",
+    "numeric__dst_port",
+    "numeric__duration",
+    "numeric__src_bytes",
+    "numeric__dst_bytes",
+    "numeric__src_pkts",
+    "numeric__dst_pkts",
+    "categorical__proto_icmp",
+    "categorical__proto_tcp",
+    "categorical__proto_udp",
+    "categorical__service_-",
+    "categorical__service_dce_rpc",
+    "categorical__service_dns",
+    "categorical__service_ftp",
+    "categorical__service_gssapi",
+    "categorical__service_http",
+    "categorical__service_smb",
+    "categorical__service_smb;gssapi",
+    "categorical__service_ssl",
+    "categorical__conn_state_OTH",
+    "categorical__conn_state_REJ",
+    "categorical__conn_state_RSTO",
+    "categorical__conn_state_RSTOS0",
+    "categorical__conn_state_RSTR",
+    "categorical__conn_state_RSTRH",
+    "categorical__conn_state_S0",
+    "categorical__conn_state_S1",
+    "categorical__conn_state_S2",
+    "categorical__conn_state_S3",
+    "categorical__conn_state_SF",
+    "categorical__conn_state_SH",
+    "categorical__conn_state_SHR"
+  ],
+  "validation_unknown_categories": {
+    "proto": {
+      "validation_rows_with_unseen_category": 0,
+      "distinct_unseen_categories": [],
+      "training_distinct_categories": 3
+    },
+    "service": {
+      "validation_rows_with_unseen_category": 0,
+      "distinct_unseen_categories": [],
+      "training_distinct_categories": 9
+    },
+    "conn_state": {
+      "validation_rows_with_unseen_category": 0,
+      "distinct_unseen_categories": [],
+      "training_distinct_categories": 13
+    }
+  },
+  "sklearn_version": "1.9.1",
+  "pandas_version": "3.0.6",
+  "numpy_version": "2.5.4",
+  "known_limitations": [
+    "Group-disjoint by bidirectional 5-tuple, not by attack session/campaign or IP pair.",
+    "Identical selected input signatures still overlap across the split.",
+    "ToN-IoT train_test_network.csv lacks event timestamps; this is NOT a 5/10/15/20-second ML experiment.",
+    "Using IP/port-based grouping does not guarantee held-out deployment environments.",
+    "No classifier trained and no held-out test evaluation performed."
+  ]
+}
