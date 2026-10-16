@@ -1,3 +1,4 @@
 # Install local package and basic test tooling:
 -e .[dev]
+networkx
 # Add pinned or constrained ML dependencies after model selection.
