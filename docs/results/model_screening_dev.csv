@@ -1,0 +1,15 @@
+,recall_other,fpr,pr_auc_other,recall_flood,precision,cv_time_s,size_kb
+Random Forest | full,0.87,0.007,0.913,1.0,0.996,8.9,1316.8
+Extra Trees | full,0.899,0.001,0.95,1.0,1.0,5.2,1642.0
+LightGBM | full,0.942,0.01,0.839,1.0,0.995,1.0,356.2
+AdaBoost | full,0.942,0.001,0.89,1.0,1.0,16.8,187.4
+Isolation Forest | full,0.029,0.01,0.056,0.0,0.049,3.4,1285.4
+Isolation Forest (log) | full,0.043,0.012,0.093,0.0,0.064,3.3,1462.1
+One-Class SVM (log+scaled) | full,0.913,0.106,0.265,1.0,0.947,0.8,85.8
+Random Forest | behaviour,0.159,0.03,0.141,0.996,0.984,6.4,1050.4
+Extra Trees | behaviour,0.188,0.028,0.129,0.996,0.985,4.8,1136.3
+LightGBM | behaviour,0.478,0.04,0.263,0.996,0.979,0.8,356.3
+AdaBoost | behaviour,0.217,0.029,0.168,0.996,0.985,15.6,172.8
+Isolation Forest | behaviour,0.029,0.012,0.077,0.0,0.043,6.1,790.5
+Isolation Forest (log) | behaviour,0.014,0.01,0.081,0.0,0.026,5.4,862.3
+One-Class SVM (log+scaled) | behaviour,0.377,0.047,0.101,0.002,0.181,2.0,59.5
