@@ -1,0 +1,4 @@
+,recall_all,recall_flood,recall_other,fpr,precision,pr_auc_other
+always normal,0.0,0.0,0.0,0.0,0.0,0.018
+always attack,1.0,1.0,1.0,1.0,0.654,0.018
+one-line rule,0.985,0.995,0.043,0.045,0.976,0.018
