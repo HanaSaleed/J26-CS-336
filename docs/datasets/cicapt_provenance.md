@@ -76,7 +76,7 @@ The extended labels were created using evidence from process activity and identi
 
 The initial record counts, collection periods, labels, and process activity have been examined. Further work is required to validate the extended labels, construct model features, and evaluate detection performance using a leakage-resistant split.
 
-## 8. Process Cleaning and Validation
+## 9. Process Cleaning and Validation
 Phase 1: 4,941 processes, 164,316 events, and 0 attack processes, as expected.
 
 Phase 2: 24,839 original process records were reduced to 12,443 after merging process versions. The cleaned data contains 7,137 attack-labelled processes and 47 identified attack steps.
@@ -86,3 +86,15 @@ No events were left without an associated process.
 Correcting the mislabelled cp activity reduced the discrepancy in normal process rates between the two phases. Phase 2 recorded approximately 74 normal processes per hour, compared with 51 in Phase 1.
 
 Automated tests were added to validate the cleaning results.
+
+## 10. Path-Category and Network Features
+
+
+
+Paths are grouped into six categories: sensitive, persistence, temp, home, hidden, and system binaries.
+
+Network features count distinct destinations, external connections, and distinct ports per process.
+
+Features use categories and counts rather than raw file paths or IP addresses.
+
+These features may help identify rare attack tactics but are unlikely to detect the cp staging flood because its file-copy activity was not logged.

@@ -1,0 +1,7 @@
+feature_set,pair,spearman
+full,LGBM~ET,0.54
+full,LGBM~OCSVM,0.66
+full,ET~OCSVM,0.34
+behaviour,LGBM~ET,0.51
+behaviour,LGBM~OCSVM,0.44
+behaviour,ET~OCSVM,-0.16

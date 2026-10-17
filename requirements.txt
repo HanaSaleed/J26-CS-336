@@ -1,5 +1,7 @@
-# Install local package and basic test tooling:
 -e .[dev]
 networkx
 pytest
+scikit-learn
+lightgbm
+pyarrow
 # Add pinned or constrained ML dependencies after model selection.

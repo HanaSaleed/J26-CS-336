@@ -3,3 +3,19 @@ network_flow:
   primary: Edge-IIoTset
   validation_candidates: [ToN-IoT, X-IIoTID, CICAPT-IIoT2024]
 # Dataset roles for the other modules are pending team confirmation.
+
+device_telemetry:
+  primary: CICAPT-IIoT2024
+    
+cicapt_provenance:
+  name: CICAPT-IIoT 2024 (provenance, Auditd + SPADE)
+  raw_dir: data/raw/cicapt_provenance
+  files:
+    phase1: Phase1_Provenance.csv   # benign only, used for baselines
+    phase2: Phase2_Provenance.csv   # benign + APT campaign
+  interim_dir: data/interim/device_telemetry
+  processed_dir: data/processed/device_telemetry
+  unit: process
+  window_seconds: 60
+  heldout_cutoff_utc: "2023-12-03 12:00"
+  validation_candidates: [ToN-IoT]
