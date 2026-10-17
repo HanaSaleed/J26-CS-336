@@ -1,0 +1,45 @@
+# TON_IoT Modbus Dataset
+
+## Purpose and source
+
+This experiment uses the processed TON_IoT Modbus CSV for binary normal-versus-attack classification. The original CSV is kept outside the repository. Place a local copy at data/raw/ton_iot/IoT_Modbus.csv or pass its path with --data. The data/raw directory is ignored by Git.
+
+Official dataset information:
+- UNSW TON_IoT project: https://research.unsw.edu.au/projects/toniot-datasets
+- Dataset structure paper: https://gala.gre.ac.uk/id/eprint/34598/7/34598_ESSOP_Generating_IoT_edge_network_datasets.pdf
+
+## Target and predictors
+
+The target is label (0 normal, 1 attack). The four predictors are:
+- FC1_Read_Input_Register
+- FC2_Read_Discrete_Value
+- FC3_Read_Holding_Register
+- FC4_Read_Coil
+
+The type column is excluded from predictors because it provides attack-category information associated with the target. Date and time are parsed to a timestamp for ordering and partitioning, not used as predictors.
+
+## Read-only inspection findings
+
+The inspected processed file contains 287,194 rows, no missing values, 222,855 normal rows, and 64,339 attack rows. Attack rows by type are backdoor 40,011; password 18,115; injection 5,186; scanning 529; and xss 498.
+
+The separate Modbus ground-truth file contains 59,989 event rows. All 59,989 distinct processed attack timestamps matched the ground-truth timestamps after trimming whitespace; no timestamp was missing or extra and no event type disagreed. Some processed rows share an attack timestamp, explaining why attack-row counts exceed event timestamp counts.
+
+There are 12,314 rows in exact duplicate groups after timestamp normalization. These groups do not have conflicting labels or types. The baseline retains all rows; it does not treat repeated timestamps or repeated feature vectors as grounds for removing observations.
+
+Attack activity is time-localized: scanning occurs on Apr 23, injection on Apr 25, password on Apr 26–27, xss on Apr 27, and backdoor on Apr 28–29, 2019.
+
+## Split and baseline method
+
+The experiment trains through Apr 25, 2019 inclusive and tests on later dates. It assigns all records on each date to the same side of the split. Training has 153,913 rows (148,198 normal and 5,715 attack). Testing has 133,281 rows (74,657 normal and 58,624 attack).
+
+The baseline is a scikit-learn pipeline with StandardScaler followed by LogisticRegression(class_weight="balanced", max_iter=2000, random_state=42). The model is fit only on training rows. The reported hard-prediction threshold is 0.5. Metrics include accuracy, precision, recall, F1, balanced accuracy, ROC AUC, average precision (PR AUC), and the confusion matrix.
+
+This is a temporal and campaign holdout, not an IID estimate: training attacks include scanning and injection, while the test attacks include password, xss, and backdoor. Attack prevalence also changes substantially between partitions. Interpret the result as a first baseline for later-period generalization. Do not tune on this test set.
+
+## Reproduction
+
+Install requirements, then run from the repository root:
+
+    python experiments/physical_sensor/train_modbus_baseline.py --data "PATH_TO_IoT_Modbus.csv" --output docs/results/modbus_temporal_baseline.csv
+
+The script reports the partition counts and attack types. It does not modify the source CSV or save a model artifact.

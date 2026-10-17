@@ -1,0 +1,2 @@
+model,split,cutoff_inclusive,features,train_rows,train_normal,train_attack,test_rows,test_normal,test_attack,threshold,accuracy,precision,recall,f1,balanced_accuracy,roc_auc,pr_auc,tn,fp,fn,tp
+standardized_logistic_regression,chronological,2019-04-25,FC1_Read_Input_Register;FC2_Read_Discrete_Value;FC3_Read_Holding_Register;FC4_Read_Coil,153913,148198,5715,133281,74657,58624,0.5,0.5033500649004734,0.4426219567656065,0.498055403930131,0.46870535355967574,0.5027815361668149,0.5054787791042461,0.44276684932497373,37889,36768,29426,29198

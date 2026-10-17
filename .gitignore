@@ -25,3 +25,6 @@ models/*.onnx
 
 runs/
 mlruns/
+
+# Keep compact experiment result tables under version control
+!docs/results/*.csv

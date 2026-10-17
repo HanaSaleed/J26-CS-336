@@ -2,4 +2,19 @@
 network_flow:
   primary: Edge-IIoTset
   validation_candidates: [ToN-IoT, X-IIoTID, CICAPT-IIoT2024]
-# Dataset roles for the other modules are pending team confirmation.
+
+physical_sensor:
+  primary: TON_IoT Modbus
+  raw_path: data/raw/ton_iot/IoT_Modbus.csv
+  target: label
+  time_columns: [date, time]
+  feature_columns:
+    - FC1_Read_Input_Register
+    - FC2_Read_Discrete_Value
+    - FC3_Read_Holding_Register
+    - FC4_Read_Coil
+  excluded_predictors: [type]
+  split:
+    strategy: chronological
+    training_cutoff_inclusive: "2019-04-25"
+  duplicate_policy: retain_rows_and_report_exact_duplicates
