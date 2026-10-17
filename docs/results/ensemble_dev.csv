@@ -1,0 +1,11 @@
+,recall_other,fpr,pr_auc_other,recall_flood,precision
+Extra Trees (best single) | full,0.899,0.001,0.95,1.0,1.0
+LightGBM | full,0.942,0.01,0.839,1.0,0.995
+Soft vote (LGBM+ET) | full,0.942,0.01,0.952,1.0,0.995
+Majority vote (2 of 3) | full,0.913,0.006,0.67,1.0,0.997
+Stacked (nested) | full,0.913,0.005,0.9,1.0,0.998
+Extra Trees (best single) | behaviour,0.188,0.028,0.129,0.996,0.985
+LightGBM | behaviour,0.478,0.04,0.263,0.996,0.979
+Soft vote (LGBM+ET) | behaviour,0.348,0.03,0.172,0.996,0.984
+Majority vote (2 of 3) | behaviour,0.348,0.027,0.077,0.996,0.986
+Stacked (nested) | behaviour,0.232,0.043,0.11,0.001,0.138
