@@ -1,0 +1,9 @@
+,recall_other,fpr,pr_auc_other,recall_flood
+all features,0.942,0.01,0.839,1.0
+without cmd_len,0.928,0.01,0.813,1.0
+without cmd_pipes,0.942,0.01,0.838,1.0
+without cmd_redirect,0.942,0.01,0.833,1.0
+without cmd_encoded,0.913,0.01,0.809,1.0
+without cmd_hidden_path,0.899,0.025,0.365,0.638
+without is_root,0.899,0.005,0.836,1.0
+without uid_ne_euid,0.942,0.01,0.839,1.0
