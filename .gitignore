@@ -4,17 +4,18 @@ __pycache__/
 .pytest_cache/
 .env
 .ipynb_checkpoints/
+*.egg-info/
 
 data/raw/
 data/interim/
 data/processed/
 !data/README.md
 
-models/*.joblib
-models/*.pkl
-models/*.pt
-models/*.pth
-models/*.onnx
+models/**/*.joblib
+models/**/*.pkl
+models/**/*.pt
+models/**/*.pth
+models/**/*.onnx
 
 *.pcap
 *.pcapng
@@ -25,3 +26,6 @@ models/*.onnx
 
 runs/
 mlruns/
+
+# results tables are small and part of the research record
+!docs/results/*.csv
