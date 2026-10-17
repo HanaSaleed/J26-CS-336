@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "id": "ton_iot_decision_tree_v1",
+      "name": "Decision Tree · ToN-IoT (10 inputs)",
+      "signal": "network",
+      "model_path": "models/ton_iot_decision_tree_v1/decision_tree_pipeline.joblib",
+      "report_path": "reports/ton_iot_decision_tree_v1.json",
+      "validation_path": "data/processed/ton_iot_group_holdout_v1/validation.csv",
+      "figures_dir": "reports/figures/ton_iot_decision_tree_v1",
+      "features": ["src_port", "dst_port", "proto", "service", "duration", "src_bytes", "dst_bytes", "conn_state", "src_pkts", "dst_pkts"]
+    },
+    {
+      "id": "ton_iot_decision_tree_no_ports_v1",
+      "name": "Decision Tree · No ports (8 inputs)",
+      "signal": "network",
+      "model_path": "models/ton_iot_decision_tree_no_ports_v1/no_ports_pipeline.joblib",
+      "report_path": "reports/ton_iot_decision_tree_no_ports_v1.json",
+      "validation_path": "data/processed/ton_iot_group_holdout_v1/validation.csv",
+      "figures_dir": "reports/figures/ton_iot_decision_tree_no_ports_v1",
+      "features": ["proto", "service", "duration", "src_bytes", "dst_bytes", "conn_state", "src_pkts", "dst_pkts"]
+    }
+  ]
+}
