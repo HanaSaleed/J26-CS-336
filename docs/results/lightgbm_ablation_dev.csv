@@ -1,0 +1,11 @@
+,recall_other,fpr,pr_auc_other,recall_flood
+all features,0.942,0.01,0.839,1.0
+without operations,0.899,0.01,0.835,1.0
+without touch,0.942,0.01,0.839,1.0
+without privilege,0.899,0.005,0.836,1.0
+without program,0.928,0.01,0.847,1.0
+without cmdline,0.928,0.031,0.385,0.638
+without rarity,0.942,0.002,0.882,1.0
+without family,0.957,0.147,0.797,1.0
+without context,0.928,0.01,0.814,1.0
+"behaviour only (no cmdline, privilege, context)",0.478,0.04,0.263,0.996
