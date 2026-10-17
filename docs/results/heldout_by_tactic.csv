@@ -1,0 +1,6 @@
+tactic,processes,caught,median_score,recall,seen_in_development
+collection,4,4,0.948,1.0,True
+credentialAccess,8,7,0.951,0.875,True
+defenceEvasion,22,10,0.56,0.455,False
+discovery,3,3,0.951,1.0,True
+lateralMovement,6,6,0.918,1.0,False
