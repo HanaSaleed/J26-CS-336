@@ -43,3 +43,10 @@ Install requirements, then run from the repository root:
     python experiments/physical_sensor/train_modbus_baseline.py --data "PATH_TO_IoT_Modbus.csv" --output docs/results/modbus_temporal_baseline.csv
 
 The script reports the partition counts and attack types. It does not modify the source CSV or save a model artifact.
+## Exploratory model comparison
+
+A second experiment compares the standardized, class-weighted logistic baseline with a 200-tree RandomForestClassifier using balanced subsampling. Both use the same four Modbus features, training rows through Apr 25, 2019, later-date holdout, and default 0.5 threshold. Results are in `docs/results/modbus_model_comparison.csv` and can be reproduced with:
+
+    python experiments/physical_sensor/compare_modbus_models.py --data "PATH_TO_IoT_Modbus.csv"
+
+On the later-period holdout, logistic regression achieved ROC AUC 0.5055 and recall 0.4981. The random forest achieved ROC AUC 0.4984 and recall 0.0002 (10 of 58,624 attacks detected), despite accuracy 0.5602. The accuracy reflects the holdout's class mix and should not be read as useful detection quality. This comparison reuses a holdout already reported by the first baseline, so it is exploratory and must not be treated as an unbiased final model-selection estimate. Do not tune a threshold on this holdout.
