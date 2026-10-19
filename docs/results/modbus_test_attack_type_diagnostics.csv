@@ -1,0 +1,7 @@
+model,attack_type,attack_rows,detected,missed,recall
+standardized_logistic_regression,backdoor,40011,19951,20060,0.49863787458448927
+standardized_logistic_regression,password,18115,9003,9112,0.49699144355506486
+standardized_logistic_regression,xss,498,244,254,0.4899598393574297
+random_forest_balanced_subsample,backdoor,40011,3,40008,7.497938067031566e-05
+random_forest_balanced_subsample,password,18115,4,18111,0.00022081148219707425
+random_forest_balanced_subsample,xss,498,3,495,0.006024096385542169

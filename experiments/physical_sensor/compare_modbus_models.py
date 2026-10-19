@@ -1,4 +1,4 @@
-"""Compare two Modbus classifiers on the fixed chronological split."""
+"""Compare Modbus classifiers and report temporal holdout errors."""
 import argparse
 import sys
 from pathlib import Path
@@ -34,22 +34,59 @@ def main():
             random_state=42, n_jobs=-1,
         ).fit(train[FEATURE_COLUMNS], train["label"])),
     ]
-    results = [{
-        "model": name,
-        "split": "chronological_exploratory_comparison",
-        "cutoff_inclusive": args.cutoff,
-        "features": ";".join(FEATURE_COLUMNS),
-        "train_rows": len(train),
-        "test_rows": len(test),
-        **evaluate_binary(
-            test["label"], predict_attack_probability(model, test, FEATURE_COLUMNS)
-        ),
-    } for name, model in models]
+
+    results, by_type, by_day = [], [], []
+    is_attack = test["label"].eq(1).to_numpy()
+    is_normal = ~is_attack
+    attack_rows = test.loc[is_attack, "type"].reset_index(drop=True)
+    normal_days = test.loc[is_normal, "timestamp"].dt.strftime("%Y-%m-%d").reset_index(drop=True)
+
+    for name, model in models:
+        probability = predict_attack_probability(model, test, FEATURE_COLUMNS)
+        predicted_attack = probability >= 0.5
+        results.append({
+            "model": name,
+            "split": "chronological_exploratory_comparison",
+            "cutoff_inclusive": args.cutoff,
+            "features": ";".join(FEATURE_COLUMNS),
+            "train_rows": len(train),
+            "test_rows": len(test),
+            **evaluate_binary(test["label"], probability),
+        })
+
+        attack_report = pd.DataFrame({"type": attack_rows, "detected": predicted_attack[is_attack]})
+        for attack_type, group in attack_report.groupby("type", sort=True):
+            detected = int(group["detected"].sum())
+            by_type.append({
+                "model": name,
+                "attack_type": attack_type,
+                "attack_rows": len(group),
+                "detected": detected,
+                "missed": len(group) - detected,
+                "recall": detected / len(group),
+            })
+
+        normal_report = pd.DataFrame({"date": normal_days, "false_alarm": predicted_attack[is_normal]})
+        for day, group in normal_report.groupby("date", sort=True):
+            alarms = int(group["false_alarm"].sum())
+            by_day.append({
+                "model": name,
+                "date": day,
+                "normal_rows": len(group),
+                "false_alarms": alarms,
+                "false_alarm_rate": alarms / len(group),
+            })
 
     output = args.output if args.output.is_absolute() else ROOT / args.output
     output.parent.mkdir(parents=True, exist_ok=True)
+    type_output = output.with_name("modbus_test_attack_type_diagnostics.csv")
+    day_output = output.with_name("modbus_test_daily_false_alarms.csv")
     pd.DataFrame(results).to_csv(output, index=False)
+    pd.DataFrame(by_type).to_csv(type_output, index=False)
+    pd.DataFrame(by_day).to_csv(day_output, index=False)
     print("Saved comparison to {}".format(output))
+    print("Saved attack-type report to {}".format(type_output))
+    print("Saved daily false-alarm report to {}".format(day_output))
     print("Exploratory only: this reuses the previously reported holdout; do not tune on it.")
 
 

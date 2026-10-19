@@ -1,0 +1,9 @@
+model,date,normal_rows,false_alarms,false_alarm_rate
+standardized_logistic_regression,2019-04-26,6423,3228,0.5025688930406352
+standardized_logistic_regression,2019-04-27,17302,8264,0.47763264362501445
+standardized_logistic_regression,2019-04-28,1393,629,0.4515434314429289
+standardized_logistic_regression,2019-04-29,49539,24647,0.49752720079129575
+random_forest_balanced_subsample,2019-04-26,6423,0,0.0
+random_forest_balanced_subsample,2019-04-27,17302,0,0.0
+random_forest_balanced_subsample,2019-04-28,1393,0,0.0
+random_forest_balanced_subsample,2019-04-29,49539,4,8.07444639576899e-05
