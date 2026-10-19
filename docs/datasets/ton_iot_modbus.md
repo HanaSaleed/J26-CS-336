@@ -53,3 +53,8 @@ On the later-period holdout, logistic regression achieved ROC AUC 0.5055 and rec
 ## Post-hoc error diagnostics
 
 The comparison script also writes `docs/results/modbus_test_attack_type_diagnostics.csv` and `docs/results/modbus_test_daily_false_alarms.csv`. Attack type is used only to group the already-labeled test rows for reporting; it is never passed to either model. At the fixed 0.5 threshold, logistic regression detected about half of each test attack type and flagged about 45–50% of normal rows each day. The random forest generated only four false alarms across the normal test rows, but detected just 10 attacks total. This shows a poor detection-versus-false-alarm tradeoff for both models. These reports are diagnostic only and do not justify tuning against the reused holdout.
+## Modbus feature profile
+
+Run `python experiments/physical_sensor/profile_modbus_features.py --data "PATH_TO_IoT_Modbus.csv"` to create `docs/results/modbus_feature_profile.csv`. It reports unique-value counts, zero fractions, means, medians, upper quantiles, and maxima for each of the four input columns, grouped by train/test period and normal/attack type. These attack categories are report labels only, not model inputs.
+
+In this dataset, the four inputs have many distinct numeric values and are almost always nonzero. Group means are broadly in the 31,000–34,000 range, with some differences between normal and attack groups. This simple summary does not prove the distributions overlap or establish that the features contain no signal; it motivates looking at the distributions and temporal behavior before changing the model.
