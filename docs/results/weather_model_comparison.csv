@@ -1,0 +1,2 @@
+model,dataset,split,cutoff_inclusive,features,train_rows,train_normal,train_attack,test_rows,test_normal,test_attack,threshold,accuracy,precision,recall,f1,balanced_accuracy,roc_auc,pr_auc,tn,fp,fn,tp
+standardized_logistic_regression,TON_IoT_Weather,chronological_exploratory_holdout,2019-04-26,temperature;pressure;humidity,537995,495342,42653,112247,64376,47871,0.5,0.44093828788297235,0.37457438559822,0.4642058866537152,0.41460115488306576,0.4439210121723901,0.4200189046168429,0.3804334557988739,27272,37104,25649,22222
