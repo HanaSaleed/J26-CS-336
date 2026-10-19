@@ -61,3 +61,8 @@ In this dataset, the four inputs have many distinct numeric values and are almos
 ## Feature distribution plots
 
 Run `python experiments/physical_sensor/plot_modbus_distributions.py --data "PATH_TO_IoT_Modbus.csv"` to generate `docs/results/modbus_feature_distributions.svg`. It draws one panel per feature, with normalized curves for normal rows and each attack type in the training and test periods. Curves show the percentage of each group falling into each value bin, so smaller groups remain visible; the XSS group is small (498 rows) and should be interpreted cautiously. These plots are descriptive and do not tune or select a model.
+## Quantified feature overlap
+
+Run `python experiments/physical_sensor/measure_modbus_distribution_overlap.py --data "PATH_TO_IoT_Modbus.csv"` to create `docs/results/modbus_distribution_overlap.csv`. It compares normalized 32-bin histograms for each feature, separately for each period and attack type. `histogram_overlap` ranges from 0 (no shared bin mass) to 1 (identical binned distributions); it is a coarse, univariate measure, not a classifier score.
+
+The later test-period backdoor and password rows have about 97–98% overlap with normal rows for each individual feature. XSS has about 84–87% overlap. The training-period injection rows have about 94–95% overlap, while scanning is about 85–89%. The high overlap helps explain why a single feature is not a clean separator. It does not rule out interactions between features, sequential behavior, or information in additional fields.
