@@ -1,0 +1,4 @@
+partition,start,end,rows,normal,attack,attack_type_counts
+candidate_fit_period,2019-03-31 12:36:52,2019-04-23 23:59:55,120065,119536,529,scanning=529
+candidate_validation_already_used_in_prior_training,2019-04-24 00:00:00,2019-04-25 10:15:11,33848,28662,5186,injection=5186
+previously_examined_test_period,2019-04-26 13:39:51,2019-04-29 23:59:58,133281,74657,58624,backdoor=40011; password=18115; xss=498
