@@ -1,0 +1,2 @@
+model,dataset,split,cutoff_inclusive,features,excluded_undated_rows,train_rows,train_normal,train_attack,test_rows,test_normal,test_attack,threshold,accuracy,precision,recall,f1,balanced_accuracy,roc_auc,pr_auc,tn,fp,fn,tp
+standardized_logistic_regression,TON_IoT_Thermostat,chronological_exploratory_holdout,2019-04-26,current_temperature;thermostat_status,4621,361865,343871,17994,75742,37461,38281,0.5,0.4983496606902379,0.5032086645200513,0.5837883022909537,0.5405117786484787,0.49741455903635,0.49526251325829634,0.5010666926780754,15398,22063,15933,22348

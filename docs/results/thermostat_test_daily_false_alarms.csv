@@ -1,0 +1,4 @@
+model,date,normal_rows,false_alarms,false_alarm_rate
+standardized_logistic_regression,2019-04-27,18732,10850,0.5792227204783259
+standardized_logistic_regression,2019-04-28,1515,909,0.6
+standardized_logistic_regression,2019-04-29,17214,10304,0.5985825490879517

@@ -1,0 +1,4 @@
+model,attack_type,attack_rows,detected,missed,recall
+standardized_logistic_regression,backdoor,35568,20808,14760,0.5850202429149798
+standardized_logistic_regression,ransomware,2264,1281,983,0.5658127208480566
+standardized_logistic_regression,xss,449,259,190,0.576837416481069
