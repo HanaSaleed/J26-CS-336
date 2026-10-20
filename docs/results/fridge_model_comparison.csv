@@ -1,0 +1,2 @@
+model,dataset,split,cutoff_inclusive,features,train_rows,train_normal,train_attack,test_rows,test_normal,test_attack,threshold,accuracy,precision,recall,f1,balanced_accuracy,roc_auc,pr_auc,tn,fp,fn,tp
+standardized_logistic_regression_one_hot_condition,TON_IoT_Fridge,chronological_exploratory_holdout,2019-04-26,fridge_temperature;temp_condition,487753,451000,36753,99323,49827,49496,0.5,0.4974779255560142,0.4952350407770549,0.4367625666720543,0.46416455533130074,0.49727625995512925,0.4970111005446227,0.4966705217952595,27793,22034,27878,21618
