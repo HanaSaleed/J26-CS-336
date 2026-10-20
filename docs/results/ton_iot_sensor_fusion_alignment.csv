@@ -1,0 +1,8 @@
+sensor,dated_source_rows,unique_seconds,repeated_rows_aggregated,excluded_known_undated_normal_rows
+weather,650242,188312,461930,0
+thermostat,437607,197528,240079,4621
+fridge,587076,175731,411345,0
+gps_tracker,595686,197431,398255,0
+garage_door,570111,167622,402489,21335
+motion_light,452262,199612,252650,0
+all_sensors_inner_join,,31437,,
