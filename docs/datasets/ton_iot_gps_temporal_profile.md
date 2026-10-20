@@ -33,3 +33,9 @@ Do not use this reviewed holdout for further model selection. A fresh campaign, 
 
 - [UNSW TON_IoT dataset page](https://research.unsw.edu.au/projects/toniot-datasets)
 - Alsaedi et al., [TON_IoT Telemetry Dataset (2020)](https://doi.org/10.1109/ACCESS.2020.3022862), especially the GPS simulation algorithm and the attack-timestamp labeling description.
+
+## GPS ablation validation feasibility
+
+A GPS-versus-no-GPS ablation was not accepted as a model comparison because the matched six-sensor training cohort does not support a credible chronological validation split. The shared cohort has 31,437 seconds overall; within the training period through 2019-04-26, 21,452 seconds remain, with attacks concentrated on April 25–26 and normal data mostly on earlier dates. Before April 25 there are no attack seconds in the matched cohort. On April 25, there are 494 normal and 937 attack seconds, but these occur in campaign-specific time blocks. A scan of all within-day chronological cutoffs found no split with at least 50 seconds of each class in both training and validation; after the training block contains 50 attack seconds, no more than 5 normal seconds can remain for validation.
+
+A preliminary cutoff at 2019-04-25 09:00:53 yielded only 2 normal seconds among 577 validation seconds. Its model metrics are therefore not reported or used for feature decisions. Randomly dividing seconds could put adjacent records from the same campaign on both sides and give an overly optimistic result. The GPS ablation is deferred until a suitable independent campaign or dataset is available. The previously reviewed post-April-26 holdout remains excluded from further model selection.
