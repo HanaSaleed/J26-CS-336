@@ -1,0 +1,113 @@
+{
+  "project": "J26-CS-336",
+  "version": "cicapt_flow_v1_PROVISIONAL",
+  "source_positive_report": "reports\\cicapt_attack_temporal_candidates_20261019T170646_912515Z.csv",
+  "scope": "CICAPT IIoT Phase2 only; attack-labeled observations from original labels",
+  "positive_observations": 1004,
+  "positive_bidirectional_5tuple_groups": 46,
+  "distinct_attack_categories": 25,
+  "categories_with_only_one_positive_flow_group": [
+    "add command",
+    "add or copy content to clipboard",
+    "capture linux desktop",
+    "check python",
+    "collect arp details",
+    "create a new user in linux",
+    "download sandcat and lazagne",
+    "dump history",
+    "exfil staged directory",
+    "extract password with grep",
+    "find local users",
+    "list directory",
+    "list os information",
+    "network interface configuration",
+    "permission groups discovery",
+    "scan wifi networks",
+    "start sandcat",
+    "system owner/user discovery"
+  ],
+  "target_fraction_of_positive_records": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "positive_record_counts_by_split": {
+    "train": 666,
+    "validation": 146,
+    "test": 192
+  },
+  "positive_group_counts_by_split": {
+    "train": 39,
+    "validation": 6,
+    "test": 1
+  },
+  "positive_category_records_by_split": {
+    "train": {
+      "add command": 14,
+      "add or copy content to clipboard": 14,
+      "advanced file search and stager": 14,
+      "capture linux desktop": 24,
+      "check python": 14,
+      "collect arp details": 14,
+      "compress staged directory": 14,
+      "create a new user in linux": 44,
+      "create staging directory": 4,
+      "download sandcat and lazagne": 14,
+      "dump credentials from firefox browser": 14,
+      "dump history": 14,
+      "exfil staged directory": 14,
+      "extract password with grep": 14,
+      "find files": 222,
+      "find local users": 14,
+      "linux download file and run": 28,
+      "list directory": 14,
+      "list os information": 14,
+      "network interface configuration": 14,
+      "permission groups discovery": 14,
+      "scan wifi networks": 26,
+      "stage sensitive files": 66,
+      "start sandcat": 14,
+      "system owner/user discovery": 14
+    },
+    "validation": {
+      "advanced file search and stager": 28,
+      "compress staged directory": 14,
+      "dump credentials from firefox browser": 16,
+      "find files": 34,
+      "stage sensitive files": 54
+    },
+    "test": {
+      "create staging directory": 192
+    }
+  },
+  "positive_records_by_utc_day_and_split": {
+    "train": {
+      "2023-12-01": 50,
+      "2023-12-02": 326,
+      "2023-12-03": 290
+    },
+    "validation": {
+      "2023-12-02": 130,
+      "2023-12-03": 16
+    },
+    "test": {
+      "2023-12-04": 192
+    }
+  },
+  "grouping": "canonical bidirectional [ip_protocol, [[ip,port],[ip,port]]] key",
+  "priority": "at least one group per observed attack category reserved in training; other groups greedy positive-row balance",
+  "future_benign_only_flow_assignment": {
+    "applied": false,
+    "description": "Use SAME canonical flow key; groups containing positives always use explicit positive mapping. Otherwise stable blake2b(SEED|key) fraction: train <.70, validation <.85, test otherwise.",
+    "seed": "J26-CS-336|CICAPT|flow-v1"
+  },
+  "status": "PROPOSED ASSIGNMENT - NOT YET A MATERIALIZED SPLIT OR HELD-OUT EVALUATION",
+  "caveats": [
+    "Flow-disjoint does not mean campaign-disjoint: this is one known CICAPT experiment.",
+    "Attack categories with a single positive flow cannot appear across all train/validation/test splits.",
+    "No benign flow assignments verified yet. Proportions apply only to 1,004 source-positive records.",
+    "A five-tuple may represent recurrent connections, not one independently verified attack event.",
+    "Provisional split is not a claim of real-world generalization or APT attribution.",
+    "No raw CSV feature values or held-out test outcomes are examined by this script."
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "project_id": "J26-CS-336",
+  "purpose": "CICAPT Phase 2 exploratory temporal candidates against Caldera attack_info",
+  "source_csv": "D:\\IIoT-APT-Research\\data\\raw\\cicapt_IIOT_phase2_NetworkData.csv",
+  "metadata": "D:\\IIoT-APT-Research\\data\\metadata\\cicapt\\attack_info.csv",
+  "scope": "full_file",
+  "records_scanned": 9536823,
+  "binary_labels": {
+    "0": 9535819,
+    "1": 1004
+  },
+  "attack_labeled_records": 1004,
+  "metadata_event_count": 58,
+  "metadata_unique_technique_names": 27,
+  "network_attack_category_count": 25,
+  "nearest_same_name_within_seconds": {
+    "30": 403,
+    "120": 1004,
+    "300": 1004
+  },
+  "no_exact_name_metadata_candidates": 0,
+  "by_network_category": {
+    "add command": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "add or copy content to clipboard": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "advanced file search and stager": {
+      "attack_labeled_records": 42,
+      "within_30_seconds": 20,
+      "within_120_seconds": 42,
+      "within_300_seconds": 42
+    },
+    "capture linux desktop": {
+      "attack_labeled_records": 24,
+      "within_30_seconds": 14,
+      "within_120_seconds": 24,
+      "within_300_seconds": 24
+    },
+    "check python": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "collect arp details": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "compress staged directory": {
+      "attack_labeled_records": 28,
+      "within_30_seconds": 8,
+      "within_120_seconds": 28,
+      "within_300_seconds": 28
+    },
+    "create a new user in linux": {
+      "attack_labeled_records": 44,
+      "within_30_seconds": 34,
+      "within_120_seconds": 44,
+      "within_300_seconds": 44
+    },
+    "create staging directory": {
+      "attack_labeled_records": 196,
+      "within_30_seconds": 63,
+      "within_120_seconds": 196,
+      "within_300_seconds": 196
+    },
+    "download sandcat and lazagne": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "dump credentials from firefox browser": {
+      "attack_labeled_records": 30,
+      "within_30_seconds": 8,
+      "within_120_seconds": 30,
+      "within_300_seconds": 30
+    },
+    "dump history": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "exfil staged directory": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "extract password with grep": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "find files": {
+      "attack_labeled_records": 256,
+      "within_30_seconds": 114,
+      "within_120_seconds": 256,
+      "within_300_seconds": 256
+    },
+    "find local users": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "linux download file and run": {
+      "attack_labeled_records": 28,
+      "within_30_seconds": 18,
+      "within_120_seconds": 28,
+      "within_300_seconds": 28
+    },
+    "list directory": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "list os information": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "network interface configuration": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "permission groups discovery": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "scan wifi networks": {
+      "attack_labeled_records": 26,
+      "within_30_seconds": 12,
+      "within_120_seconds": 26,
+      "within_300_seconds": 26
+    },
+    "stage sensitive files": {
+      "attack_labeled_records": 120,
+      "within_30_seconds": 52,
+      "within_120_seconds": 120,
+      "within_300_seconds": 120
+    },
+    "start sandcat": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    },
+    "system owner/user discovery": {
+      "attack_labeled_records": 14,
+      "within_30_seconds": 4,
+      "within_120_seconds": 14,
+      "within_300_seconds": 14
+    }
+  },
+  "earliest_attack_labeled_utc": "2023-12-01T22:25:30.720+00:00",
+  "latest_attack_labeled_utc": "2023-12-04T03:04:25.143+00:00",
+  "sources_unchanged_size_mtime": true,
+  "elapsed_seconds": 136.98,
+  "limitations": [
+    "Temporal proximity plus an exact category name is NOT ground-truth event attribution.",
+    "Nearest-match algorithm reuses metadata events; no one-to-one event pairing is inferred.",
+    "No timestamp shift is applied or inferred. NS-3 capture timing must be verified independently.",
+    "Exports are network CSV observations; one row has not been verified to equal one original packet.",
+    "Source labels and category names are retained as evidence; never put them into model predictors.",
+    "This reads ONLY the CICAPT Phase 2 CSV and attack_info.csv; no ML training or test data use."
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "research_id": "J26-CS-336",
+  "purpose": "CICAPT-IIoT phase 2 attack-label and timestamp audit",
+  "source_file": "D:\\IIoT-APT-Research\\data\\raw\\cicapt_IIOT_phase2_NetworkData.csv",
+  "scope": "first_N_records_only",
+  "limit": 100000,
+  "data_records_read": 100000,
+  "source_unchanged_size_and_mtime": true,
+  "binary_label_counts": {
+    "0": 99986,
+    "1": 14
+  },
+  "attack_labeled_fraction": 0.00014,
+  "timestamp_missing": 0,
+  "timestamp_invalid": 0,
+  "adjacent_timestamp_decreases_in_csv_order": 1,
+  "adjacent_equal_timestamps_in_csv_order": 2,
+  "timestamp_range_if_epoch_seconds": {
+    "first_file_row_utc": "2023-12-04T22:08:19.416+00:00",
+    "last_file_row_utc": "2023-12-03T05:48:58.296+00:00",
+    "minimum_utc": "2023-12-02T23:01:40.317+00:00",
+    "maximum_utc": "2023-12-04T22:09:08.953+00:00",
+    "first_attack_labeled_utc": "2023-12-03T05:36:29.040+00:00",
+    "last_attack_labeled_utc": "2023-12-03T05:37:14.673+00:00"
+  },
+  "backward_jump_examples": [
+    {
+      "csv_data_row": 12614,
+      "previous_ts": 1701727748.953407,
+      "current_ts": 1701558100.317517,
+      "backward_seconds_if_epoch_seconds": 169648.63589,
+      "previous_utc_if_epoch_seconds": "2023-12-04T22:09:08.953+00:00",
+      "current_utc_if_epoch_seconds": "2023-12-02T23:01:40.317+00:00"
+    }
+  ],
+  "attack_subLabel_counts": [
+    {
+      "value": "discovery",
+      "count": 14
+    }
+  ],
+  "attack_subLabelCat_counts": [
+    {
+      "value": "permission groups discovery",
+      "count": 14
+    }
+  ],
+  "attack_source_ip_counts": [
+    {
+      "value": "172.16.65.128",
+      "count": 8
+    },
+    {
+      "value": "172.16.63.128",
+      "count": 6
+    }
+  ],
+  "attack_source_destination_pairs": [
+    {
+      "source_ip": "172.16.65.128",
+      "destination_ip": "172.16.63.128",
+      "count": 8
+    },
+    {
+      "source_ip": "172.16.63.128",
+      "destination_ip": "172.16.65.128",
+      "count": 6
+    }
+  ],
+  "attack_destination_port_counts": [
+    {
+      "value": "41596",
+      "count": 8
+    },
+    {
+      "value": "8888",
+      "count": 6
+    }
+  ],
+  "attack_protocol_counts": [
+    {
+      "value": "6",
+      "count": 14
+    }
+  ],
+  "first_attack_labeled_examples": [
+    {
+      "csv_data_row": 74214,
+      "timestamp_as_stored": "1701581789.040482",
+      "utc_if_epoch_seconds": "2023-12-03T05:36:29.040+00:00",
+      "source_ip": "172.16.63.128",
+      "destination_ip": "172.16.65.128",
+      "source_port": "41596",
+      "destination_port": "8888",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 74212,
+          "label": "0",
+          "ts": "1701581788.974508",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        },
+        {
+          "data_row": 74213,
+          "label": "0",
+          "ts": "1701581788.97662",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 74215,
+      "timestamp_as_stored": "1701581789.042594",
+      "utc_if_epoch_seconds": "2023-12-03T05:36:29.042+00:00",
+      "source_ip": "172.16.63.128",
+      "destination_ip": "172.16.65.128",
+      "source_port": "41596",
+      "destination_port": "8888",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 74213,
+          "label": "0",
+          "ts": "1701581788.97662",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        },
+        {
+          "data_row": 74214,
+          "label": "1",
+          "ts": "1701581789.040482",
+          "source": "172.16.63.128",
+          "destination": "172.16.65.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 74216,
+      "timestamp_as_stored": "1701581789.043251",
+      "utc_if_epoch_seconds": "2023-12-03T05:36:29.043+00:00",
+      "source_ip": "172.16.65.128",
+      "destination_ip": "172.16.63.128",
+      "source_port": "8888",
+      "destination_port": "41596",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 74214,
+          "label": "1",
+          "ts": "1701581789.040482",
+          "source": "172.16.63.128",
+          "destination": "172.16.65.128"
+        },
+        {
+          "data_row": 74215,
+          "label": "1",
+          "ts": "1701581789.042594",
+          "source": "172.16.63.128",
+          "destination": "172.16.65.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 74217,
+      "timestamp_as_stored": "1701581789.045363",
+      "utc_if_epoch_seconds": "2023-12-03T05:36:29.045+00:00",
+      "source_ip": "172.16.65.128",
+      "destination_ip": "172.16.63.128",
+      "source_port": "8888",
+      "destination_port": "41596",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 74215,
+          "label": "1",
+          "ts": "1701581789.042594",
+          "source": "172.16.63.128",
+          "destination": "172.16.65.128"
+        },
+        {
+          "data_row": 74216,
+          "label": "1",
+          "ts": "1701581789.043251",
+          "source": "172.16.65.128",
+          "destination": "172.16.63.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 75194,
+      "timestamp_as_stored": "1701581819.759845",
+      "utc_if_epoch_seconds": "2023-12-03T05:36:59.759+00:00",
+      "source_ip": "172.16.63.128",
+      "destination_ip": "172.16.65.128",
+      "source_port": "41596",
+      "destination_port": "8888",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 75192,
+          "label": "0",
+          "ts": "1701581819.588997",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        },
+        {
+          "data_row": 75193,
+          "label": "0",
+          "ts": "1701581819.591109",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 75195,
+      "timestamp_as_stored": "1701581819.761957",
+      "utc_if_epoch_seconds": "2023-12-03T05:36:59.761+00:00",
+      "source_ip": "172.16.63.128",
+      "destination_ip": "172.16.65.128",
+      "source_port": "41596",
+      "destination_port": "8888",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 75193,
+          "label": "0",
+          "ts": "1701581819.591109",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        },
+        {
+          "data_row": 75194,
+          "label": "1",
+          "ts": "1701581819.759845",
+          "source": "172.16.63.128",
+          "destination": "172.16.65.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 75196,
+      "timestamp_as_stored": "1701581819.762684",
+      "utc_if_epoch_seconds": "2023-12-03T05:36:59.762+00:00",
+      "source_ip": "172.16.65.128",
+      "destination_ip": "172.16.63.128",
+      "source_port": "8888",
+      "destination_port": "41596",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 75194,
+          "label": "1",
+          "ts": "1701581819.759845",
+          "source": "172.16.63.128",
+          "destination": "172.16.65.128"
+        },
+        {
+          "data_row": 75195,
+          "label": "1",
+          "ts": "1701581819.761957",
+          "source": "172.16.63.128",
+          "destination": "172.16.65.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 75197,
+      "timestamp_as_stored": "1701581819.764796",
+      "utc_if_epoch_seconds": "2023-12-03T05:36:59.764+00:00",
+      "source_ip": "172.16.65.128",
+      "destination_ip": "172.16.63.128",
+      "source_port": "8888",
+      "destination_port": "41596",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 75195,
+          "label": "1",
+          "ts": "1701581819.761957",
+          "source": "172.16.63.128",
+          "destination": "172.16.65.128"
+        },
+        {
+          "data_row": 75196,
+          "label": "1",
+          "ts": "1701581819.762684",
+          "source": "172.16.65.128",
+          "destination": "172.16.63.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 75702,
+      "timestamp_as_stored": "1701581834.666081",
+      "utc_if_epoch_seconds": "2023-12-03T05:37:14.666+00:00",
+      "source_ip": "172.16.65.128",
+      "destination_ip": "172.16.63.128",
+      "source_port": "8888",
+      "destination_port": "41596",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 75700,
+          "label": "0",
+          "ts": "1701581834.64656",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        },
+        {
+          "data_row": 75701,
+          "label": "0",
+          "ts": "1701581834.648672",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        }
+      ]
+    },
+    {
+      "csv_data_row": 75703,
+      "timestamp_as_stored": "1701581834.668193",
+      "utc_if_epoch_seconds": "2023-12-03T05:37:14.668+00:00",
+      "source_ip": "172.16.65.128",
+      "destination_ip": "172.16.63.128",
+      "source_port": "8888",
+      "destination_port": "41596",
+      "protocol_as_stored": "6",
+      "subLabel": "discovery",
+      "subLabelCat": "permission groups discovery",
+      "preceding_data_rows": [
+        {
+          "data_row": 75701,
+          "label": "0",
+          "ts": "1701581834.648672",
+          "source": "172.16.64.128",
+          "destination": "172.16.63.128"
+        },
+        {
+          "data_row": 75702,
+          "label": "1",
+          "ts": "1701581834.666081",
+          "source": "172.16.65.128",
+          "destination": "172.16.63.128"
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 2.14,
+  "limitations": [
+    "CSV data rows have not been verified to represent individual original packets.",
+    "UTC conversions assume ts is Unix epoch seconds; the source timestamp semantics remain to be verified.",
+    "Dataset binary labels and sublabels are reported as stored, not independently authenticated.",
+    "A group of rows sharing labels/IPs/times is not proof of an APT campaign or MITRE technique.",
+    "No training, labeling, filtering, sorting, model prediction or test-set access was performed."
+  ]
+}

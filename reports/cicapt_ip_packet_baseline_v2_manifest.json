@@ -1,0 +1,71 @@
+{
+  "project": "J26-CS-336",
+  "name": "CICAPT Phase2 IP-addressed packet-level exploratory baseline (v2)",
+  "status": "FROZEN ALLOCATION POLICY FOR EXPLORATORY BASELINE; TRAINING DATA NOT MATERIALIZED",
+  "not_a_claim_of": [
+    "independent APT-campaign evaluation",
+    "verified packet-to-PCAP provenance",
+    "ready-to-deploy Raspberry Pi window feature compatibility"
+  ],
+  "raw_source": {
+    "path": "data\\raw\\cicapt_IIOT_phase2_NetworkData.csv",
+    "bytes": 4336376799,
+    "total_records": 9536823,
+    "note": "Raw file size checked against preflight. No full-file checksum computed; original file unchanged."
+  },
+  "source_artifacts_sha256": {
+    "reports\\cicapt_flow_split_plan_v2.json": "fa3619182573cf5251b92c67444a8b6a17342e9c26307ed7471885091472b801",
+    "reports\\cicapt_positive_flow_split_v2.csv": "2f1806b83c9a0a1ad6a0177b1692c7eaae6d23dfc723c6d3742756a7987e993d",
+    "reports\\cicapt_full_split_v2_preflight_fixed.json": "dd9b6be67cb8fb6dc9629b2ccd7f9bbe54c80ea75534d32f8113eb9908f56c78"
+  },
+  "ip_scope_note": "Original full preflight accepts valid IPv4 OR IPv6 addresses; this manifest counts IP-addressed candidates, not independently verified IPv4-only records.",
+  "label_policy": "Use publisher-provided label as target; never include label, subLabel, subLabelCat, Caldera event candidate, raw IPs, or epoch ts in features.",
+  "eligibility_policy": {
+    "excluded_record_count": 74995,
+    "excluded_record_type": "Source IP=0, Destination IP=0, Protocol Type=0, ARP=1, IPv=0, label=0",
+    "evidence": "Full Phase2 terminal check on 2026-10-20; all 74,995 zero-address records had this pattern.",
+    "method": "Keep source rows untouched; skip these only for the IP-addressed baseline materialization.",
+    "warning": "The non-IP fallback group in preflight was only for accounting; never use it as a real flow."
+  },
+  "split_policy": {
+    "unit": "canonical bidirectional IP/port/protocol 5-tuple; groups may include both benign and attack observations",
+    "attack_bearing_groups": "Use explicit v2 positive-flow mapping (46 groups)",
+    "benign_only_groups": "Hash flow key using BLAKE2b digest_size=8 on J26-CS-336|CICAPT|flow-v1|<canonical_key>; train if fraction <0.70, validation if <0.85, else test",
+    "design_used_known_attack_categories": true,
+    "limitation": "Flow disjointness does not ensure session/campaign disjointness; validation attacks occur only Dec2; test covers 5 of 25 observed categories.",
+    "use": "Train and tune on train/validation only; defer opening test examples until choices are locked. Report test once and label it internal CICAPT holdout."
+  },
+  "counts_by_split_after_arp_exclusion": {
+    "train": {
+      "eligible_normal_records": 7651688,
+      "attack_labeled_records": 712,
+      "eligible_total_records": 7652400,
+      "attack_rate_percent": 0.00930427,
+      "positive_five_tuple_groups": 31,
+      "normal_records_in_attack_containing_groups": 170374
+    },
+    "validation": {
+      "eligible_normal_records": 911171,
+      "attack_labeled_records": 146,
+      "eligible_total_records": 911317,
+      "attack_rate_percent": 0.01602077,
+      "positive_five_tuple_groups": 8,
+      "normal_records_in_attack_containing_groups": 302
+    },
+    "test": {
+      "eligible_normal_records": 897965,
+      "attack_labeled_records": 146,
+      "eligible_total_records": 898111,
+      "attack_rate_percent": 0.01625634,
+      "positive_five_tuple_groups": 7,
+      "normal_records_in_attack_containing_groups": 322
+    }
+  },
+  "totals": {
+    "eligible_ip_addressed_candidate_records": 9461828,
+    "attack_labeled_records": 1004,
+    "normal_eligible_records": 9460824,
+    "attack_flow_keys": 46
+  },
+  "next": "Implement streaming packet-level baseline preprocessing and train/validation pipeline. Confirm IPv4-only vs IPv6 presence before asserting an IPv4-only experiment. Do not treat dataset columns as verified 5/10/15/20-second gateway windows."
+}

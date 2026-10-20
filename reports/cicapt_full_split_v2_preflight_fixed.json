@@ -1,0 +1,153 @@
+{
+  "project": "J26-CS-336",
+  "status": "PREFLIGHT / NO TRAIN-VALIDATION-TEST CSV MATERIALIZED / NOT APPROVED FOR MODEL TRAINING",
+  "source": "data\\raw\\cicapt_IIOT_phase2_NetworkData.csv",
+  "source_bytes": 4336376799,
+  "positive_mapping": "reports\\cicapt_positive_flow_split_v2.csv",
+  "positive_mapping_sha256": "2f1806b83c9a0a1ad6a0177b1692c7eaae6d23dfc723c6d3742756a7987e993d",
+  "algorithm": "v2 positive-flow override; canonical valid-IP flows hashed; non-IP benign rows hashed by distinct raw-token surrogate grouping",
+  "canonical_key_definition": "[int_protocol, [[normalized_ip, int_port], [normalized_ip, int_port]]] sorted endpoints; compact JSON",
+  "benign_only_hash_seed": "J26-CS-336|CICAPT|flow-v1",
+  "benign_only_hash_thresholds": {
+    "train": "<0.70",
+    "validation": "0.70..0.85",
+    "test": ">=0.85"
+  },
+  "counts_by_split": {
+    "train": {
+      "normal": 7726683,
+      "attack": 712,
+      "total": 7727395,
+      "attack_prevalence_percent": 0.009214,
+      "benign_rows_in_positive_containing_flows": 170374,
+      "benign_rows_in_benign_only_flows": 7556309,
+      "benign_rows_with_non_ip_address_tokens": 74995
+    },
+    "validation": {
+      "normal": 911171,
+      "attack": 146,
+      "total": 911317,
+      "attack_prevalence_percent": 0.016021,
+      "benign_rows_in_positive_containing_flows": 302,
+      "benign_rows_in_benign_only_flows": 910869,
+      "benign_rows_with_non_ip_address_tokens": 0
+    },
+    "test": {
+      "normal": 897965,
+      "attack": 146,
+      "total": 898111,
+      "attack_prevalence_percent": 0.016256,
+      "benign_rows_in_positive_containing_flows": 322,
+      "benign_rows_in_benign_only_flows": 897643,
+      "benign_rows_with_non_ip_address_tokens": 0
+    }
+  },
+  "counts_by_day": {
+    "2023-12-01": {
+      "train": {
+        "normal": 175469,
+        "attack": 0
+      },
+      "validation": {
+        "normal": 19386,
+        "attack": 0
+      },
+      "test": {
+        "normal": 23506,
+        "attack": 50
+      }
+    },
+    "2023-12-02": {
+      "train": {
+        "normal": 2647078,
+        "attack": 230
+      },
+      "validation": {
+        "normal": 289594,
+        "attack": 146
+      },
+      "test": {
+        "normal": 302069,
+        "attack": 80
+      }
+    },
+    "2023-12-03": {
+      "train": {
+        "normal": 2455774,
+        "attack": 290
+      },
+      "validation": {
+        "normal": 322472,
+        "attack": 0
+      },
+      "test": {
+        "normal": 296314,
+        "attack": 16
+      }
+    },
+    "2023-12-04": {
+      "train": {
+        "normal": 2448362,
+        "attack": 192
+      },
+      "validation": {
+        "normal": 279719,
+        "attack": 0
+      },
+      "test": {
+        "normal": 276076,
+        "attack": 0
+      }
+    }
+  },
+  "positive_flow_keys_verified": 46,
+  "positive_observations_verified": 1004,
+  "benign_records_in_positive_containing_groups_total": 170998,
+  "benign_records_with_non_ip_address_tokens_total": 74995,
+  "non_ip_address_tokens_most_common": [
+    [
+      "0",
+      149990
+    ]
+  ],
+  "non_ip_surrogate_group_count": 1,
+  "non_ip_surrogate_groups_largest": [
+    {
+      "benign_records": 74995,
+      "assigned_split": "train"
+    }
+  ],
+  "largest_positive_group_by_benign_rows": [
+    {
+      "benign_records": 127410,
+      "assigned_split": "train"
+    },
+    {
+      "benign_records": 41682,
+      "assigned_split": "train"
+    },
+    {
+      "benign_records": 556,
+      "assigned_split": "train"
+    },
+    {
+      "benign_records": 126,
+      "assigned_split": "test"
+    },
+    {
+      "benign_records": 92,
+      "assigned_split": "validation"
+    }
+  ],
+  "total_raw_records": 9536823,
+  "caveats": [
+    "Target shares 70/15/15 are hash probabilities for benign-only flow keys, not guaranteed row percentages.",
+    "v2 positive-group assignments were selected using known labels/categories; this is not a campaign-independent holdout.",
+    "Bidirectional 5-tuple key equality prevents same-key cross-partition rows, not all temporal/session leakage.",
+    "Attacker IP/port and selected TCP-flag behavior can be shortcut features; ablation and same-pair evaluation required.",
+    "Only counts and grouping fields were processed; features/labels were not changed and no test records exported.",
+    "No claim made that CICAPT CSV rows are verified raw PCAP packets.",
+    "Non-IP address tokens (e.g. 0) on benign records are opaque placeholders, not verified hosts; distinct surrogate groups reduce splitting of identical records but are not genuine flows.",
+    "All records are counted in the preflight; exclusion or separate handling of non-IP traffic must be decided before training."
+  ]
+}

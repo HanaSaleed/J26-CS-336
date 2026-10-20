@@ -1,0 +1,125 @@
+{
+  "version": "cicapt_flow_v2_PROVISIONAL",
+  "source": "reports\\cicapt_positive_flow_split_v1.csv",
+  "design_seed": 20261019,
+  "status": "POSITIVE-FLOW ASSIGNMENTS ONLY; RAW CSV AND BENIGN FLOWS NOT PARTITIONED",
+  "total_positive_observations": 1004,
+  "positive_flow_groups": 46,
+  "distinct_attack_categories": 25,
+  "single_positive_flow_categories": [
+    "add command",
+    "add or copy content to clipboard",
+    "capture linux desktop",
+    "check python",
+    "collect arp details",
+    "create a new user in linux",
+    "download sandcat and lazagne",
+    "dump history",
+    "exfil staged directory",
+    "extract password with grep",
+    "find local users",
+    "list directory",
+    "list os information",
+    "network interface configuration",
+    "permission groups discovery",
+    "scan wifi networks",
+    "start sandcat",
+    "system owner/user discovery"
+  ],
+  "reserved_training_positive_flows": 25,
+  "oversized_positive_flow_keys_reserved_in_training": [
+    "[6,[[\"172.16.63.128\",54938],[\"172.16.65.128\",8888]]]"
+  ],
+  "target_positive_proportions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "actual_positive_counts": {
+    "train": 712,
+    "test": 146,
+    "validation": 146
+  },
+  "actual_positive_group_counts": {
+    "train": 31,
+    "test": 7,
+    "validation": 8
+  },
+  "actual_positive_category_counts": {
+    "train": 25,
+    "validation": 4,
+    "test": 5
+  },
+  "positive_records_by_category": {
+    "train": {
+      "add command": 14,
+      "add or copy content to clipboard": 14,
+      "advanced file search and stager": 14,
+      "capture linux desktop": 24,
+      "check python": 14,
+      "collect arp details": 14,
+      "compress staged directory": 14,
+      "create a new user in linux": 44,
+      "create staging directory": 192,
+      "download sandcat and lazagne": 14,
+      "dump credentials from firefox browser": 14,
+      "dump history": 14,
+      "exfil staged directory": 14,
+      "extract password with grep": 14,
+      "find files": 102,
+      "find local users": 14,
+      "linux download file and run": 4,
+      "list directory": 14,
+      "list os information": 14,
+      "network interface configuration": 14,
+      "permission groups discovery": 14,
+      "scan wifi networks": 26,
+      "stage sensitive files": 68,
+      "start sandcat": 14,
+      "system owner/user discovery": 14
+    },
+    "validation": {
+      "compress staged directory": 14,
+      "find files": 94,
+      "linux download file and run": 24,
+      "stage sensitive files": 14
+    },
+    "test": {
+      "advanced file search and stager": 28,
+      "create staging directory": 4,
+      "dump credentials from firefox browser": 16,
+      "find files": 60,
+      "stage sensitive files": 38
+    }
+  },
+  "positive_records_by_utc_day": {
+    "train": {
+      "2023-12-02": 230,
+      "2023-12-03": 290,
+      "2023-12-04": 192
+    },
+    "validation": {
+      "2023-12-02": 146
+    },
+    "test": {
+      "2023-12-01": 50,
+      "2023-12-02": 80,
+      "2023-12-03": 16
+    }
+  },
+  "largest_positive_group_in_partition": {
+    "train": 192,
+    "test": 36,
+    "validation": 26
+  },
+  "score": 0.002037292644924714,
+  "notes": [
+    "Positive-only counts do not describe final train/validation/test class balance.",
+    "Benign records sharing a positive 5-tuple must follow that positive group's assignment.",
+    "Benign-only groups need their own reproducible assignment and verification.",
+    "Train retains all attack category names but single-flow categories cannot support heldout evaluation.",
+    "Category-aware split design is not evidence of independent attack campaigns or generalization.",
+    "Port/IP shortcut and TCP-flag ablations and independent lab evaluation remain essential.",
+    "Do not use test holdout for model/feature selection after freeze."
+  ]
+}

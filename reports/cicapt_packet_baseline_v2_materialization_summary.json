@@ -1,0 +1,60 @@
+{
+  "project": "J26-CS-336",
+  "status": "train and natural validation materialized; TEST UNEXPORTED",
+  "raw": "data\\raw\\cicapt_IIOT_phase2_NetworkData.csv",
+  "frozen_manifest": "reports\\cicapt_ip_packet_baseline_v2_manifest.json",
+  "frozen_manifest_sha256": "2ecfa3db2a58645be74198ba198f6279dca9dbc0a6a8e99410605fe0cb3441f9",
+  "training_benign_sample": {
+    "method": "deterministic uniform row selection from TRAIN ONLY, BLAKE2b 8-byte digest",
+    "seed": "J26-CS-336|CICAPT|train-normal-sampling-v1",
+    "normal_per_attack_target": 50,
+    "inclusion_probability": 0.004652568165351227,
+    "expected_normal_sample_size": 35600,
+    "actual_normal_sample_size": 35478,
+    "no_resampling_of_validation_or_test": true
+  },
+  "feature_allowlist_first_baseline": [
+    "proto",
+    "frame_size",
+    "syn_flag",
+    "ack_flag",
+    "rst_flag",
+    "fin_flag",
+    "psh_flag"
+  ],
+  "stored_but_not_first_baseline": [
+    "src_port",
+    "dst_port"
+  ],
+  "label_column_target_only": "label",
+  "observations_routed_by_split": {
+    "train": {
+      "normal": 7651688,
+      "attack": 712
+    },
+    "validation": {
+      "normal": 911171,
+      "attack": 146
+    },
+    "test": {
+      "normal": 897965,
+      "attack": 146
+    }
+  },
+  "observations_exported": {
+    "train": {
+      "normal": 35478,
+      "attack": 712
+    },
+    "validation": {
+      "normal": 911171,
+      "attack": 146
+    },
+    "test": "NO FILE GENERATED"
+  },
+  "address_versions_all_eligible": {
+    "4->4": 9461828
+  },
+  "excluded_source_rows_benign_arp": 74995,
+  "warning": "The train benign subset changes prevalence; predicted probabilities are NOT calibrated. Model evaluation must use untouched natural validation, with test reserved."
+}
