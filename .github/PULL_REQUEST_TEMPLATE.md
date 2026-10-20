@@ -2,7 +2,7 @@
 What changed and why?
 
 ## Research component
-Network flow / device telemetry / physical sensor / fusion / shared
+Network flow / device telemetry / physical sensor and application layer/ fusion / shared
 
 ## Verification
 - [ ] Tests or explanation why not applicable

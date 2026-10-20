@@ -7,7 +7,7 @@ Final Year Research Project
 ### Research Components
 1. Network Flow Detection
 2. Device Telemetry Analysis
-3. Physical Sensor Analysis
+3. Physical Sensor and application layer data Analysis
 4. Multi-Signal Fusion and Edge Deployment
 
 ### Project Status
