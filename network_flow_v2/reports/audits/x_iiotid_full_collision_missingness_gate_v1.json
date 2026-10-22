@@ -1,0 +1,163 @@
+{
+  "dataset": "X-IIoTID dataset.csv",
+  "all_records_scanned": 820834,
+  "phase": "feature-ambiguity and missingness analysis BEFORE splits/models",
+  "hash_method": "BLAKE2b-128; length-prefixed canonical cell strings",
+  "normalization": "strip cell whitespace and map listed placeholders to <MISSING>; do not collapse numeric representations",
+  "dataset_split_created": false,
+  "model_trained": false,
+  "gateway_features_semantically_verified": false,
+  "class3_counts": {
+    "Normal": 421417,
+    "Attack": 399417
+  },
+  "feature_sets": {
+    "basic8": [
+      "Protocol",
+      "Service",
+      "Duration",
+      "Scr_bytes",
+      "Des_bytes",
+      "Scr_pkts",
+      "Des_pkts",
+      "Conn_state"
+    ],
+    "core19": [
+      "Protocol",
+      "Service",
+      "Duration",
+      "Scr_bytes",
+      "Des_bytes",
+      "Conn_state",
+      "is_syn_only",
+      "Is_SYN_ACK",
+      "is_pure_ack",
+      "is_with_payload",
+      "FIN or RST",
+      "Scr_pkts",
+      "Scr_ip_bytes",
+      "Des_pkts",
+      "Des_ip_bytes",
+      "total_bytes",
+      "total_packet",
+      "paket_rate",
+      "byte_rate"
+    ]
+  },
+  "collision_summary": {
+    "basic8": {
+      "unique_groups": 417865,
+      "row_count": 820834,
+      "repeated_records": 446309,
+      "conflicting_groups": 2000,
+      "conflicting_records": 92954,
+      "max_group_size": 64533
+    },
+    "core19": {
+      "unique_groups": 419378,
+      "row_count": 820834,
+      "repeated_records": 445336,
+      "conflicting_groups": 1969,
+      "conflicting_records": 21866,
+      "max_group_size": 64194
+    }
+  },
+  "missingness_class3_percentage": {
+    "Duration": {
+      "Normal": 1.8319,
+      "Attack": 17.0351,
+      "abs_difference_pp": 15.2032
+    },
+    "Des_bytes": {
+      "Normal": 19.9852,
+      "Attack": 34.9635,
+      "abs_difference_pp": 14.9783
+    },
+    "Scr_bytes": {
+      "Normal": 19.9852,
+      "Attack": 34.9635,
+      "abs_difference_pp": 14.9783
+    },
+    "paket_rate": {
+      "Normal": 19.9852,
+      "Attack": 34.9635,
+      "abs_difference_pp": 14.9783
+    },
+    "total_bytes": {
+      "Normal": 19.9854,
+      "Attack": 34.9635,
+      "abs_difference_pp": 14.978
+    },
+    "byte_rate": {
+      "Normal": 19.9854,
+      "Attack": 34.9635,
+      "abs_difference_pp": 14.978
+    },
+    "total_packet": {
+      "Normal": 18.4886,
+      "Attack": 18.7346,
+      "abs_difference_pp": 0.246
+    },
+    "Scr_ip_bytes": {
+      "Normal": 18.4886,
+      "Attack": 18.7346,
+      "abs_difference_pp": 0.246
+    },
+    "Scr_pkts": {
+      "Normal": 18.4886,
+      "Attack": 18.7346,
+      "abs_difference_pp": 0.246
+    },
+    "Des_pkts": {
+      "Normal": 18.4886,
+      "Attack": 18.7346,
+      "abs_difference_pp": 0.246
+    },
+    "Des_ip_bytes": {
+      "Normal": 18.4886,
+      "Attack": 18.7346,
+      "abs_difference_pp": 0.246
+    },
+    "Protocol": {
+      "Normal": 0.0,
+      "Attack": 0.0386,
+      "abs_difference_pp": 0.0386
+    },
+    "Service": {
+      "Normal": 0.0,
+      "Attack": 0.0,
+      "abs_difference_pp": 0.0
+    },
+    "FIN or RST": {
+      "Normal": 0.0,
+      "Attack": 0.0,
+      "abs_difference_pp": 0.0
+    },
+    "is_with_payload": {
+      "Normal": 0.0,
+      "Attack": 0.0,
+      "abs_difference_pp": 0.0
+    },
+    "is_syn_only": {
+      "Normal": 0.0,
+      "Attack": 0.0,
+      "abs_difference_pp": 0.0
+    },
+    "Conn_state": {
+      "Normal": 0.0,
+      "Attack": 0.0,
+      "abs_difference_pp": 0.0
+    },
+    "is_pure_ack": {
+      "Normal": 0.0,
+      "Attack": 0.0,
+      "abs_difference_pp": 0.0
+    },
+    "Is_SYN_ACK": {
+      "Normal": 0.0,
+      "Attack": 0.0,
+      "abs_difference_pp": 0.0
+    }
+  },
+  "next_gate": "Review collisions, verify feature semantics and per-scenario/missingness shortcuts; then define related-record-safe train/validation/test partitions."
+}
