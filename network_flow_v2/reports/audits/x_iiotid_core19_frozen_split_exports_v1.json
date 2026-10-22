@@ -1,0 +1,53 @@
+{
+  "source_csv": "X-IIoTID dataset.csv",
+  "original_rows": 820834,
+  "manifest_file": "x_iiotid_core19_signature_split_manifest_v1.csv",
+  "manifest_sha256": "8704e269d96abfe61b61a4608ab4e2f0608952555d6b34730da92ebac31fe2c0",
+  "feature_set": "Core19",
+  "features": [
+    "Protocol",
+    "Service",
+    "Duration",
+    "Scr_bytes",
+    "Des_bytes",
+    "Conn_state",
+    "is_syn_only",
+    "Is_SYN_ACK",
+    "is_pure_ack",
+    "is_with_payload",
+    "FIN or RST",
+    "Scr_pkts",
+    "Scr_ip_bytes",
+    "Des_pkts",
+    "Des_ip_bytes",
+    "total_bytes",
+    "total_packet",
+    "paket_rate",
+    "byte_rate"
+  ],
+  "counts": {
+    "train": 574585,
+    "validation": 123125,
+    "test": 123124
+  },
+  "files": {
+    "train": {
+      "name": "x_iiotid_core19_train_v1.csv.gz",
+      "bytes": 12799909
+    },
+    "validation": {
+      "name": "x_iiotid_core19_validation_v1.csv.gz",
+      "bytes": 2754143
+    },
+    "test": {
+      "name": "x_iiotid_core19_test_v1.csv.gz",
+      "bytes": 2745726
+    }
+  },
+  "test_scored": false,
+  "method": "Preserves exact row-to-partition mapping from Notebook 06; no new split performed",
+  "limitations": [
+    "Provisional signature-disjoint split, not verified independent sessions/campaigns",
+    "Network feature extraction semantics not yet verified"
+  ]
+}
