@@ -1,0 +1,23 @@
+{
+  "model": "random_forest",
+  "features": "Core19",
+  "train_rows_used": 150000,
+  "validation_rows": 123125,
+  "precision_attack": 0.9832699240750278,
+  "recall_attack": 0.9878488449726265,
+  "f1_attack": 0.9855540660932699,
+  "balanced_accuracy": 0.9859592887321804,
+  "false_positive_rate": 0.015930267508265705,
+  "tn": 62206,
+  "fp": 1007,
+  "fn": 728,
+  "tp": 59184,
+  "fit_seconds": 13.418,
+  "predict_ms_per_1000": 7.153,
+  "random_seed": 42,
+  "frozen_manifest_sha256": "8704e269d96abfe61b61a4608ab4e2f0608952555d6b34730da92ebac31fe2c0",
+  "test_evaluated": false,
+  "split_limitation": "No Core19 signature overlap, capture/session independence unverified",
+  "feature_limitation": "Feature gateway extractability and semantic definitions pending verification",
+  "hardware_note": "Laptop timing, NOT Raspberry Pi edge benchmarking"
+}
