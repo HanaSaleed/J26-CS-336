@@ -1,0 +1,23 @@
+X-IIoTID — Provisional Edge Model Shortlisting
+=======================================================
+
+Screening: Attack F1 >= 98%, FPR <= 2%.
+Thresholds are exploratory, not Pi requirements.
+Measurements are from the laptop.
+
+lightgbm: PROVISIONAL CANDIDATE
+Reason: Highest validation F1; compact model. High sustained CPU requires thread optimization.
+
+random_forest: PROVISIONAL CANDIDATE
+Reason: High validation F1 and manageable model storage. Slower single-flow inference; assess error diversity.
+
+decision_tree: PROVISIONAL CANDIDATE
+Reason: Lowest false-positive rate; fastest single-flow p95 latency; smallest among quality-passing models.
+
+adaboost: BASELINE / NOT PRIORITIZED
+Reason: Lower validation F1; relatively slow inference.
+
+extra_trees: BASELINE / NOT PRIORITIZED
+Reason: Lower validation F1 and high false-positive rate.
+
+Final ensemble selection requires error-diversity analysis and actual Raspberry Pi benchmarking.

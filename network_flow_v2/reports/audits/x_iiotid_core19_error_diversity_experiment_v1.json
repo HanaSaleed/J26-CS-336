@@ -1,0 +1,25 @@
+{
+  "purpose": "Saved full-trained X-IIoTID Core19 models; validation-only diversity and voting screening",
+  "models": [
+    "decision_tree",
+    "random_forest",
+    "lightgbm"
+  ],
+  "training_rows_reported": 574585,
+  "validation_rows": 123125,
+  "frozen_manifest_sha256": "8704e269d96abfe61b61a4608ab4e2f0608952555d6b34730da92ebac31fe2c0",
+  "model_confusion_matrices_reproduced": true,
+  "test_evaluated": false,
+  "limitations": [
+    "Provisional signature-disjoint split; session/capture independence unverified",
+    "Raw probabilities may be uncalibrated; voting threshold not optimized",
+    "Model feature definitions and live gateway extractability remain unverified",
+    "Ensemble CPU/RAM/latency and Raspberry Pi deployment not measured here",
+    "Validation does not demonstrate complete APT campaign detection"
+  ],
+  "outputs": {
+    "rescue_counts_csv": "x_iiotid_core19_model_error_rescues_v1.csv",
+    "candidate_metrics_csv": "x_iiotid_core19_exploratory_ensemble_validation_v1.csv",
+    "category_recall_csv": "x_iiotid_core19_attack_category_error_comparison_v1.csv"
+  }
+}
