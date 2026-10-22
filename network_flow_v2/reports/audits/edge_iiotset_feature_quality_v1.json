@@ -1,0 +1,131 @@
+{
+  "dataset": "ML-EdgeIIoT-dataset.csv",
+  "rows": 157800,
+  "columns": 63,
+  "feature_candidates": 61,
+  "binary_counts": {
+    "1": 133499,
+    "0": 24301
+  },
+  "attack_type_counts": {
+    "Normal": 24301,
+    "DDoS_UDP": 14498,
+    "DDoS_ICMP": 14090,
+    "Ransomware": 10925,
+    "DDoS_HTTP": 10561,
+    "SQL_injection": 10311,
+    "Uploading": 10269,
+    "DDoS_TCP": 10247,
+    "Backdoor": 10195,
+    "Vulnerability_scanner": 10076,
+    "Port_Scanning": 10071,
+    "XSS": 10052,
+    "Password": 9989,
+    "MITM": 1214,
+    "Fingerprinting": 1001
+  },
+  "label_invalid_rows": 0,
+  "label_mismatch_rows": 0,
+  "exact_duplicate_group_rows": 821,
+  "exact_duplicate_excess_rows": 814,
+  "feature_duplicate_group_rows": 821,
+  "potential_conflicting_binary_label_rows_hash_screen": 0,
+  "columns_at_least_95pct_zero": [
+    "arp.opcode",
+    "arp.hw.size",
+    "icmp.transmit_timestamp",
+    "icmp.unused",
+    "http.response",
+    "http.tls_port",
+    "tcp.connection.synack",
+    "udp.port",
+    "udp.time_delta",
+    "dns.qry.name",
+    "dns.qry.qu",
+    "dns.qry.type",
+    "dns.retransmission",
+    "dns.retransmit_request",
+    "dns.retransmit_request_in",
+    "mqtt.conflag.cleansess",
+    "mqtt.conflags",
+    "mqtt.hdrflags",
+    "mqtt.len",
+    "mqtt.msg_decoded_as",
+    "mqtt.msgtype",
+    "mqtt.proto_len",
+    "mqtt.topic_len",
+    "mqtt.ver",
+    "mbtcp.len",
+    "mbtcp.trans_id",
+    "mbtcp.unit_id"
+  ],
+  "constant_columns": [
+    "icmp.unused",
+    "http.tls_port",
+    "dns.qry.type",
+    "dns.retransmit_request_in",
+    "mqtt.msg_decoded_as",
+    "mbtcp.len",
+    "mbtcp.trans_id",
+    "mbtcp.unit_id"
+  ],
+  "mixed_dtype_review": [
+    {
+      "feature": "frame.time",
+      "raw_dtype": "str",
+      "distinct_values": 155186,
+      "numeric_parse_pct": 0.77,
+      "numeric_zero_pct": 0.55,
+      "has_fractional_numeric_values": false
+    },
+    {
+      "feature": "ip.src_host",
+      "raw_dtype": "str",
+      "distinct_values": 19090,
+      "numeric_parse_pct": 5.06,
+      "numeric_zero_pct": 5.06,
+      "has_fractional_numeric_values": false
+    },
+    {
+      "feature": "ip.dst_host",
+      "raw_dtype": "str",
+      "distinct_values": 8084,
+      "numeric_parse_pct": 13.58,
+      "numeric_zero_pct": 13.58,
+      "has_fractional_numeric_values": false
+    },
+    {
+      "feature": "tcp.srcport",
+      "raw_dtype": "str",
+      "distinct_values": 32186,
+      "numeric_parse_pct": 99.77,
+      "numeric_zero_pct": 12.96,
+      "has_fractional_numeric_values": false
+    },
+    {
+      "feature": "tcp.dstport",
+      "raw_dtype": "float64",
+      "distinct_values": 23188,
+      "numeric_parse_pct": 100.0,
+      "numeric_zero_pct": 21.5,
+      "has_fractional_numeric_values": false
+    },
+    {
+      "feature": "http.file_data",
+      "raw_dtype": "str",
+      "distinct_values": 496,
+      "numeric_parse_pct": 94.0,
+      "numeric_zero_pct": 94.0,
+      "has_fractional_numeric_values": false
+    },
+    {
+      "feature": "mqtt.msg",
+      "raw_dtype": "str",
+      "distinct_values": 117,
+      "numeric_parse_pct": 99.21,
+      "numeric_zero_pct": 99.21,
+      "has_fractional_numeric_values": false
+    }
+  ],
+  "note": "Read-only audit; duplicate and hash collisions require provenance-aware review. No split, normalization, or training was performed."
+}

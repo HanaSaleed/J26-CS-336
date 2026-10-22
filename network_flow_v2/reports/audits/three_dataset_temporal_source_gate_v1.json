@@ -1,0 +1,161 @@
+{
+  "status": "READ_ONLY_PRE_SPLIT_DIAGNOSTICS",
+  "edge_iiotset": {
+    "records": 157800,
+    "expected_columns": 63,
+    "field_count_errors_first_20": [],
+    "frame_time_kinds": {
+      "numeric_like": 1214,
+      "year_prefix_datetime_like": 142088,
+      "ipv4_like": 14498
+    },
+    "frame_time_by_attack_type": {
+      "MITM": {
+        "numeric_like": 1214
+      },
+      "Fingerprinting": {
+        "year_prefix_datetime_like": 1001
+      },
+      "Ransomware": {
+        "year_prefix_datetime_like": 10925
+      },
+      "Uploading": {
+        "year_prefix_datetime_like": 10269
+      },
+      "SQL_injection": {
+        "year_prefix_datetime_like": 10311
+      },
+      "DDoS_HTTP": {
+        "year_prefix_datetime_like": 10561
+      },
+      "DDoS_TCP": {
+        "year_prefix_datetime_like": 10247
+      },
+      "Password": {
+        "year_prefix_datetime_like": 9989
+      },
+      "Port_Scanning": {
+        "year_prefix_datetime_like": 10071
+      },
+      "Vulnerability_scanner": {
+        "year_prefix_datetime_like": 10076
+      },
+      "Backdoor": {
+        "year_prefix_datetime_like": 10195
+      },
+      "XSS": {
+        "year_prefix_datetime_like": 10052
+      },
+      "Normal": {
+        "year_prefix_datetime_like": 24301
+      },
+      "DDoS_UDP": {
+        "ipv4_like": 14498
+      },
+      "DDoS_ICMP": {
+        "year_prefix_datetime_like": 14090
+      }
+    },
+    "temporal_ready": "REVIEW_REQUIRED",
+    "note": "IP-like/numeric/year-prefix mixed tokens; verify source export and original capture semantics"
+  },
+  "x_iiotid": {
+    "records": 820834,
+    "plausible_epoch_seconds": 820383,
+    "invalid_or_nonplausible": 451,
+    "date_missing_or_placeholder": 332,
+    "unique_plausible_epoch_seconds": 218988,
+    "decreasing_adjacent_valid_timestamps": 410088,
+    "equal_adjacent_valid_timestamps": 215,
+    "per_binary_label": {
+      "Attack": {
+        "plausible": 398966,
+        "invalid_or_nonplausible": 451
+      },
+      "Normal": {
+        "plausible": 421417
+      }
+    },
+    "date_examples": [
+      "9/01/2020",
+      "13/01/2020",
+      "27/02/2020",
+      "16/12/2019",
+      "31/01/2020",
+      "12/12/2019",
+      "21/02/2020",
+      "24/02/2020"
+    ],
+    "timestamp_examples": [
+      {
+        "date": "9/01/2020",
+        "timestamp": 1578540956,
+        "utc": "2020-01-09T03:35:56+00:00",
+        "class3": "Attack"
+      },
+      {
+        "date": "13/01/2020",
+        "timestamp": 1578871873,
+        "utc": "2020-01-12T23:31:13+00:00",
+        "class3": "Normal"
+      },
+      {
+        "date": "9/01/2020",
+        "timestamp": 1578522486,
+        "utc": "2020-01-08T22:28:06+00:00",
+        "class3": "Normal"
+      },
+      {
+        "date": "27/02/2020",
+        "timestamp": 1582757640,
+        "utc": "2020-02-26T22:54:00+00:00",
+        "class3": "Normal"
+      },
+      {
+        "date": "16/12/2019",
+        "timestamp": 1576452612,
+        "utc": "2019-12-15T23:30:12+00:00",
+        "class3": "Normal"
+      },
+      {
+        "date": "31/01/2020",
+        "timestamp": 1580452611,
+        "utc": "2020-01-31T06:36:51+00:00",
+        "class3": "Normal"
+      },
+      {
+        "date": "12/12/2019",
+        "timestamp": 1576100087,
+        "utc": "2019-12-11T21:34:47+00:00",
+        "class3": "Normal"
+      },
+      {
+        "date": "21/02/2020",
+        "timestamp": 1582241330,
+        "utc": "2020-02-20T23:28:50+00:00",
+        "class3": "Normal"
+      },
+      {
+        "date": "16/12/2019",
+        "timestamp": 1576468008,
+        "utc": "2019-12-16T03:46:48+00:00",
+        "class3": "Normal"
+      },
+      {
+        "date": "24/02/2020",
+        "timestamp": 1582504530,
+        "utc": "2020-02-24T00:35:30+00:00",
+        "class3": "Attack"
+      }
+    ],
+    "temporal_ready": "REVIEW_REQUIRED",
+    "note": "Plausible epoch seconds do not verify capture grouping, time alignment or window label truth"
+  },
+  "ton_iot": {
+    "explicit_timestamp_columns": [],
+    "has_duration": true,
+    "temporal_ready": false,
+    "note": "No event timestamp in current downloaded CSV"
+  },
+  "next_step": "Investigate Edge frame.time values against original release, verify X capture/time/label provenance, then choose grouped split; static baselines may proceed independently with leakage-aware feature selection."
+}

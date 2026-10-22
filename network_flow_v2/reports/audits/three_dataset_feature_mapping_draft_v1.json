@@ -1,0 +1,267 @@
+{
+  "generated_utc": "2026-10-21T18:46:17.881265+00:00",
+  "status": "DRAFT — column presence confirmed; semantic equivalence NOT established",
+  "files": {
+    "edge_iiotset": {
+      "name": "ML-EdgeIIoT-dataset.csv",
+      "size_bytes": 82184390
+    },
+    "x_iiotid": {
+      "name": "X-IIoTID dataset.csv",
+      "size_bytes": 355308902
+    },
+    "ton_iot": {
+      "name": "ton_iot_train_test_network.csv",
+      "size_bytes": 29902775
+    }
+  },
+  "columns": {
+    "edge_iiotset": 63,
+    "x_iiotid": 68,
+    "ton_iot": 44
+  },
+  "target_labels": {
+    "edge_iiotset": [
+      "Attack_label",
+      "Attack_type"
+    ],
+    "x_iiotid": [
+      "class1",
+      "class2",
+      "class3"
+    ],
+    "ton_iot": [
+      "label",
+      "type"
+    ]
+  },
+  "candidate_mappings": [
+    {
+      "concept": "source_ip",
+      "ton_iot": "src_ip",
+      "x_iiotid": "Scr_IP",
+      "edge_iiotset": "ip.src_host",
+      "review_status": "IDENTIFIER_ONLY",
+      "why_review": "Identifier; possible capture/site shortcut; grouping metadata, not baseline X.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "destination_ip",
+      "ton_iot": "dst_ip",
+      "x_iiotid": "Des_IP",
+      "edge_iiotset": "ip.dst_host",
+      "review_status": "IDENTIFIER_ONLY",
+      "why_review": "Identifier; retain separately from learned behavioural features.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "source_port",
+      "ton_iot": "src_port",
+      "x_iiotid": "Scr_port",
+      "edge_iiotset": "tcp.srcport",
+      "review_status": "PROTOCOL_SPECIFIC",
+      "why_review": "ToN/X plausible; Edge field is TCP-packet scoped. Compare port ablation.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "destination_port",
+      "ton_iot": "dst_port",
+      "x_iiotid": "Des_port",
+      "edge_iiotset": "tcp.dstport",
+      "review_status": "PROTOCOL_SPECIFIC",
+      "why_review": "ToN/X plausible; Edge field is TCP-packet scoped.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "network_protocol",
+      "ton_iot": "proto",
+      "x_iiotid": "Protocol",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Edge has protocol-specific fields, but no verified generic protocol column.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "service",
+      "ton_iot": "service",
+      "x_iiotid": "Service",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Compare categorical definitions and placeholder conventions.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "flow_duration",
+      "ton_iot": "duration",
+      "x_iiotid": "Duration",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Verify units (e.g., seconds), handling of 0 and nonnumeric tokens.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "source_payload_bytes",
+      "ton_iot": "src_bytes",
+      "x_iiotid": "Scr_bytes",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Check directional meaning, payload vs total bytes, and unavailable tokens.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "destination_payload_bytes",
+      "ton_iot": "dst_bytes",
+      "x_iiotid": "Des_bytes",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Check directional meaning, payload vs total bytes, and unavailable tokens.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "missed_bytes",
+      "ton_iot": "missed_bytes",
+      "x_iiotid": "missed_bytes",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Check exporter meaning and when measurements are absent.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "source_packets",
+      "ton_iot": "src_pkts",
+      "x_iiotid": "Scr_pkts",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Packet count at connection level; no direct Edge packet-row equivalent.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "destination_packets",
+      "ton_iot": "dst_pkts",
+      "x_iiotid": "Des_pkts",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Packet count at connection level.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "source_ip_bytes",
+      "ton_iot": "src_ip_bytes",
+      "x_iiotid": "Scr_ip_bytes",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Despite name, candidate byte count; verify IP-header accounting.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "destination_ip_bytes",
+      "ton_iot": "dst_ip_bytes",
+      "x_iiotid": "Des_ip_bytes",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Despite name, candidate byte count; verify IP-header accounting.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "connection_state",
+      "ton_iot": "conn_state",
+      "x_iiotid": "Conn_state",
+      "edge_iiotset": NaN,
+      "review_status": "POTENTIAL_TON_X",
+      "why_review": "Check state vocabulary and producer-specific meanings.",
+      "edge_iiotset_column_exists": false,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "tcp_syn_signal",
+      "ton_iot": NaN,
+      "x_iiotid": "is_syn_only",
+      "edge_iiotset": "tcp.connection.syn",
+      "review_status": "PROTOCOL_SPECIFIC",
+      "why_review": "One field may be a flow flag, the other packet/protocol indicator; not interchangeable.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": false
+    },
+    {
+      "concept": "packet_or_capture_time",
+      "ton_iot": NaN,
+      "x_iiotid": "Timestamp",
+      "edge_iiotset": "frame.time",
+      "review_status": "TIME_NOT_EQUIVALENT",
+      "why_review": "ToN selected CSV has no time field; verify timestamp origin and units.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": true,
+      "ton_iot_column_exists": false
+    },
+    {
+      "concept": "dns_query",
+      "ton_iot": "dns_query",
+      "x_iiotid": NaN,
+      "edge_iiotset": "dns.qry.name",
+      "review_status": "PROTOCOL_SPECIFIC",
+      "why_review": "Different recording granularity; do not equate raw DNS values.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": false,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "http_method",
+      "ton_iot": "http_method",
+      "x_iiotid": NaN,
+      "edge_iiotset": "http.request.method",
+      "review_status": "PROTOCOL_SPECIFIC",
+      "why_review": "May differ by protocol parsing and aggregation.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": false,
+      "ton_iot_column_exists": true
+    },
+    {
+      "concept": "tcp_payload_length",
+      "ton_iot": NaN,
+      "x_iiotid": NaN,
+      "edge_iiotset": "tcp.len",
+      "review_status": "OTHER",
+      "why_review": "This is NOT the same measurement as directional flow byte counts.",
+      "edge_iiotset_column_exists": true,
+      "x_iiotid_column_exists": false,
+      "ton_iot_column_exists": false
+    }
+  ],
+  "notes": [
+    "Do not append/merge the datasets based on this mapping.",
+    "Prove feature definitions and units before claiming equivalent measurements.",
+    "Edge-IIoTset CSV is packet/protocol oriented; ToN and X-IIoTID are more connection-oriented.",
+    "Feature availability during live Raspberry Pi capture remains unverified.",
+    "No rows were cleaned or split by this notebook."
+  ]
+}

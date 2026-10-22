@@ -1,0 +1,67 @@
+# Edge-IIoTset — Feature dictionary DRAFT
+
+> Column groups are inferred from names; meanings, units and live-capture feasibility remain unverified.
+
+Feature | Family (candidate) | Raw dtype | Distinct | Zero % | Verified meaning/unit | Gateway-compatible?
+--- | --- | --- | --- | --- | --- | ---
+frame.time | frame | str | 155186 | N/A | UNVERIFIED | TO_CHECK
+ip.src_host | ip | str | 19090 | N/A | UNVERIFIED | TO_CHECK
+ip.dst_host | ip | str | 8084 | N/A | UNVERIFIED | TO_CHECK
+arp.dst.proto_ipv4 | arp | str | 8 | N/A | UNVERIFIED | TO_CHECK
+arp.opcode | arp | float64 | 3 | 99.0 | UNVERIFIED | TO_CHECK
+arp.hw.size | arp | float64 | 2 | 99.0 | UNVERIFIED | TO_CHECK
+arp.src.proto_ipv4 | arp | str | 8 | N/A | UNVERIFIED | TO_CHECK
+icmp.checksum | icmp | float64 | 13187 | 90.7 | UNVERIFIED | TO_CHECK
+icmp.seq_le | icmp | float64 | 13824 | 90.08 | UNVERIFIED | TO_CHECK
+icmp.transmit_timestamp | icmp | float64 | 84 | 99.95 | UNVERIFIED | TO_CHECK
+icmp.unused | icmp | float64 | 1 | 100.0 | UNVERIFIED | TO_CHECK
+http.file_data | http | str | 496 | N/A | UNVERIFIED | TO_CHECK
+http.content_length | http | float64 | 33 | 94.01 | UNVERIFIED | TO_CHECK
+http.request.uri.query | http | str | 1665 | N/A | UNVERIFIED | TO_CHECK
+http.request.method | http | str | 6 | N/A | UNVERIFIED | TO_CHECK
+http.referer | http | str | 4 | N/A | UNVERIFIED | TO_CHECK
+http.request.full_uri | http | str | 4073 | N/A | UNVERIFIED | TO_CHECK
+http.request.version | http | str | 8 | N/A | UNVERIFIED | TO_CHECK
+http.response | http | float64 | 2 | 95.43 | UNVERIFIED | TO_CHECK
+http.tls_port | http | float64 | 1 | 100.0 | UNVERIFIED | TO_CHECK
+tcp.ack | tcp | float64 | 27929 | 29.88 | UNVERIFIED | TO_CHECK
+tcp.ack_raw | tcp | float64 | 94716 | 29.88 | UNVERIFIED | TO_CHECK
+tcp.checksum | tcp | float64 | 55513 | 21.5 | UNVERIFIED | TO_CHECK
+tcp.connection.fin | tcp | float64 | 2 | 94.19 | UNVERIFIED | TO_CHECK
+tcp.connection.rst | tcp | float64 | 2 | 90.59 | UNVERIFIED | TO_CHECK
+tcp.connection.syn | tcp | float64 | 2 | 87.21 | UNVERIFIED | TO_CHECK
+tcp.connection.synack | tcp | float64 | 2 | 97.01 | UNVERIFIED | TO_CHECK
+tcp.dstport | tcp | float64 | 23188 | 21.5 | UNVERIFIED | TO_CHECK
+tcp.flags | tcp | float64 | 9 | 21.5 | UNVERIFIED | TO_CHECK
+tcp.flags.ack | tcp | float64 | 2 | 36.48 | UNVERIFIED | TO_CHECK
+tcp.len | tcp | float64 | 786 | 73.19 | UNVERIFIED | TO_CHECK
+tcp.options | tcp | str | 73139 | N/A | UNVERIFIED | TO_CHECK
+tcp.payload | tcp | str | 27369 | N/A | UNVERIFIED | TO_CHECK
+tcp.seq | tcp | float64 | 18199 | 37.08 | UNVERIFIED | TO_CHECK
+tcp.srcport | tcp | str | 32186 | N/A | UNVERIFIED | TO_CHECK
+udp.port | udp | float64 | 32 | 99.74 | UNVERIFIED | TO_CHECK
+udp.stream | udp | float64 | 14492 | 90.79 | UNVERIFIED | TO_CHECK
+udp.time_delta | udp | float64 | 39 | 99.74 | UNVERIFIED | TO_CHECK
+dns.qry.name | dns | float64 | 1430 | 98.95 | UNVERIFIED | TO_CHECK
+dns.qry.name.len | dns | str | 8 | N/A | UNVERIFIED | TO_CHECK
+dns.qry.qu | dns | float64 | 66 | 99.84 | UNVERIFIED | TO_CHECK
+dns.qry.type | dns | float64 | 1 | 100.0 | UNVERIFIED | TO_CHECK
+dns.retransmission | dns | float64 | 4 | 99.98 | UNVERIFIED | TO_CHECK
+dns.retransmit_request | dns | float64 | 2 | 100.0 | UNVERIFIED | TO_CHECK
+dns.retransmit_request_in | dns | float64 | 1 | 100.0 | UNVERIFIED | TO_CHECK
+mqtt.conack.flags | mqtt | str | 3 | N/A | UNVERIFIED | TO_CHECK
+mqtt.conflag.cleansess | mqtt | float64 | 2 | 99.21 | UNVERIFIED | TO_CHECK
+mqtt.conflags | mqtt | float64 | 2 | 99.21 | UNVERIFIED | TO_CHECK
+mqtt.hdrflags | mqtt | float64 | 5 | 96.79 | UNVERIFIED | TO_CHECK
+mqtt.len | mqtt | float64 | 4 | 97.6 | UNVERIFIED | TO_CHECK
+mqtt.msg_decoded_as | mqtt | float64 | 1 | 100.0 | UNVERIFIED | TO_CHECK
+mqtt.msg | mqtt | str | 117 | N/A | UNVERIFIED | TO_CHECK
+mqtt.msgtype | mqtt | float64 | 5 | 96.79 | UNVERIFIED | TO_CHECK
+mqtt.proto_len | mqtt | float64 | 2 | 99.21 | UNVERIFIED | TO_CHECK
+mqtt.protoname | mqtt | str | 3 | N/A | UNVERIFIED | TO_CHECK
+mqtt.topic | mqtt | str | 3 | N/A | UNVERIFIED | TO_CHECK
+mqtt.topic_len | mqtt | float64 | 2 | 99.21 | UNVERIFIED | TO_CHECK
+mqtt.ver | mqtt | float64 | 2 | 99.21 | UNVERIFIED | TO_CHECK
+mbtcp.len | mbtcp | float64 | 1 | 100.0 | UNVERIFIED | TO_CHECK
+mbtcp.trans_id | mbtcp | float64 | 1 | 100.0 | UNVERIFIED | TO_CHECK
+mbtcp.unit_id | mbtcp | float64 | 1 | 100.0 | UNVERIFIED | TO_CHECK
