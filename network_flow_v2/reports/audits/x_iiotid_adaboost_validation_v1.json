@@ -1,0 +1,23 @@
+{
+  "model": "adaboost",
+  "features": "Core19",
+  "train_rows_used": 574585,
+  "validation_rows": 123125,
+  "precision_attack": 0.9535226606350005,
+  "recall_attack": 0.9499098678061156,
+  "f1_attack": 0.9517128356062443,
+  "balanced_accuracy": 0.9530132446935597,
+  "false_positive_rate": 0.043883378418996095,
+  "tn": 60439,
+  "fp": 2774,
+  "fn": 3001,
+  "tp": 56911,
+  "fit_seconds": 184.092,
+  "predict_ms_per_1000": 21.413,
+  "random_seed": 42,
+  "frozen_manifest_sha256": "8704e269d96abfe61b61a4608ab4e2f0608952555d6b34730da92ebac31fe2c0",
+  "test_evaluated": false,
+  "split_limitation": "No Core19 signature overlap, capture/session independence unverified",
+  "feature_limitation": "Feature gateway extractability and semantic definitions pending verification",
+  "hardware_note": "Laptop timing, NOT Raspberry Pi edge benchmarking"
+}
