@@ -1,0 +1,10 @@
+candidate,model_count,single_flow_p50_ms,single_flow_p95_ms,single_flow_runs,validation_batch_seconds,batch_throughput_flows_per_second,process_cpu_pct_during_batch,peak_process_ram_mib,combined_model_storage_mib
+LightGBM,1,12.633,17.049,60,1.0493,117344.7,259.11,382.21,0.2155
+Decision Tree,1,9.268,12.377,60,0.4396,280072.6,99.52,394.03,0.0333
+Random Forest,1,37.265,41.921,60,0.9345,131759.9,334.42,398.98,2.8459
+LightGBM + RF (OR),2,52.171,69.219,60,1.7834,69037.8,331.17,404.51,3.0614
+LightGBM + DT (OR),2,21.643,23.935,60,1.4678,83881.3,234.19,397.82,0.2488
+LightGBM + RF (AND),2,51.147,60.721,60,1.7435,70619.2,334.28,395.02,3.0614
+Three-model majority,3,60.222,72.918,60,2.1786,56515.7,296.92,402.43,3.0947
+Three-model OR,3,61.693,76.996,60,2.1311,57776.0,295.48,405.64,3.0947
+Three-model mean probability,3,60.057,69.826,60,2.2492,54742.6,289.0,411.87,3.0947

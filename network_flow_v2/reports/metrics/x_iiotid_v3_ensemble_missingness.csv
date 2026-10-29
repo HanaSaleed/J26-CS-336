@@ -1,0 +1,37 @@
+candidate,feature,group,attack_records,recall_pct
+LightGBM,Des_bytes,missing,13997,97.27
+LightGBM,Des_bytes,present,45915,99.58
+Decision Tree,Des_bytes,missing,13997,92.59
+Decision Tree,Des_bytes,present,45915,99.55
+Random Forest,Des_bytes,missing,13997,97.36
+Random Forest,Des_bytes,present,45915,99.51
+LightGBM + RF (OR),Des_bytes,missing,13997,97.75
+LightGBM + RF (OR),Des_bytes,present,45915,99.63
+LightGBM + DT (OR),Des_bytes,missing,13997,97.51
+LightGBM + DT (OR),Des_bytes,present,45915,99.64
+LightGBM + RF (AND),Des_bytes,missing,13997,96.88
+LightGBM + RF (AND),Des_bytes,present,45915,99.47
+Three-model majority,Des_bytes,missing,13997,97.33
+Three-model majority,Des_bytes,present,45915,99.57
+Three-model OR,Des_bytes,missing,13997,97.87
+Three-model OR,Des_bytes,present,45915,99.66
+Three-model mean probability,Des_bytes,missing,13997,97.38
+Three-model mean probability,Des_bytes,present,45915,99.58
+LightGBM,Duration,missing,2663,99.06
+LightGBM,Duration,present,57249,99.04
+Decision Tree,Duration,missing,2663,86.37
+Decision Tree,Duration,present,57249,98.46
+Random Forest,Duration,missing,2663,99.02
+Random Forest,Duration,present,57249,99.01
+LightGBM + RF (OR),Duration,missing,2663,99.06
+LightGBM + RF (OR),Duration,present,57249,99.19
+LightGBM + DT (OR),Duration,missing,2663,99.06
+LightGBM + DT (OR),Duration,present,57249,99.14
+LightGBM + RF (AND),Duration,missing,2663,99.02
+LightGBM + RF (AND),Duration,present,57249,98.86
+Three-model majority,Duration,missing,2663,99.02
+Three-model majority,Duration,present,57249,99.05
+Three-model OR,Duration,missing,2663,99.06
+Three-model OR,Duration,present,57249,99.25
+Three-model mean probability,Duration,missing,2663,99.02
+Three-model mean probability,Duration,present,57249,99.06

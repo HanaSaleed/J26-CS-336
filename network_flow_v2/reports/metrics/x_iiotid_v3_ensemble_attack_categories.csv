@@ -1,0 +1,82 @@
+candidate,class2,attack_records,detected,missed,recall_pct
+LightGBM,C&C,344,334,10,97.09
+LightGBM,Exfiltration,3289,3281,8,99.76
+LightGBM,Exploitation,174,160,14,91.95
+LightGBM,Lateral _movement,4666,4539,127,97.28
+LightGBM,RDOS,11466,11464,2,99.98
+LightGBM,Reconnaissance,26925,26567,358,98.67
+LightGBM,Tampering,1827,1824,3,99.84
+LightGBM,Weaponization,11186,11159,27,99.76
+LightGBM,crypto-ransomware,35,10,25,28.57
+Decision Tree,C&C,344,331,13,96.22
+Decision Tree,Exfiltration,3289,3284,5,99.85
+Decision Tree,Exploitation,174,158,16,90.8
+Decision Tree,Lateral _movement,4666,4534,132,97.17
+Decision Tree,RDOS,11466,11464,2,99.98
+Decision Tree,Reconnaissance,26925,26150,775,97.12
+Decision Tree,Tampering,1827,1823,4,99.78
+Decision Tree,Weaponization,11186,10908,278,97.51
+Decision Tree,crypto-ransomware,35,15,20,42.86
+Random Forest,C&C,344,341,3,99.13
+Random Forest,Exfiltration,3289,3288,1,99.97
+Random Forest,Exploitation,174,159,15,91.38
+Random Forest,Lateral _movement,4666,4537,129,97.24
+Random Forest,RDOS,11466,11464,2,99.98
+Random Forest,Reconnaissance,26925,26522,403,98.5
+Random Forest,Tampering,1827,1822,5,99.73
+Random Forest,Weaponization,11186,11158,28,99.75
+Random Forest,crypto-ransomware,35,28,7,80.0
+LightGBM + RF (OR),C&C,344,342,2,99.42
+LightGBM + RF (OR),Exfiltration,3289,3288,1,99.97
+LightGBM + RF (OR),Exploitation,174,161,13,92.53
+LightGBM + RF (OR),Lateral _movement,4666,4542,124,97.34
+LightGBM + RF (OR),RDOS,11466,11464,2,99.98
+LightGBM + RF (OR),Reconnaissance,26925,26616,309,98.85
+LightGBM + RF (OR),Tampering,1827,1824,3,99.84
+LightGBM + RF (OR),Weaponization,11186,11161,25,99.78
+LightGBM + RF (OR),crypto-ransomware,35,28,7,80.0
+LightGBM + DT (OR),C&C,344,334,10,97.09
+LightGBM + DT (OR),Exfiltration,3289,3288,1,99.97
+LightGBM + DT (OR),Exploitation,174,161,13,92.53
+LightGBM + DT (OR),Lateral _movement,4666,4541,125,97.32
+LightGBM + DT (OR),RDOS,11466,11464,2,99.98
+LightGBM + DT (OR),Reconnaissance,26925,26608,317,98.82
+LightGBM + DT (OR),Tampering,1827,1825,2,99.89
+LightGBM + DT (OR),Weaponization,11186,11159,27,99.76
+LightGBM + DT (OR),crypto-ransomware,35,16,19,45.71
+LightGBM + RF (AND),C&C,344,333,11,96.8
+LightGBM + RF (AND),Exfiltration,3289,3281,8,99.76
+LightGBM + RF (AND),Exploitation,174,158,16,90.8
+LightGBM + RF (AND),Lateral _movement,4666,4534,132,97.17
+LightGBM + RF (AND),RDOS,11466,11464,2,99.98
+LightGBM + RF (AND),Reconnaissance,26925,26473,452,98.32
+LightGBM + RF (AND),Tampering,1827,1822,5,99.73
+LightGBM + RF (AND),Weaponization,11186,11156,30,99.73
+LightGBM + RF (AND),crypto-ransomware,35,10,25,28.57
+Three-model majority,C&C,344,333,11,96.8
+Three-model majority,Exfiltration,3289,3287,2,99.94
+Three-model majority,Exploitation,174,161,13,92.53
+Three-model majority,Lateral _movement,4666,4536,130,97.21
+Three-model majority,RDOS,11466,11464,2,99.98
+Three-model majority,Reconnaissance,26925,26564,361,98.66
+Three-model majority,Tampering,1827,1823,4,99.78
+Three-model majority,Weaponization,11186,11156,30,99.73
+Three-model majority,crypto-ransomware,35,16,19,45.71
+Three-model OR,C&C,344,342,2,99.42
+Three-model OR,Exfiltration,3289,3289,0,100.0
+Three-model OR,Exploitation,174,161,13,92.53
+Three-model OR,Lateral _movement,4666,4542,124,97.34
+Three-model OR,RDOS,11466,11464,2,99.98
+Three-model OR,Reconnaissance,26925,26645,280,98.96
+Three-model OR,Tampering,1827,1825,2,99.89
+Three-model OR,Weaponization,11186,11161,25,99.78
+Three-model OR,crypto-ransomware,35,28,7,80.0
+Three-model mean probability,C&C,344,333,11,96.8
+Three-model mean probability,Exfiltration,3289,3288,1,99.97
+Three-model mean probability,Exploitation,174,160,14,91.95
+Three-model mean probability,Lateral _movement,4666,4537,129,97.24
+Three-model mean probability,RDOS,11466,11464,2,99.98
+Three-model mean probability,Reconnaissance,26925,26568,357,98.67
+Three-model mean probability,Tampering,1827,1823,4,99.78
+Three-model mean probability,Weaponization,11186,11161,25,99.78
+Three-model mean probability,crypto-ransomware,35,16,19,45.71
