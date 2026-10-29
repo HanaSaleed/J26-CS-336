@@ -1,0 +1,16 @@
+model,protocol,records,errors,error_pct
+decision_tree,icmp,43,21,48.84
+decision_tree,tcp,24997,256,1.02
+decision_tree,udp,6617,147,2.22
+random_forest,icmp,43,19,44.19
+random_forest,tcp,24997,192,0.77
+random_forest,udp,6617,121,1.83
+extra_trees,icmp,43,23,53.49
+extra_trees,tcp,24997,3768,15.07
+extra_trees,udp,6617,2757,41.67
+lightgbm,icmp,43,9,20.93
+lightgbm,tcp,24997,104,0.42
+lightgbm,udp,6617,92,1.39
+adaboost,icmp,43,14,32.56
+adaboost,tcp,24997,709,2.84
+adaboost,udp,6617,221,3.34

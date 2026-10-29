@@ -1,0 +1,110 @@
+{
+  "experiment": "ToN-IoT Core10 V3 | validation only",
+  "model": "adaboost",
+  "created_utc": "2026-10-29T07:23:12.842138+00:00",
+  "features": [
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes"
+  ],
+  "target": "label",
+  "label_mapping": {
+    "0": "Normal",
+    "1": "Attack"
+  },
+  "seed": 42,
+  "frozen_manifest_sha256": "c29eef1901d76f11218c3faa720807a0c20f9b70f8d03739102eccfada17d4c0",
+  "model_file": "adaboost_core10_v3.joblib",
+  "metrics": {
+    "model": "adaboost",
+    "training_rows": 147730,
+    "validation_rows": 31657,
+    "accuracy": 0.97018,
+    "balanced_accuracy": 0.95642,
+    "precision_attack": 0.978441,
+    "recall_attack": 0.982572,
+    "f1_attack": 0.980502,
+    "false_positive_rate": 0.069733,
+    "false_negative_rate": 0.017428,
+    "tn": 6977,
+    "fp": 523,
+    "fn": 421,
+    "tp": 23736
+  },
+  "resources": {
+    "model": "adaboost",
+    "training_seconds": 12.4587,
+    "train_process_cpu_percent": 98.07,
+    "train_peak_process_ram_mib": 328.27,
+    "train_peak_ram_increase_mib": 34.02,
+    "validation_predict_seconds": 0.4133,
+    "predict_process_cpu_percent": 98.31,
+    "predict_peak_process_ram_mib": 306.0,
+    "batch_throughput_flows_per_second": 76595.7,
+    "single_flow_p50_ms": 30.391,
+    "single_flow_p95_ms": 35.174,
+    "single_flow_runs": 100,
+    "model_size_mib": 0.028
+  },
+  "top_transformed_feature_importance": [
+    {
+      "feature": "numeric__src_ip_bytes",
+      "importance": 0.231207
+    },
+    {
+      "feature": "numeric__src_pkts",
+      "importance": 0.158141
+    },
+    {
+      "feature": "numeric__dst_pkts",
+      "importance": 0.108172
+    },
+    {
+      "feature": "numeric__dst_ip_bytes",
+      "importance": 0.097737
+    },
+    {
+      "feature": "numeric__dst_bytes",
+      "importance": 0.075989
+    },
+    {
+      "feature": "numeric__duration",
+      "importance": 0.067743
+    },
+    {
+      "feature": "category__proto_tcp",
+      "importance": 0.064917
+    },
+    {
+      "feature": "category__proto_udp",
+      "importance": 0.061347
+    },
+    {
+      "feature": "category__conn_state_REJ",
+      "importance": 0.044825
+    },
+    {
+      "feature": "numeric__src_bytes",
+      "importance": 0.034536
+    }
+  ],
+  "versions": {
+    "python": "3.12.10",
+    "scikit_learn": "1.9.1"
+  },
+  "test_scored": false,
+  "limitations": [
+    "Results are validation-only, not final test accuracy.",
+    "Service has many placeholders; possible label shortcut needs evaluation.",
+    "Group-disjoint fingerprints do not prove session/capture independence.",
+    "CPU and RAM measurements are from a laptop process, not Raspberry Pi.",
+    "Feature importance is model-specific and not causal evidence."
+  ]
+}

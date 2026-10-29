@@ -1,0 +1,46 @@
+{
+  "dataset": "ToN-IoT",
+  "experiment": "Core10 V3 validation error analysis",
+  "source_validation_file": "ton_iot_core10_validation_v3.csv.gz",
+  "frozen_manifest_sha256": "c29eef1901d76f11218c3faa720807a0c20f9b70f8d03739102eccfada17d4c0",
+  "features": [
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes"
+  ],
+  "validation_rows": 31657,
+  "normal_rows": 7500,
+  "attack_rows": 24157,
+  "models": [
+    "decision_tree",
+    "random_forest",
+    "extra_trees",
+    "lightgbm",
+    "adaboost"
+  ],
+  "test_scored": false,
+  "summary_csv_files": {
+    "model_evaluation": "ton_iot_v3_model_evaluation.csv",
+    "attack_type_recall": "ton_iot_v3_attack_type_recall.csv",
+    "service_missingness": "ton_iot_v3_service_missingness_evaluation.csv",
+    "protocol_groups": "ton_iot_v3_protocol_evaluation.csv"
+  },
+  "figure_files": [
+    "ton_iot_v3_evaluation_tradeoff.png",
+    "ton_iot_v3_attack_type_recall.png"
+  ],
+  "limitations": [
+    "Validation-only results; held-out test data was not opened.",
+    "Group-disjoint feature fingerprints do not establish session or capture independence.",
+    "A high service placeholder rate can create dataset-specific shortcuts.",
+    "Laptop resources were measured in Notebook 04, not on a Raspberry Pi.",
+    "Attack types are dataset labels, not proven APT campaign-level detection."
+  ]
+}
