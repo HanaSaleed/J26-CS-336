@@ -1,0 +1,105 @@
+{
+  "dataset": "Edge-IIoTset",
+  "source_rows": 157800,
+  "selected_features": [
+    "tcp.connection.syn",
+    "tcp.connection.fin",
+    "tcp.connection.rst",
+    "tcp.flags.ack",
+    "tcp.flags",
+    "tcp.len",
+    "tcp.srcport",
+    "tcp.dstport",
+    "udp.time_delta",
+    "dns.qry.name.len",
+    "http.content_length",
+    "http.request.method",
+    "mqtt.len",
+    "mqtt.msgtype",
+    "mqtt.topic_len",
+    "icmp.seq_le"
+  ],
+  "categorical_features": [
+    "tcp.flags",
+    "http.request.method"
+  ],
+  "target": "Attack_label",
+  "attack_type": "Attack_type",
+  "manifest_name": "edge_iiotset_core16_signature_split_manifest_v3.csv",
+  "manifest_sha256": "f665081d5bbf75a25ef3f1321bdc45ac0ce6b338d84ec28f186617a939be10e7",
+  "seed_for_first_split": 42,
+  "method": "class-aware assignment of complete, exactly normalized Core16 feature groups",
+  "fractions_requested": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "counts": {
+    "train": {
+      "rows": 110460,
+      "normal": 17011,
+      "attack": 93449
+    },
+    "validation": {
+      "rows": 23670,
+      "normal": 3645,
+      "attack": 20025
+    },
+    "test": {
+      "rows": 23670,
+      "normal": 3645,
+      "attack": 20025
+    }
+  },
+  "total_rows_preserved": 157800,
+  "normalized_feature_group_overlap": 0,
+  "conflicting_label_groups": 1,
+  "rows_in_conflicting_label_groups": 4215,
+  "exported_columns": [
+    "csv_row_index_0based",
+    "tcp.connection.syn",
+    "tcp.connection.fin",
+    "tcp.connection.rst",
+    "tcp.flags.ack",
+    "tcp.flags",
+    "tcp.len",
+    "tcp.srcport",
+    "tcp.dstport",
+    "udp.time_delta",
+    "dns.qry.name.len",
+    "http.content_length",
+    "http.request.method",
+    "mqtt.len",
+    "mqtt.msgtype",
+    "mqtt.topic_len",
+    "icmp.seq_le",
+    "Attack_label",
+    "Attack_type"
+  ],
+  "num_columns": 19,
+  "files": {
+    "train": {
+      "name": "edge_iiotset_core16_train_v3.csv.gz",
+      "rows": 110460,
+      "bytes": 613966
+    },
+    "validation": {
+      "name": "edge_iiotset_core16_validation_v3.csv.gz",
+      "rows": 23670,
+      "bytes": 170648
+    },
+    "test": {
+      "name": "edge_iiotset_core16_test_v3.csv.gz",
+      "rows": 23670,
+      "bytes": 170339
+    }
+  },
+  "test_scored": false,
+  "limitations": [
+    "Exact Core16 group isolation does not establish independent devices, capture sessions or attacks.",
+    "One mixed-label group contains 4,215 indistinguishable feature records; no rows removed.",
+    "Packet/protocol data are not verified as network flow features.",
+    "The labels are class-imbalanced and several protocol fields are zero-heavy.",
+    "No held-out test predictions have been generated."
+  ]
+}
