@@ -1,0 +1,158 @@
+{
+  "dataset": "ToN-IoT network CSV",
+  "source_file": "ton_iot_train_test_network.csv",
+  "source_sha256_from_notebook_01": "26ddc513552de36de6428b2e578efaed2b57504c716dfba847cc0109a64e1974",
+  "rows": 211043,
+  "selected_features": [
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes"
+  ],
+  "categorical_features": [
+    "proto",
+    "service",
+    "conn_state"
+  ],
+  "numeric_features": [
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes"
+  ],
+  "target": "label",
+  "additional_label": "type",
+  "exported_columns": [
+    "csv_row_index_0based",
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes",
+    "label",
+    "type"
+  ],
+  "export_file": "ton_iot_core10_selected_v3.csv.gz",
+  "exported_rows": 211043,
+  "feature_quality": [
+    {
+      "feature": "service",
+      "type": "categorical",
+      "missing_count": 132032,
+      "missing_pct": 62.56,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 39.59,
+      "attack_missing_pct": 69.7
+    },
+    {
+      "feature": "proto",
+      "type": "categorical",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "duration",
+      "type": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "src_bytes",
+      "type": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "dst_bytes",
+      "type": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "conn_state",
+      "type": "categorical",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "src_pkts",
+      "type": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "src_ip_bytes",
+      "type": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "dst_pkts",
+      "type": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "dst_ip_bytes",
+      "type": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    }
+  ],
+  "feature_pattern_diagnostics": {
+    "total_rows": 211043,
+    "distinct_normalized_feature_patterns": 92454,
+    "repeated_feature_groups": 7329,
+    "rows_in_repeated_groups": 125918,
+    "conflicting_binary_label_groups": 15,
+    "rows_in_conflicting_groups": 7522
+  },
+  "limitations": [
+    "Feature names alone do not verify equivalence with X-IIoTID.",
+    "Session/capture independence is not verified.",
+    "Service placeholders may be informative; validate missingness-only baselines."
+  ],
+  "test_scored": false,
+  "split_performed": false
+}
