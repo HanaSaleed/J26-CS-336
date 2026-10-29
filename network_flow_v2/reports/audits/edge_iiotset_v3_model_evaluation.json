@@ -1,0 +1,65 @@
+{
+  "dataset": "Edge-IIoTset selected ML CSV",
+  "experiment": "Core16 V3 validation diagnostics",
+  "created_utc": "2026-10-29T13:22:14.002169+00:00",
+  "source_rows": 157800,
+  "train_rows": 110460,
+  "validation_rows": 23670,
+  "frozen_manifest_sha256": "f665081d5bbf75a25ef3f1321bdc45ac0ce6b338d84ec28f186617a939be10e7",
+  "attack_types_absent_from_validation": [
+    "MITM"
+  ],
+  "models_verified": [
+    "decision_tree",
+    "random_forest",
+    "extra_trees",
+    "lightgbm",
+    "adaboost"
+  ],
+  "lightgbm_port_ablation": [
+    {
+      "variant": "full_core16",
+      "selected_features": 16,
+      "accuracy_pct": 100.0,
+      "attack_f1_pct": 100.0,
+      "false_positive_pct": 0.0,
+      "missed_attacks": 0,
+      "false_alarms": 0,
+      "training_seconds": null,
+      "model_size_mib": 0.18145
+    },
+    {
+      "variant": "ports_only",
+      "selected_features": 2,
+      "accuracy_pct": 99.970427,
+      "attack_f1_pct": 99.982524,
+      "false_positive_pct": 0.164609,
+      "missed_attacks": 1,
+      "false_alarms": 6,
+      "training_seconds": 0.803423,
+      "model_size_mib": 0.177486
+    },
+    {
+      "variant": "without_ports",
+      "selected_features": 14,
+      "accuracy_pct": 92.95733,
+      "attack_f1_pct": 96.003261,
+      "false_positive_pct": 45.624143,
+      "missed_attacks": 4,
+      "false_alarms": 1663,
+      "training_seconds": 1.074129,
+      "model_size_mib": 0.190948
+    }
+  ],
+  "core16_conflicting_label_training_rows": 4215,
+  "noport_overlap_with_train_validation_rows": 20254,
+  "noport_overlap_with_train_validation_fingerprint_groups": 493,
+  "test_scored": false,
+  "limitations": [
+    "No MITM validation records",
+    "Ports may be label shortcuts",
+    "No-port data may have new cross-partition fingerprint collisions",
+    "Group-disjoint features are not session-disjoint captures",
+    "Laptop validation is not an edge gateway benchmark"
+  ]
+}

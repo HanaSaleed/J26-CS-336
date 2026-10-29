@@ -1,0 +1,4 @@
+variant,subset,validation_rows,f1_pct,fpr_pct,fn,fp
+full_core16,nonoverlap_noport,3416,100.0,0.0,0,0
+ports_only,nonoverlap_noport,3416,99.91026024528867,7.894736842105263,0,6
+without_ports,nonoverlap_noport,3416,99.21213022149547,65.78947368421052,3,50
