@@ -1,0 +1,6 @@
+model,f1_pct,false_positive_pct,missed_attacks,false_alarms,accuracy_pct,p95_ms,model_mib,training_sec,training_peak_process_ram_mib,training_cpu_pct
+decision_tree,98.42,1.0,1245,634,98.47,9.931,0.0333,21.8761,813.82,96.78
+random_forest,98.75,1.44,593,911,98.78,40.16,2.8459,67.3756,911.5,607.53
+extra_trees,92.8,8.64,3313,5464,92.87,39.125,0.9577,27.5421,861.12,542.52
+lightgbm,98.92,1.14,574,722,98.95,13.924,0.2155,9.7721,834.82,265.1
+adaboost,95.17,4.39,3001,2774,95.31,38.971,0.0291,185.2659,849.29,98.32

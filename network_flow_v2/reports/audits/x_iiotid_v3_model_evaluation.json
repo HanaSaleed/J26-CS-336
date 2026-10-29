@@ -1,0 +1,87 @@
+{
+  "dataset": "X-IIoTID",
+  "feature_set": "Core19",
+  "model_count": 5,
+  "training_rows": 574585,
+  "validation_rows": 123125,
+  "test_scored": false,
+  "provisional_shortlist": [
+    "lightgbm",
+    "decision_tree",
+    "random_forest"
+  ],
+  "comparison": [
+    {
+      "model": "decision_tree",
+      "f1_pct": 98.42,
+      "false_positive_pct": 1.0,
+      "missed_attacks": 1245,
+      "false_alarms": 634,
+      "accuracy_pct": 98.47,
+      "p95_ms": 9.931,
+      "model_mib": 0.0333,
+      "training_sec": 21.8761,
+      "training_peak_process_ram_mib": 813.82,
+      "training_cpu_pct": 96.78
+    },
+    {
+      "model": "random_forest",
+      "f1_pct": 98.75,
+      "false_positive_pct": 1.44,
+      "missed_attacks": 593,
+      "false_alarms": 911,
+      "accuracy_pct": 98.78,
+      "p95_ms": 40.16,
+      "model_mib": 2.8459,
+      "training_sec": 67.3756,
+      "training_peak_process_ram_mib": 911.5,
+      "training_cpu_pct": 607.53
+    },
+    {
+      "model": "extra_trees",
+      "f1_pct": 92.8,
+      "false_positive_pct": 8.64,
+      "missed_attacks": 3313,
+      "false_alarms": 5464,
+      "accuracy_pct": 92.87,
+      "p95_ms": 39.125,
+      "model_mib": 0.9577,
+      "training_sec": 27.5421,
+      "training_peak_process_ram_mib": 861.12,
+      "training_cpu_pct": 542.52
+    },
+    {
+      "model": "lightgbm",
+      "f1_pct": 98.92,
+      "false_positive_pct": 1.14,
+      "missed_attacks": 574,
+      "false_alarms": 722,
+      "accuracy_pct": 98.95,
+      "p95_ms": 13.924,
+      "model_mib": 0.2155,
+      "training_sec": 9.7721,
+      "training_peak_process_ram_mib": 834.82,
+      "training_cpu_pct": 265.1
+    },
+    {
+      "model": "adaboost",
+      "f1_pct": 95.17,
+      "false_positive_pct": 4.39,
+      "missed_attacks": 3001,
+      "false_alarms": 2774,
+      "accuracy_pct": 95.31,
+      "p95_ms": 38.971,
+      "model_mib": 0.0291,
+      "training_sec": 185.2659,
+      "training_peak_process_ram_mib": 849.29,
+      "training_cpu_pct": 98.32
+    }
+  ],
+  "limitations": [
+    "Validation-only evidence; held-out test set unopened.",
+    "Missing-value patterns and Service may create dataset shortcuts.",
+    "No proof of capture-session or campaign independence.",
+    "CPU, latency and memory are laptop measurements, not live gateway benchmarks.",
+    "Per-category class2 recall measures flow labels, not complete APT campaigns."
+  ]
+}

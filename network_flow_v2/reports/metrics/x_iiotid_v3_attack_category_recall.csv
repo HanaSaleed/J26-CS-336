@@ -1,0 +1,46 @@
+model,class2,attack_count,detected,missed,recall_pct
+decision_tree,C&C,344,331,13,96.22
+decision_tree,Exfiltration,3289,3284,5,99.85
+decision_tree,Exploitation,174,158,16,90.8
+decision_tree,Lateral _movement,4666,4534,132,97.17
+decision_tree,RDOS,11466,11464,2,99.98
+decision_tree,Reconnaissance,26925,26150,775,97.12
+decision_tree,Tampering,1827,1823,4,99.78
+decision_tree,Weaponization,11186,10908,278,97.51
+decision_tree,crypto-ransomware,35,15,20,42.86
+random_forest,C&C,344,341,3,99.13
+random_forest,Exfiltration,3289,3288,1,99.97
+random_forest,Exploitation,174,159,15,91.38
+random_forest,Lateral _movement,4666,4537,129,97.24
+random_forest,RDOS,11466,11464,2,99.98
+random_forest,Reconnaissance,26925,26522,403,98.5
+random_forest,Tampering,1827,1822,5,99.73
+random_forest,Weaponization,11186,11158,28,99.75
+random_forest,crypto-ransomware,35,28,7,80.0
+extra_trees,C&C,344,211,133,61.34
+extra_trees,Exfiltration,3289,3261,28,99.15
+extra_trees,Exploitation,174,157,17,90.23
+extra_trees,Lateral _movement,4666,4538,128,97.26
+extra_trees,RDOS,11466,11415,51,99.56
+extra_trees,Reconnaissance,26925,24017,2908,89.2
+extra_trees,Tampering,1827,1824,3,99.84
+extra_trees,Weaponization,11186,11176,10,99.91
+extra_trees,crypto-ransomware,35,0,35,0.0
+lightgbm,C&C,344,334,10,97.09
+lightgbm,Exfiltration,3289,3281,8,99.76
+lightgbm,Exploitation,174,160,14,91.95
+lightgbm,Lateral _movement,4666,4539,127,97.28
+lightgbm,RDOS,11466,11464,2,99.98
+lightgbm,Reconnaissance,26925,26567,358,98.67
+lightgbm,Tampering,1827,1824,3,99.84
+lightgbm,Weaponization,11186,11159,27,99.76
+lightgbm,crypto-ransomware,35,10,25,28.57
+adaboost,C&C,344,56,288,16.28
+adaboost,Exfiltration,3289,3288,1,99.97
+adaboost,Exploitation,174,60,114,34.48
+adaboost,Lateral _movement,4666,4386,280,94.0
+adaboost,RDOS,11466,11416,50,99.56
+adaboost,Reconnaissance,26925,24916,2009,92.54
+adaboost,Tampering,1827,1806,21,98.85
+adaboost,Weaponization,11186,10961,225,97.99
+adaboost,crypto-ransomware,35,22,13,62.86
