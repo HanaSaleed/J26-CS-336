@@ -1,0 +1,254 @@
+{
+  "dataset": "Edge-IIoTset",
+  "source_file": "ML-EdgeIIoT-dataset.csv",
+  "source_sha256_from_notebook_01": "53101fad091af20bee815860962a5016b802ee45d456a141042f6183094c3c1a",
+  "rows": 157800,
+  "original_columns": 63,
+  "selected_features": [
+    "tcp.connection.syn",
+    "tcp.connection.fin",
+    "tcp.connection.rst",
+    "tcp.flags.ack",
+    "tcp.flags",
+    "tcp.len",
+    "tcp.srcport",
+    "tcp.dstport",
+    "udp.time_delta",
+    "dns.qry.name.len",
+    "http.content_length",
+    "http.request.method",
+    "mqtt.len",
+    "mqtt.msgtype",
+    "mqtt.topic_len",
+    "icmp.seq_le"
+  ],
+  "categorical_features": [
+    "tcp.flags",
+    "http.request.method"
+  ],
+  "numeric_features": [
+    "tcp.connection.syn",
+    "tcp.connection.fin",
+    "tcp.connection.rst",
+    "tcp.flags.ack",
+    "tcp.len",
+    "tcp.srcport",
+    "tcp.dstport",
+    "udp.time_delta",
+    "dns.qry.name.len",
+    "http.content_length",
+    "mqtt.len",
+    "mqtt.msgtype",
+    "mqtt.topic_len",
+    "icmp.seq_le"
+  ],
+  "label_columns": [
+    "Attack_label",
+    "Attack_type"
+  ],
+  "target": "Attack_label",
+  "export_columns": [
+    "csv_row_index_0based",
+    "tcp.connection.syn",
+    "tcp.connection.fin",
+    "tcp.connection.rst",
+    "tcp.flags.ack",
+    "tcp.flags",
+    "tcp.len",
+    "tcp.srcport",
+    "tcp.dstport",
+    "udp.time_delta",
+    "dns.qry.name.len",
+    "http.content_length",
+    "http.request.method",
+    "mqtt.len",
+    "mqtt.msgtype",
+    "mqtt.topic_len",
+    "icmp.seq_le",
+    "Attack_label",
+    "Attack_type"
+  ],
+  "export_file": "edge_iiotset_core16_selected_v3.csv.gz",
+  "binary_label_counts": {
+    "Normal": 24301,
+    "Attack": 133499
+  },
+  "feature_quality": [
+    {
+      "feature": "dns.qry.name.len",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 99.84,
+      "invalid_numeric_count": 29,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "udp.time_delta",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 99.74,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "mqtt.topic_len",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 99.21,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "mqtt.len",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 97.6,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "mqtt.msgtype",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 96.79,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "http.request.method",
+      "kind": "categorical",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 95.44,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "tcp.connection.fin",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 94.19,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "http.content_length",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 94.01,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "tcp.connection.rst",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 90.59,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "icmp.seq_le",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 90.08,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "tcp.connection.syn",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 87.21,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "tcp.len",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 73.19,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "tcp.flags.ack",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 36.48,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "tcp.flags",
+      "kind": "categorical",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 21.5,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "tcp.dstport",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 21.5,
+      "invalid_numeric_count": 0,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    },
+    {
+      "feature": "tcp.srcport",
+      "kind": "numeric",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "zero_pct": 12.96,
+      "invalid_numeric_count": 367,
+      "normal_missing_pct": 0.0,
+      "attack_missing_pct": 0.0
+    }
+  ],
+  "pattern_diagnostics": {
+    "distinct_normalized_feature_patterns": 110175,
+    "repeated_feature_groups": 13848,
+    "rows_in_repeated_groups": 61473,
+    "conflicting_binary_label_groups": 1,
+    "rows_in_conflicting_groups": 4215,
+    "largest_feature_group_rows": 4215,
+    "exact_duplicate_records_in_selected_columns": 52531
+  },
+  "zero_is_missing": false,
+  "notes": [
+    "No source rows removed, resampled or deduplicated.",
+    "Pattern comparisons normalize numeric forms and placeholders; source values are preserved in export.",
+    "These packet/protocol features are provisional; not verified as flow features or deployable gateway measurements.",
+    "No splitting, model training or testing performed."
+  ]
+}
