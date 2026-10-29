@@ -1,0 +1,121 @@
+{
+  "experiment": "Edge-IIoTset Core16 V3 | validation only",
+  "created_utc": "2026-10-29T12:59:35.921581+00:00",
+  "model": "decision_tree",
+  "features": [
+    "tcp.connection.syn",
+    "tcp.connection.fin",
+    "tcp.connection.rst",
+    "tcp.flags.ack",
+    "tcp.flags",
+    "tcp.len",
+    "tcp.srcport",
+    "tcp.dstport",
+    "udp.time_delta",
+    "dns.qry.name.len",
+    "http.content_length",
+    "http.request.method",
+    "mqtt.len",
+    "mqtt.msgtype",
+    "mqtt.topic_len",
+    "icmp.seq_le"
+  ],
+  "target": "Attack_label",
+  "label_mapping": {
+    "0": "Normal",
+    "1": "Attack"
+  },
+  "seed": 42,
+  "frozen_manifest_sha256": "f665081d5bbf75a25ef3f1321bdc45ac0ce6b338d84ec28f186617a939be10e7",
+  "model_file": "decision_tree_core16_v3.joblib",
+  "metrics": {
+    "model": "decision_tree",
+    "training_rows": 110460,
+    "validation_rows": 23670,
+    "accuracy": 0.99962,
+    "balanced_accuracy": 0.999663,
+    "precision_attack": 0.99995,
+    "recall_attack": 0.9996,
+    "f1_attack": 0.999775,
+    "false_positive_rate": 0.000274,
+    "false_negative_rate": 0.0004,
+    "tn": 3644,
+    "fp": 1,
+    "fn": 8,
+    "tp": 20017
+  },
+  "resources": {
+    "model": "decision_tree",
+    "training_seconds": 0.6017,
+    "train_process_cpu_percent": 96.09,
+    "train_peak_process_ram_mib": 302.59,
+    "train_peak_ram_increase_mib": 35.51,
+    "validation_predict_seconds": 0.0525,
+    "predict_process_cpu_percent": 29.78,
+    "predict_peak_process_ram_mib": 273.91,
+    "batch_throughput_records_per_second": 450857.1,
+    "single_record_p50_ms": 9.483,
+    "single_record_p95_ms": 14.283,
+    "single_record_runs": 100,
+    "model_size_mib": 0.0034
+  },
+  "top_transformed_feature_importance": [
+    {
+      "feature": "numeric__tcp.dstport",
+      "importance": 0.522952
+    },
+    {
+      "feature": "numeric__tcp.srcport",
+      "importance": 0.472498
+    },
+    {
+      "feature": "numeric__udp.time_delta",
+      "importance": 0.001251
+    },
+    {
+      "feature": "category__tcp.flags_2.0",
+      "importance": 0.001145
+    },
+    {
+      "feature": "numeric__icmp.seq_le",
+      "importance": 0.001016
+    },
+    {
+      "feature": "numeric__dns.qry.name.len",
+      "importance": 0.000496
+    },
+    {
+      "feature": "numeric__tcp.len",
+      "importance": 0.000468
+    },
+    {
+      "feature": "category__http.request.method_0.0",
+      "importance": 0.000174
+    },
+    {
+      "feature": "numeric__tcp.connection.rst",
+      "importance": 0.0
+    },
+    {
+      "feature": "category__http.request.method_GET",
+      "importance": 0.0
+    }
+  ],
+  "attack_types_absent_from_validation": [
+    "MITM"
+  ],
+  "versions": {
+    "python": "3.12.10",
+    "scikit_learn": "1.9.1"
+  },
+  "test_scored": false,
+  "limitations": [
+    "Edge-IIoTset selected ML data are packet/protocol records, not verified flows.",
+    "No per-type recall can be measured for categories missing from validation.",
+    "Exact feature-group separation does not prove capture/session independence.",
+    "Mixed-label feature patterns make some Core16 records indistinguishable.",
+    "High zero rates may encode protocol applicability or dataset shortcuts.",
+    "Laptop CPU, RAM and latency are not Raspberry Pi or end-to-end network timing.",
+    "Feature importance is estimator-specific and is not causal evidence."
+  ]
+}
