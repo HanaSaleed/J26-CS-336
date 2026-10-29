@@ -1,0 +1,63 @@
+{
+  "dataset": "X-IIoTID",
+  "feature_set": "Core19",
+  "features": [
+    "Protocol",
+    "Service",
+    "Duration",
+    "Scr_bytes",
+    "Des_bytes",
+    "Conn_state",
+    "is_syn_only",
+    "Is_SYN_ACK",
+    "is_pure_ack",
+    "is_with_payload",
+    "FIN or RST",
+    "Scr_pkts",
+    "Scr_ip_bytes",
+    "Des_pkts",
+    "Des_ip_bytes",
+    "total_bytes",
+    "total_packet",
+    "paket_rate",
+    "byte_rate"
+  ],
+  "target": "class3",
+  "extra_labels": [
+    "class1",
+    "class2"
+  ],
+  "source_reduced_dataset": "data\\processed\\x_iiotid_core19_selected_v3.csv.gz",
+  "source_reduced_dataset_sha256": "190612b6304047201573fc2001cf74d3e4fa561b44c30655403535425ca71d69",
+  "original_source_sha256": "7b9290057ee42e784da3c0d84b781815502c9205c74175c96374e71a5ffd98a0",
+  "frozen_manifest": "data\\splits\\x_iiotid_core19_signature_split_manifest_v1.csv",
+  "manifest_sha256": "8704e269d96abfe61b61a4608ab4e2f0608952555d6b34730da92ebac31fe2c0",
+  "counts": {
+    "train": 574585,
+    "validation": 123125,
+    "test": 123124
+  },
+  "class_counts": {
+    "train": {
+      "Normal": 294992,
+      "Attack": 279593
+    },
+    "validation": {
+      "Normal": 63213,
+      "Attack": 59912
+    },
+    "test": {
+      "Normal": 63212,
+      "Attack": 59912
+    }
+  },
+  "normalized_signature_overlap_groups": 0,
+  "export_files": {
+    "train": "data\\splits\\x_iiotid_core19_train_v3.csv.gz",
+    "validation": "data\\splits\\x_iiotid_core19_validation_v3.csv.gz",
+    "test": "data\\splits\\x_iiotid_core19_test_v3.csv.gz"
+  },
+  "preprocessing_fitted": false,
+  "test_scored": false,
+  "note": "Existing frozen split reused; no new split or model fitting. Session independence unverified."
+}
