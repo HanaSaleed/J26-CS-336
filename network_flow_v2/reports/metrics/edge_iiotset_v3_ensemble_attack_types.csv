@@ -1,0 +1,66 @@
+candidate,attack_type,attack_records,detected,missed,recall_pct
+LightGBM,Backdoor,182,182,0,100.0
+LightGBM,DDoS_HTTP,1663,1663,0,100.0
+LightGBM,DDoS_ICMP,2914,2914,0,100.0
+LightGBM,DDoS_TCP,2307,2307,0,100.0
+LightGBM,DDoS_UDP,2996,2996,0,100.0
+LightGBM,Fingerprinting,65,65,0,100.0
+LightGBM,Password,1910,1910,0,100.0
+LightGBM,Port_Scanning,2190,2190,0,100.0
+LightGBM,Ransomware,278,278,0,100.0
+LightGBM,SQL_injection,1899,1899,0,100.0
+LightGBM,Uploading,1541,1541,0,100.0
+LightGBM,Vulnerability_scanner,1136,1136,0,100.0
+LightGBM,XSS,944,944,0,100.0
+Decision Tree,Backdoor,182,182,0,100.0
+Decision Tree,DDoS_HTTP,1663,1663,0,100.0
+Decision Tree,DDoS_ICMP,2914,2914,0,100.0
+Decision Tree,DDoS_TCP,2307,2301,6,99.73992197659298
+Decision Tree,DDoS_UDP,2996,2996,0,100.0
+Decision Tree,Fingerprinting,65,63,2,96.92307692307692
+Decision Tree,Password,1910,1910,0,100.0
+Decision Tree,Port_Scanning,2190,2190,0,100.0
+Decision Tree,Ransomware,278,278,0,100.0
+Decision Tree,SQL_injection,1899,1899,0,100.0
+Decision Tree,Uploading,1541,1541,0,100.0
+Decision Tree,Vulnerability_scanner,1136,1136,0,100.0
+Decision Tree,XSS,944,944,0,100.0
+Random Forest,Backdoor,182,181,1,99.45054945054945
+Random Forest,DDoS_HTTP,1663,1663,0,100.0
+Random Forest,DDoS_ICMP,2914,2914,0,100.0
+Random Forest,DDoS_TCP,2307,2307,0,100.0
+Random Forest,DDoS_UDP,2996,2996,0,100.0
+Random Forest,Fingerprinting,65,65,0,100.0
+Random Forest,Password,1910,1910,0,100.0
+Random Forest,Port_Scanning,2190,2190,0,100.0
+Random Forest,Ransomware,278,278,0,100.0
+Random Forest,SQL_injection,1899,1899,0,100.0
+Random Forest,Uploading,1541,1541,0,100.0
+Random Forest,Vulnerability_scanner,1136,1136,0,100.0
+Random Forest,XSS,944,944,0,100.0
+LightGBM + RF (OR),Backdoor,182,182,0,100.0
+LightGBM + RF (OR),DDoS_HTTP,1663,1663,0,100.0
+LightGBM + RF (OR),DDoS_ICMP,2914,2914,0,100.0
+LightGBM + RF (OR),DDoS_TCP,2307,2307,0,100.0
+LightGBM + RF (OR),DDoS_UDP,2996,2996,0,100.0
+LightGBM + RF (OR),Fingerprinting,65,65,0,100.0
+LightGBM + RF (OR),Password,1910,1910,0,100.0
+LightGBM + RF (OR),Port_Scanning,2190,2190,0,100.0
+LightGBM + RF (OR),Ransomware,278,278,0,100.0
+LightGBM + RF (OR),SQL_injection,1899,1899,0,100.0
+LightGBM + RF (OR),Uploading,1541,1541,0,100.0
+LightGBM + RF (OR),Vulnerability_scanner,1136,1136,0,100.0
+LightGBM + RF (OR),XSS,944,944,0,100.0
+Three-model majority,Backdoor,182,182,0,100.0
+Three-model majority,DDoS_HTTP,1663,1663,0,100.0
+Three-model majority,DDoS_ICMP,2914,2914,0,100.0
+Three-model majority,DDoS_TCP,2307,2307,0,100.0
+Three-model majority,DDoS_UDP,2996,2996,0,100.0
+Three-model majority,Fingerprinting,65,65,0,100.0
+Three-model majority,Password,1910,1910,0,100.0
+Three-model majority,Port_Scanning,2190,2190,0,100.0
+Three-model majority,Ransomware,278,278,0,100.0
+Three-model majority,SQL_injection,1899,1899,0,100.0
+Three-model majority,Uploading,1541,1541,0,100.0
+Three-model majority,Vulnerability_scanner,1136,1136,0,100.0
+Three-model majority,XSS,944,944,0,100.0

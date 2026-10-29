@@ -1,0 +1,32 @@
+{
+  "dataset": "Edge-IIoTset selected ML CSV",
+  "feature_set": "Core16",
+  "created_utc": "2026-10-29T13:34:03.572758+00:00",
+  "train_rows": 110460,
+  "validation_rows": 23670,
+  "test_scored": false,
+  "frozen_manifest_sha256": "f665081d5bbf75a25ef3f1321bdc45ac0ce6b338d84ec28f186617a939be10e7",
+  "models_verified": [
+    "lightgbm",
+    "decision_tree",
+    "random_forest",
+    "extra_trees",
+    "adaboost"
+  ],
+  "candidate_count": 11,
+  "baseline_lightgbm_f1_pct": 100.0,
+  "any_ensemble_improved_f1": false,
+  "noport_validation_overlap_rows": 20254,
+  "attack_types_absent_from_validation": [
+    "MITM"
+  ],
+  "conclusion": "No demonstrated F1 improvement over LightGBM in this validation split.",
+  "limitations": [
+    "Ports-only model almost perfectly predicts labels on this split; possible collection shortcut.",
+    "Removing ports creates overlapping 14-feature fingerprints across train/validation.",
+    "MITM is absent from validation and cannot be evaluated.",
+    "Core16 grouping does not prove capture-session or independent-device generalization.",
+    "All inference/resource numbers are laptop measurements.",
+    "Attack labels are binary packet-level records, not proven multi-stage APT detections."
+  ]
+}
