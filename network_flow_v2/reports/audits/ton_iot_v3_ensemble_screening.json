@@ -1,0 +1,334 @@
+{
+  "dataset": "ToN-IoT",
+  "feature_set": "Core10",
+  "features": [
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes"
+  ],
+  "train_rows": 147730,
+  "validation_rows": 31657,
+  "test_scored": false,
+  "frozen_manifest_sha256": "c29eef1901d76f11218c3faa720807a0c20f9b70f8d03739102eccfada17d4c0",
+  "created_utc": "2026-10-29T07:44:47.024134+00:00",
+  "shortlisted_models": [
+    "lightgbm",
+    "decision_tree",
+    "random_forest"
+  ],
+  "ensemble_count": 9,
+  "resource_benchmark_single_flow_runs": 60,
+  "comparison": [
+    {
+      "candidate": "LightGBM",
+      "attack_f1_pct": 99.576,
+      "attack_precision_pct": 99.565,
+      "attack_recall_pct": 99.586,
+      "false_positive_pct": 1.4,
+      "accuracy_pct": 99.352,
+      "false_alarms": 105,
+      "missed_attacks": 100,
+      "tn": 7395,
+      "fp": 105,
+      "fn": 100,
+      "tp": 24057
+    },
+    {
+      "candidate": "Decision Tree",
+      "attack_f1_pct": 99.119,
+      "attack_precision_pct": 99.532,
+      "attack_recall_pct": 98.708,
+      "false_positive_pct": 1.493,
+      "accuracy_pct": 98.661,
+      "false_alarms": 112,
+      "missed_attacks": 312,
+      "tn": 7388,
+      "fp": 112,
+      "fn": 312,
+      "tp": 23845
+    },
+    {
+      "candidate": "Random Forest",
+      "attack_f1_pct": 99.312,
+      "attack_precision_pct": 99.37,
+      "attack_recall_pct": 99.255,
+      "false_positive_pct": 2.027,
+      "accuracy_pct": 98.951,
+      "false_alarms": 152,
+      "missed_attacks": 180,
+      "tn": 7348,
+      "fp": 152,
+      "fn": 180,
+      "tp": 23977
+    },
+    {
+      "candidate": "LightGBM + RF (OR)",
+      "attack_f1_pct": 99.467,
+      "attack_precision_pct": 99.295,
+      "attack_recall_pct": 99.64,
+      "false_positive_pct": 2.28,
+      "accuracy_pct": 99.185,
+      "false_alarms": 171,
+      "missed_attacks": 87,
+      "tn": 7329,
+      "fp": 171,
+      "fn": 87,
+      "tp": 24070
+    },
+    {
+      "candidate": "LightGBM + DT (OR)",
+      "attack_f1_pct": 99.52,
+      "attack_precision_pct": 99.446,
+      "attack_recall_pct": 99.594,
+      "false_positive_pct": 1.787,
+      "accuracy_pct": 99.267,
+      "false_alarms": 134,
+      "missed_attacks": 98,
+      "tn": 7366,
+      "fp": 134,
+      "fn": 98,
+      "tp": 24059
+    },
+    {
+      "candidate": "LightGBM + RF (AND)",
+      "attack_f1_pct": 99.421,
+      "attack_precision_pct": 99.642,
+      "attack_recall_pct": 99.201,
+      "false_positive_pct": 1.147,
+      "accuracy_pct": 99.119,
+      "false_alarms": 86,
+      "missed_attacks": 193,
+      "tn": 7414,
+      "fp": 86,
+      "fn": 193,
+      "tp": 23964
+    },
+    {
+      "candidate": "Three-model majority",
+      "attack_f1_pct": 99.453,
+      "attack_precision_pct": 99.527,
+      "attack_recall_pct": 99.379,
+      "false_positive_pct": 1.52,
+      "accuracy_pct": 99.166,
+      "false_alarms": 114,
+      "missed_attacks": 150,
+      "tn": 7386,
+      "fp": 114,
+      "fn": 150,
+      "tp": 24007
+    },
+    {
+      "candidate": "Three-model OR",
+      "attack_f1_pct": 99.444,
+      "attack_precision_pct": 99.245,
+      "attack_recall_pct": 99.644,
+      "false_positive_pct": 2.44,
+      "accuracy_pct": 99.15,
+      "false_alarms": 183,
+      "missed_attacks": 86,
+      "tn": 7317,
+      "fp": 183,
+      "fn": 86,
+      "tp": 24071
+    },
+    {
+      "candidate": "Three-model mean probability",
+      "attack_f1_pct": 99.443,
+      "attack_precision_pct": 99.531,
+      "attack_recall_pct": 99.354,
+      "false_positive_pct": 1.507,
+      "accuracy_pct": 99.15,
+      "false_alarms": 113,
+      "missed_attacks": 156,
+      "tn": 7387,
+      "fp": 113,
+      "fn": 156,
+      "tp": 24001
+    }
+  ],
+  "diversity": [
+    {
+      "first_model": "lightgbm",
+      "second_model": "decision_tree",
+      "both_miss_same_attacks": 98,
+      "first_missed_rescued_by_second": 2,
+      "second_missed_rescued_by_first": 214,
+      "new_false_alarms_if_OR": 29,
+      "shared_false_alarms": 83
+    },
+    {
+      "first_model": "lightgbm",
+      "second_model": "random_forest",
+      "both_miss_same_attacks": 87,
+      "first_missed_rescued_by_second": 13,
+      "second_missed_rescued_by_first": 93,
+      "new_false_alarms_if_OR": 66,
+      "shared_false_alarms": 86
+    },
+    {
+      "first_model": "decision_tree",
+      "second_model": "random_forest",
+      "both_miss_same_attacks": 137,
+      "first_missed_rescued_by_second": 175,
+      "second_missed_rescued_by_first": 43,
+      "new_false_alarms_if_OR": 63,
+      "shared_false_alarms": 89
+    }
+  ],
+  "service_train_validation_shift": [
+    {
+      "partition": "train",
+      "class": "Normal",
+      "records": 35000,
+      "service_missing_count": 12696,
+      "service_missing_pct": 36.27
+    },
+    {
+      "partition": "train",
+      "class": "Attack",
+      "records": 112730,
+      "service_missing_count": 94893,
+      "service_missing_pct": 84.18
+    },
+    {
+      "partition": "validation",
+      "class": "Normal",
+      "records": 7500,
+      "service_missing_count": 3526,
+      "service_missing_pct": 47.01
+    },
+    {
+      "partition": "validation",
+      "class": "Attack",
+      "records": 24157,
+      "service_missing_count": 8672,
+      "service_missing_pct": 35.9
+    }
+  ],
+  "resources": [
+    {
+      "candidate": "LightGBM",
+      "model_count": 1,
+      "single_flow_p50_ms": 11.388,
+      "single_flow_p95_ms": 16.941,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.1635,
+      "batch_throughput_flows_per_second": 193606.8,
+      "process_cpu_pct_during_batch": 382.24,
+      "peak_process_ram_mib": 257.61,
+      "combined_model_storage_mib": 0.2083
+    },
+    {
+      "candidate": "Decision Tree",
+      "model_count": 1,
+      "single_flow_p50_ms": 7.657,
+      "single_flow_p95_ms": 11.014,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.0539,
+      "batch_throughput_flows_per_second": 587778.8,
+      "process_cpu_pct_during_batch": 116.04,
+      "peak_process_ram_mib": 255.4,
+      "combined_model_storage_mib": 0.0109
+    },
+    {
+      "candidate": "Random Forest",
+      "model_count": 1,
+      "single_flow_p50_ms": 35.556,
+      "single_flow_p95_ms": 44.077,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.1338,
+      "batch_throughput_flows_per_second": 236580.3,
+      "process_cpu_pct_during_batch": 373.66,
+      "peak_process_ram_mib": 262.94,
+      "combined_model_storage_mib": 0.7584
+    },
+    {
+      "candidate": "LightGBM + RF (OR)",
+      "model_count": 2,
+      "single_flow_p50_ms": 48.627,
+      "single_flow_p95_ms": 63.72,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.3718,
+      "batch_throughput_flows_per_second": 85152.9,
+      "process_cpu_pct_during_batch": 357.25,
+      "peak_process_ram_mib": 263.82,
+      "combined_model_storage_mib": 0.9667
+    },
+    {
+      "candidate": "LightGBM + DT (OR)",
+      "model_count": 2,
+      "single_flow_p50_ms": 19.049,
+      "single_flow_p95_ms": 24.474,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.2377,
+      "batch_throughput_flows_per_second": 133179.0,
+      "process_cpu_pct_during_batch": 374.68,
+      "peak_process_ram_mib": 259.84,
+      "combined_model_storage_mib": 0.2192
+    },
+    {
+      "candidate": "LightGBM + RF (AND)",
+      "model_count": 2,
+      "single_flow_p50_ms": 48.255,
+      "single_flow_p95_ms": 64.386,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.2964,
+      "batch_throughput_flows_per_second": 106792.0,
+      "process_cpu_pct_during_batch": 442.76,
+      "peak_process_ram_mib": 262.04,
+      "combined_model_storage_mib": 0.9667
+    },
+    {
+      "candidate": "Three-model majority",
+      "model_count": 3,
+      "single_flow_p50_ms": 54.563,
+      "single_flow_p95_ms": 65.49,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.3517,
+      "batch_throughput_flows_per_second": 90009.8,
+      "process_cpu_pct_during_batch": 422.05,
+      "peak_process_ram_mib": 263.41,
+      "combined_model_storage_mib": 0.9776
+    },
+    {
+      "candidate": "Three-model OR",
+      "model_count": 3,
+      "single_flow_p50_ms": 53.961,
+      "single_flow_p95_ms": 66.056,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.3691,
+      "batch_throughput_flows_per_second": 85757.8,
+      "process_cpu_pct_during_batch": 410.58,
+      "peak_process_ram_mib": 263.82,
+      "combined_model_storage_mib": 0.9776
+    },
+    {
+      "candidate": "Three-model mean probability",
+      "model_count": 3,
+      "single_flow_p50_ms": 54.163,
+      "single_flow_p95_ms": 72.117,
+      "single_flow_runs": 60,
+      "validation_batch_seconds": 0.3406,
+      "batch_throughput_flows_per_second": 92947.8,
+      "process_cpu_pct_during_batch": 422.06,
+      "peak_process_ram_mib": 264.28,
+      "combined_model_storage_mib": 0.9776
+    }
+  ],
+  "notes": [
+    "Validation-only ensemble screening; no held-out test access.",
+    "MITM and other per-type recall are record-level results, not APT campaign-level detection.",
+    "Normal and attack labels are compared on the same frozen validation row IDs.",
+    "Missing service might encode collection/dataset shortcuts; needs ablation testing.",
+    "Group-disjoint feature fingerprints do not guarantee independent capture sessions.",
+    "Resource benchmarks are laptop saved-pipeline measurements; RAM includes loaded data and libraries.",
+    "Model labels and feature meanings must be harmonized before cross-dataset testing."
+  ]
+}

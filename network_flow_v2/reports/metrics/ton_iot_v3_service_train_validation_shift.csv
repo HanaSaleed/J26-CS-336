@@ -1,0 +1,5 @@
+partition,class,records,service_missing_count,service_missing_pct
+train,Normal,35000,12696,36.27
+train,Attack,112730,94893,84.18
+validation,Normal,7500,3526,47.01
+validation,Attack,24157,8672,35.9

@@ -1,0 +1,28 @@
+candidate,protocol,records,errors,error_pct
+LightGBM,icmp,43,9,20.93
+LightGBM,tcp,24997,104,0.42
+LightGBM,udp,6617,92,1.39
+Decision Tree,icmp,43,21,48.84
+Decision Tree,tcp,24997,256,1.02
+Decision Tree,udp,6617,147,2.22
+Random Forest,icmp,43,19,44.19
+Random Forest,tcp,24997,192,0.77
+Random Forest,udp,6617,121,1.83
+LightGBM + RF (OR),icmp,43,8,18.6
+LightGBM + RF (OR),tcp,24997,159,0.64
+LightGBM + RF (OR),udp,6617,91,1.38
+LightGBM + DT (OR),icmp,43,9,20.93
+LightGBM + DT (OR),tcp,24997,123,0.49
+LightGBM + DT (OR),udp,6617,100,1.51
+LightGBM + RF (AND),icmp,43,20,46.51
+LightGBM + RF (AND),tcp,24997,137,0.55
+LightGBM + RF (AND),udp,6617,122,1.84
+Three-model majority,icmp,43,20,46.51
+Three-model majority,tcp,24997,128,0.51
+Three-model majority,udp,6617,116,1.75
+Three-model OR,icmp,43,8,18.6
+Three-model OR,tcp,24997,165,0.66
+Three-model OR,udp,6617,96,1.45
+Three-model mean probability,icmp,43,19,44.19
+Three-model mean probability,tcp,24997,128,0.51
+Three-model mean probability,udp,6617,122,1.84

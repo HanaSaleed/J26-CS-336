@@ -1,0 +1,37 @@
+candidate,service,actual_class,records,errors,error_pct,metric
+LightGBM,missing,Normal,3526,40,1.134,FPR
+LightGBM,missing,Attack,8672,32,0.369,FNR
+LightGBM,present,Normal,3974,65,1.636,FPR
+LightGBM,present,Attack,15485,68,0.439,FNR
+Decision Tree,missing,Normal,3526,41,1.163,FPR
+Decision Tree,missing,Attack,8672,103,1.188,FNR
+Decision Tree,present,Normal,3974,71,1.787,FPR
+Decision Tree,present,Attack,15485,209,1.35,FNR
+Random Forest,missing,Normal,3526,65,1.843,FPR
+Random Forest,missing,Attack,8672,52,0.6,FNR
+Random Forest,present,Normal,3974,87,2.189,FPR
+Random Forest,present,Attack,15485,128,0.827,FNR
+LightGBM + RF (OR),missing,Normal,3526,70,1.985,FPR
+LightGBM + RF (OR),missing,Attack,8672,28,0.323,FNR
+LightGBM + RF (OR),present,Normal,3974,101,2.542,FPR
+LightGBM + RF (OR),present,Attack,15485,59,0.381,FNR
+LightGBM + DT (OR),missing,Normal,3526,49,1.39,FPR
+LightGBM + DT (OR),missing,Attack,8672,31,0.357,FNR
+LightGBM + DT (OR),present,Normal,3974,85,2.139,FPR
+LightGBM + DT (OR),present,Attack,15485,67,0.433,FNR
+LightGBM + RF (AND),missing,Normal,3526,35,0.993,FPR
+LightGBM + RF (AND),missing,Attack,8672,56,0.646,FNR
+LightGBM + RF (AND),present,Normal,3974,51,1.283,FPR
+LightGBM + RF (AND),present,Attack,15485,137,0.885,FNR
+Three-model majority,missing,Normal,3526,46,1.305,FPR
+Three-model majority,missing,Attack,8672,44,0.507,FNR
+Three-model majority,present,Normal,3974,68,1.711,FPR
+Three-model majority,present,Attack,15485,106,0.685,FNR
+Three-model OR,missing,Normal,3526,73,2.07,FPR
+Three-model OR,missing,Attack,8672,28,0.323,FNR
+Three-model OR,present,Normal,3974,110,2.768,FPR
+Three-model OR,present,Attack,15485,58,0.375,FNR
+Three-model mean probability,missing,Normal,3526,41,1.163,FPR
+Three-model mean probability,missing,Attack,8672,45,0.519,FNR
+Three-model mean probability,present,Normal,3974,72,1.812,FPR
+Three-model mean probability,present,Attack,15485,111,0.717,FNR

@@ -1,0 +1,82 @@
+candidate,attack_type,attack_records,detected,missed,recall_pct
+LightGBM,backdoor,683,677,6,99.12
+LightGBM,ddos,4239,4219,20,99.53
+LightGBM,dos,2245,2237,8,99.64
+LightGBM,injection,6659,6643,16,99.76
+LightGBM,mitm,356,327,29,91.85
+LightGBM,password,5475,5462,13,99.76
+LightGBM,ransomware,72,72,0,100.0
+LightGBM,scanning,1506,1504,2,99.87
+LightGBM,xss,2922,2916,6,99.79
+Decision Tree,backdoor,683,676,7,98.98
+Decision Tree,ddos,4239,4183,56,98.68
+Decision Tree,dos,2245,2193,52,97.68
+Decision Tree,injection,6659,6608,51,99.23
+Decision Tree,mitm,356,279,77,78.37
+Decision Tree,password,5475,5456,19,99.65
+Decision Tree,ransomware,72,72,0,100.0
+Decision Tree,scanning,1506,1497,9,99.4
+Decision Tree,xss,2922,2881,41,98.6
+Random Forest,backdoor,683,677,6,99.12
+Random Forest,ddos,4239,4224,15,99.65
+Random Forest,dos,2245,2217,28,98.75
+Random Forest,injection,6659,6641,18,99.73
+Random Forest,mitm,356,286,70,80.34
+Random Forest,password,5475,5457,18,99.67
+Random Forest,ransomware,72,72,0,100.0
+Random Forest,scanning,1506,1499,7,99.54
+Random Forest,xss,2922,2904,18,99.38
+LightGBM + RF (OR),backdoor,683,677,6,99.12
+LightGBM + RF (OR),ddos,4239,4226,13,99.69
+LightGBM + RF (OR),dos,2245,2238,7,99.69
+LightGBM + RF (OR),injection,6659,6645,14,99.79
+LightGBM + RF (OR),mitm,356,329,27,92.42
+LightGBM + RF (OR),password,5475,5462,13,99.76
+LightGBM + RF (OR),ransomware,72,72,0,100.0
+LightGBM + RF (OR),scanning,1506,1504,2,99.87
+LightGBM + RF (OR),xss,2922,2917,5,99.83
+LightGBM + DT (OR),backdoor,683,677,6,99.12
+LightGBM + DT (OR),ddos,4239,4219,20,99.53
+LightGBM + DT (OR),dos,2245,2237,8,99.64
+LightGBM + DT (OR),injection,6659,6643,16,99.76
+LightGBM + DT (OR),mitm,356,327,29,91.85
+LightGBM + DT (OR),password,5475,5463,12,99.78
+LightGBM + DT (OR),ransomware,72,72,0,100.0
+LightGBM + DT (OR),scanning,1506,1504,2,99.87
+LightGBM + DT (OR),xss,2922,2917,5,99.83
+LightGBM + RF (AND),backdoor,683,677,6,99.12
+LightGBM + RF (AND),ddos,4239,4217,22,99.48
+LightGBM + RF (AND),dos,2245,2216,29,98.71
+LightGBM + RF (AND),injection,6659,6639,20,99.7
+LightGBM + RF (AND),mitm,356,284,72,79.78
+LightGBM + RF (AND),password,5475,5457,18,99.67
+LightGBM + RF (AND),ransomware,72,72,0,100.0
+LightGBM + RF (AND),scanning,1506,1499,7,99.54
+LightGBM + RF (AND),xss,2922,2903,19,99.35
+Three-model majority,backdoor,683,677,6,99.12
+Three-model majority,ddos,4239,4217,22,99.48
+Three-model majority,dos,2245,2226,19,99.15
+Three-model majority,injection,6659,6639,20,99.7
+Three-model majority,mitm,356,308,48,86.52
+Three-model majority,password,5475,5459,16,99.71
+Three-model majority,ransomware,72,72,0,100.0
+Three-model majority,scanning,1506,1502,4,99.73
+Three-model majority,xss,2922,2907,15,99.49
+Three-model OR,backdoor,683,677,6,99.12
+Three-model OR,ddos,4239,4226,13,99.69
+Three-model OR,dos,2245,2238,7,99.69
+Three-model OR,injection,6659,6645,14,99.79
+Three-model OR,mitm,356,329,27,92.42
+Three-model OR,password,5475,5463,12,99.78
+Three-model OR,ransomware,72,72,0,100.0
+Three-model OR,scanning,1506,1504,2,99.87
+Three-model OR,xss,2922,2917,5,99.83
+Three-model mean probability,backdoor,683,676,7,98.98
+Three-model mean probability,ddos,4239,4210,29,99.32
+Three-model mean probability,dos,2245,2225,20,99.11
+Three-model mean probability,injection,6659,6639,20,99.7
+Three-model mean probability,mitm,356,309,47,86.8
+Three-model mean probability,password,5475,5459,16,99.71
+Three-model mean probability,ransomware,72,72,0,100.0
+Three-model mean probability,scanning,1506,1504,2,99.87
+Three-model mean probability,xss,2922,2907,15,99.49
