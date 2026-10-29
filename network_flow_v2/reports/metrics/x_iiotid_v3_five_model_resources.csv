@@ -1,0 +1,6 @@
+model,training_seconds,train_process_cpu_percent,train_peak_process_ram_mib,train_peak_ram_increase_mib,validation_predict_seconds,predict_process_cpu_percent,predict_peak_process_ram_mib,batch_throughput_flows_per_second,single_flow_p50_ms,single_flow_p95_ms,single_flow_runs,model_size_mib
+decision_tree,21.8761,96.78,813.82,381.7,0.4851,93.41,529.2,253813.6,8.335,9.931,100,0.0333
+random_forest,67.3756,607.53,911.5,458.47,0.7799,382.65,543.71,157872.8,36.755,40.16,100,2.8459
+extra_trees,27.5421,542.52,861.12,410.04,0.8137,324.5,531.46,151315.0,36.66,39.125,100,0.9577
+lightgbm,9.7721,265.1,834.82,376.02,0.9049,281.46,524.05,136064.8,11.997,13.924,100,0.2155
+adaboost,185.2659,98.32,849.29,374.33,2.6882,99.97,362.29,45802.0,33.138,38.971,100,0.0291

@@ -1,0 +1,113 @@
+{
+  "experiment": "X-IIoTID Core19 V3 \u2014 validation only",
+  "model_name": "decision_tree",
+  "created_utc": "2026-10-29T05:50:10.513653+00:00",
+  "model_file": "decision_tree_core19_v3.joblib",
+  "core19_features": [
+    "Protocol",
+    "Service",
+    "Duration",
+    "Scr_bytes",
+    "Des_bytes",
+    "Conn_state",
+    "is_syn_only",
+    "Is_SYN_ACK",
+    "is_pure_ack",
+    "is_with_payload",
+    "FIN or RST",
+    "Scr_pkts",
+    "Scr_ip_bytes",
+    "Des_pkts",
+    "Des_ip_bytes",
+    "total_bytes",
+    "total_packet",
+    "paket_rate",
+    "byte_rate"
+  ],
+  "seed": 42,
+  "metrics": {
+    "model": "decision_tree",
+    "train_rows": 574585,
+    "validation_rows": 123125,
+    "accuracy": 0.984739,
+    "balanced_accuracy": 0.984595,
+    "precision_attack": 0.989309,
+    "recall_attack": 0.97922,
+    "f1_attack": 0.984238,
+    "false_positive_rate": 0.01003,
+    "false_negative_rate": 0.02078,
+    "tn": 62579,
+    "fp": 634,
+    "fn": 1245,
+    "tp": 58667
+  },
+  "resources": {
+    "model": "decision_tree",
+    "training_seconds": 21.8761,
+    "train_process_cpu_percent": 96.78,
+    "train_peak_process_ram_mib": 813.82,
+    "train_peak_ram_increase_mib": 381.7,
+    "validation_predict_seconds": 0.4851,
+    "predict_process_cpu_percent": 93.41,
+    "predict_peak_process_ram_mib": 529.2,
+    "batch_throughput_flows_per_second": 253813.6,
+    "single_flow_p50_ms": 8.335,
+    "single_flow_p95_ms": 9.931,
+    "single_flow_runs": 100,
+    "model_size_mib": 0.0333
+  },
+  "top_transformed_feature_importance": [
+    {
+      "feature": "category__Service_dns",
+      "importance": 0.291517
+    },
+    {
+      "feature": "numeric__Des_bytes",
+      "importance": 0.274829
+    },
+    {
+      "feature": "numeric__Scr_bytes",
+      "importance": 0.195906
+    },
+    {
+      "feature": "numeric__Duration",
+      "importance": 0.063143
+    },
+    {
+      "feature": "numeric__Scr_ip_bytes",
+      "importance": 0.046375
+    },
+    {
+      "feature": "numeric__paket_rate",
+      "importance": 0.036625
+    },
+    {
+      "feature": "numeric__Des_ip_bytes",
+      "importance": 0.017919
+    },
+    {
+      "feature": "numeric__Scr_pkts",
+      "importance": 0.011927
+    },
+    {
+      "feature": "category__Service_ssh",
+      "importance": 0.01072
+    },
+    {
+      "feature": "category__Service_other",
+      "importance": 0.00717
+    }
+  ],
+  "python_version": "3.12.10",
+  "sklearn_version": "1.9.1",
+  "split_report": "x_iiotid_v3_split_report.json",
+  "test_scored": false,
+  "limitations": [
+    "Laptop measurements; not measured on Raspberry Pi.",
+    "RAM includes the Python process, loaded data and libraries.",
+    "CPU percent can exceed 100 for multi-core models.",
+    "Single-flow latency includes fitted preprocessing and prediction on already cleaned input.",
+    "Capture, feature extraction and full gateway latency are not included.",
+    "Dataset signature separation does not prove session/campaign independence."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "experiment": "X-IIoTID Core19 V3 five-model comparison",
+  "training_rows": 574585,
+  "validation_rows": 123125,
+  "test_rows_reserved": 123124,
+  "test_scored": false,
+  "individual_json": [
+    "x_iiotid_v3_decision_tree_training.json",
+    "x_iiotid_v3_random_forest_training.json",
+    "x_iiotid_v3_extra_trees_training.json",
+    "x_iiotid_v3_lightgbm_training.json",
+    "x_iiotid_v3_adaboost_training.json"
+  ],
+  "note": "Laptop resource measurements include other process memory; end-to-end gateway metrics still pending."
+}
