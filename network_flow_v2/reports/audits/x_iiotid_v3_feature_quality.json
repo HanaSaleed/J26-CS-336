@@ -1,0 +1,188 @@
+{
+  "dataset": "X-IIoTID",
+  "source_sha256_from_notebook_01": "7b9290057ee42e784da3c0d84b781815502c9205c74175c96374e71a5ffd98a0",
+  "rows": 820834,
+  "selected_features": [
+    "Protocol",
+    "Service",
+    "Duration",
+    "Scr_bytes",
+    "Des_bytes",
+    "Conn_state",
+    "is_syn_only",
+    "Is_SYN_ACK",
+    "is_pure_ack",
+    "is_with_payload",
+    "FIN or RST",
+    "Scr_pkts",
+    "Scr_ip_bytes",
+    "Des_pkts",
+    "Des_ip_bytes",
+    "total_bytes",
+    "total_packet",
+    "paket_rate",
+    "byte_rate"
+  ],
+  "model_target": "class3",
+  "extra_labels_not_for_training": [
+    "class1",
+    "class2"
+  ],
+  "exported_columns": [
+    "csv_row_index_0based",
+    "Protocol",
+    "Service",
+    "Duration",
+    "Scr_bytes",
+    "Des_bytes",
+    "Conn_state",
+    "is_syn_only",
+    "Is_SYN_ACK",
+    "is_pure_ack",
+    "is_with_payload",
+    "FIN or RST",
+    "Scr_pkts",
+    "Scr_ip_bytes",
+    "Des_pkts",
+    "Des_ip_bytes",
+    "total_bytes",
+    "total_packet",
+    "paket_rate",
+    "byte_rate",
+    "class1",
+    "class2",
+    "class3"
+  ],
+  "reduced_dataset": "data\\processed\\x_iiotid_core19_selected_v3.csv.gz",
+  "missing_or_placeholder_counts": {
+    "Protocol": 154,
+    "Service": 0,
+    "Duration": 75761,
+    "Scr_bytes": 223871,
+    "Des_bytes": 223871,
+    "Conn_state": 0,
+    "is_syn_only": 0,
+    "Is_SYN_ACK": 0,
+    "is_pure_ack": 0,
+    "is_with_payload": 0,
+    "FIN or RST": 0,
+    "Scr_pkts": 152743,
+    "Scr_ip_bytes": 152743,
+    "Des_pkts": 152743,
+    "Des_ip_bytes": 152743,
+    "total_bytes": 223872,
+    "total_packet": 152743,
+    "paket_rate": 223871,
+    "byte_rate": 223872
+  },
+  "invalid_numeric_counts": {
+    "Duration": 0,
+    "Scr_bytes": 0,
+    "Des_bytes": 0,
+    "Scr_pkts": 0,
+    "Scr_ip_bytes": 1,
+    "Des_pkts": 0,
+    "Des_ip_bytes": 0,
+    "total_bytes": 0,
+    "total_packet": 0,
+    "paket_rate": 0,
+    "byte_rate": 0
+  },
+  "missing_by_class": {
+    "Protocol": {
+      "Normal": 0,
+      "Attack": 154
+    },
+    "Service": {
+      "Normal": 0,
+      "Attack": 0
+    },
+    "Duration": {
+      "Normal": 7720,
+      "Attack": 68041
+    },
+    "Scr_bytes": {
+      "Normal": 84221,
+      "Attack": 139650
+    },
+    "Des_bytes": {
+      "Normal": 84221,
+      "Attack": 139650
+    },
+    "Conn_state": {
+      "Normal": 0,
+      "Attack": 0
+    },
+    "is_syn_only": {
+      "Normal": 0,
+      "Attack": 0
+    },
+    "Is_SYN_ACK": {
+      "Normal": 0,
+      "Attack": 0
+    },
+    "is_pure_ack": {
+      "Normal": 0,
+      "Attack": 0
+    },
+    "is_with_payload": {
+      "Normal": 0,
+      "Attack": 0
+    },
+    "FIN or RST": {
+      "Normal": 0,
+      "Attack": 0
+    },
+    "Scr_pkts": {
+      "Normal": 77914,
+      "Attack": 74829
+    },
+    "Scr_ip_bytes": {
+      "Normal": 77914,
+      "Attack": 74829
+    },
+    "Des_pkts": {
+      "Normal": 77914,
+      "Attack": 74829
+    },
+    "Des_ip_bytes": {
+      "Normal": 77914,
+      "Attack": 74829
+    },
+    "total_bytes": {
+      "Normal": 84222,
+      "Attack": 139650
+    },
+    "total_packet": {
+      "Normal": 77914,
+      "Attack": 74829
+    },
+    "paket_rate": {
+      "Normal": 84221,
+      "Attack": 139650
+    },
+    "byte_rate": {
+      "Normal": 84222,
+      "Attack": 139650
+    }
+  },
+  "label_normal_attack_mismatches": {
+    "class1": 0,
+    "class2": 0
+  },
+  "normalized_feature_pattern_summary": {
+    "distinct_patterns": 419378,
+    "repeated_groups": 43880,
+    "rows_in_repeated_groups": 445336,
+    "conflicting_normal_attack_groups": 1969,
+    "rows_in_conflicting_groups": 21866,
+    "method": "BLAKE2b-128 of 19 stripped text fields; common missing tokens unified. Diagnostic only."
+  },
+  "notes": [
+    "Original CSV unchanged; selected dataset preserves values and original row order.",
+    "No missing-value imputation, encoding, model fitting or train/test splitting here.",
+    "Core19 feature meaning and live edge-gateway extractability remain unverified.",
+    "Do not use full-dataset label/missingness diagnostics to tune a model or choose features.",
+    "Model learning, supervised feature selection and preprocessing must use training data only."
+  ]
+}
