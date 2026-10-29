@@ -1,0 +1,91 @@
+{
+  "dataset": "ToN-IoT",
+  "source_rows": 211043,
+  "model_features": [
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes"
+  ],
+  "categorical_features": [
+    "proto",
+    "service",
+    "conn_state"
+  ],
+  "target": "label",
+  "attack_type": "type",
+  "manifest_name": "ton_iot_core10_signature_split_manifest_v3.csv",
+  "manifest_sha256": "c29eef1901d76f11218c3faa720807a0c20f9b70f8d03739102eccfada17d4c0",
+  "seed_for_first_split": 42,
+  "method": "class-aware greedy assignment of entire normalized Core10 feature-fingerprint groups",
+  "requested_fractions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "counts": {
+    "train": {
+      "rows": 147730,
+      "normal": 35000,
+      "attack": 112730
+    },
+    "validation": {
+      "rows": 31657,
+      "normal": 7500,
+      "attack": 24157
+    },
+    "test": {
+      "rows": 31656,
+      "normal": 7500,
+      "attack": 24156
+    }
+  },
+  "total_rows_preserved": 211043,
+  "normalized_fingerprint_overlap_groups": 0,
+  "num_columns": 13,
+  "exported_columns": [
+    "csv_row_index_0based",
+    "proto",
+    "service",
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "conn_state",
+    "src_pkts",
+    "src_ip_bytes",
+    "dst_pkts",
+    "dst_ip_bytes",
+    "label",
+    "type"
+  ],
+  "files": {
+    "train": {
+      "name": "ton_iot_core10_train_v3.csv.gz",
+      "rows": 147730,
+      "bytes": 769341
+    },
+    "validation": {
+      "name": "ton_iot_core10_validation_v3.csv.gz",
+      "rows": 31657,
+      "bytes": 309262
+    },
+    "test": {
+      "name": "ton_iot_core10_test_v3.csv.gz",
+      "rows": 31656,
+      "bytes": 309530
+    }
+  },
+  "test_scored": false,
+  "limitations": [
+    "Feature fingerprint separation does not prove independent capture sessions or attack campaigns.",
+    "The dataset is class-imbalanced; use precision, recall and false-positive rate, not only accuracy.",
+    "The service field has many placeholders and may create a dataset shortcut.",
+    "These are ToN-IoT-specific features, not verified transferable X-IIoTID inputs."
+  ]
+}
