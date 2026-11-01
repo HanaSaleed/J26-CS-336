@@ -1,0 +1,162 @@
+{
+  "created_utc": "2026-11-01T03:47:15.362965+00:00",
+  "purpose": "Pre-transfer feature compatibility audit, not a transfer score",
+  "dataset_metadata": [
+    {
+      "dataset": "x_iiotid",
+      "rows": 820834,
+      "selected_features": 19,
+      "target": "class3",
+      "record_type": "connection / flow candidate",
+      "header_valid": true
+    },
+    {
+      "dataset": "ton_iot",
+      "rows": 211043,
+      "selected_features": 10,
+      "target": "label",
+      "record_type": "connection / flow candidate",
+      "header_valid": true
+    },
+    {
+      "dataset": "edge_iiotset",
+      "rows": 157800,
+      "selected_features": 16,
+      "target": "Attack_label",
+      "record_type": "packet / protocol candidate",
+      "header_valid": true
+    }
+  ],
+  "mapping_count": 10,
+  "semantically_verified_count": 0,
+  "approval": "NOT_APPROVED_FOR_TRANSFER",
+  "candidate_mappings": [
+    {
+      "concept": "protocol",
+      "x_iiotid_column": "Protocol",
+      "ton_iot_column": "proto",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "categorical",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "service",
+      "x_iiotid_column": "Service",
+      "ton_iot_column": "service",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "categorical",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "flow_duration",
+      "x_iiotid_column": "Duration",
+      "ton_iot_column": "duration",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "numeric",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "source_payload_bytes",
+      "x_iiotid_column": "Scr_bytes",
+      "ton_iot_column": "src_bytes",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "numeric",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "destination_payload_bytes",
+      "x_iiotid_column": "Des_bytes",
+      "ton_iot_column": "dst_bytes",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "numeric",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "connection_state",
+      "x_iiotid_column": "Conn_state",
+      "ton_iot_column": "conn_state",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "categorical",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "source_packets",
+      "x_iiotid_column": "Scr_pkts",
+      "ton_iot_column": "src_pkts",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "numeric",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "source_ip_bytes",
+      "x_iiotid_column": "Scr_ip_bytes",
+      "ton_iot_column": "src_ip_bytes",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "numeric",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "destination_packets",
+      "x_iiotid_column": "Des_pkts",
+      "ton_iot_column": "dst_pkts",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "numeric",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    },
+    {
+      "concept": "destination_ip_bytes",
+      "x_iiotid_column": "Des_ip_bytes",
+      "ton_iot_column": "dst_ip_bytes",
+      "edge_iiotset_equivalent": "NOT_VERIFIED",
+      "kind": "numeric",
+      "columns_exist": true,
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "gateway_extractable_verified": false,
+      "status": "CANDIDATE_ONLY"
+    }
+  ],
+  "warnings": [
+    "Column-name similarity is not a semantic equivalence check.",
+    "No held-out test files were read or scored.",
+    "Edge-IIoTset packet/protocol records are not directly equivalent to connection flows.",
+    "Capture-session independence has not been established.",
+    "The current X-IIoTID Core19 model cannot directly accept ToN-IoT Core10 inputs."
+  ]
+}

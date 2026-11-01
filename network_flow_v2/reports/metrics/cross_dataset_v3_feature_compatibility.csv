@@ -1,0 +1,11 @@
+concept,x_iiotid_column,ton_iot_column,edge_iiotset_equivalent,kind,columns_exist,same_meaning_verified,same_units_verified,gateway_extractable_verified,status
+protocol,Protocol,proto,NOT_VERIFIED,categorical,True,False,False,False,CANDIDATE_ONLY
+service,Service,service,NOT_VERIFIED,categorical,True,False,False,False,CANDIDATE_ONLY
+flow_duration,Duration,duration,NOT_VERIFIED,numeric,True,False,False,False,CANDIDATE_ONLY
+source_payload_bytes,Scr_bytes,src_bytes,NOT_VERIFIED,numeric,True,False,False,False,CANDIDATE_ONLY
+destination_payload_bytes,Des_bytes,dst_bytes,NOT_VERIFIED,numeric,True,False,False,False,CANDIDATE_ONLY
+connection_state,Conn_state,conn_state,NOT_VERIFIED,categorical,True,False,False,False,CANDIDATE_ONLY
+source_packets,Scr_pkts,src_pkts,NOT_VERIFIED,numeric,True,False,False,False,CANDIDATE_ONLY
+source_ip_bytes,Scr_ip_bytes,src_ip_bytes,NOT_VERIFIED,numeric,True,False,False,False,CANDIDATE_ONLY
+destination_packets,Des_pkts,dst_pkts,NOT_VERIFIED,numeric,True,False,False,False,CANDIDATE_ONLY
+destination_ip_bytes,Des_ip_bytes,dst_ip_bytes,NOT_VERIFIED,numeric,True,False,False,False,CANDIDATE_ONLY
