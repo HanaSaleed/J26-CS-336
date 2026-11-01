@@ -1,0 +1,236 @@
+{
+  "notebook": "02_feature_semantics_verification.ipynb",
+  "timestamp_utc": "2026-11-01T03:58:40.499425+00:00",
+  "purpose": "Read-only TRAIN feature semantics screening (not model transfer)",
+  "source_training_files": {
+    "x_iiotid": {
+      "path_relative_to_root": "data\\splits\\x_iiotid\\x_iiotid_core19_train_v3.csv.gz",
+      "sha256": "172eebe5db48906f4f593561590a5df1747d6fce2c7303d5f279304603c8846e",
+      "train_rows_scanned": 574585
+    },
+    "ton_iot": {
+      "path_relative_to_root": "data\\splits\\ton_iot\\ton_iot_core10_train_v3.csv.gz",
+      "sha256": "392ee9623d9a039d7609c180cdcf477b69a10a9a460a686cb5442c3ea73e7142",
+      "train_rows_scanned": 147730
+    }
+  },
+  "candidate_count": 10,
+  "semantically_verified_count": 0,
+  "decision": "NOT_APPROVED_FOR_TRANSFER",
+  "evidence_limited_to": "existing feature audits, mapping report, documented feature descriptions, full TRAIN records",
+  "training_sanity_checks": {
+    "x_iiotid": {
+      "source": {
+        "both_valid": 405679,
+        "ip_lt_payload": 8,
+        "ip_positive_packet_zero": 0,
+        "pkt_valid": 473529
+      },
+      "destination": {
+        "both_valid": 405680,
+        "ip_lt_payload": 63,
+        "ip_positive_packet_zero": 0,
+        "pkt_valid": 473530
+      }
+    },
+    "ton_iot": {
+      "source": {
+        "both_valid": 147730,
+        "ip_lt_payload": 328,
+        "ip_positive_packet_zero": 0,
+        "pkt_valid": 147730
+      },
+      "destination": {
+        "both_valid": 147730,
+        "ip_lt_payload": 585,
+        "ip_positive_packet_zero": 0,
+        "pkt_valid": 147730
+      }
+    }
+  },
+  "candidate_review": [
+    {
+      "concept": "protocol",
+      "x_iiotid_column": "Protocol",
+      "ton_iot_column": "proto",
+      "kind": "categorical",
+      "x_missing_pct": 0.027,
+      "ton_missing_pct": 0.0,
+      "flag": "CHECK_CATEGORY_ENCODING",
+      "explanation": "Likely network protocol, but text/codes/unknown tokens may differ.",
+      "training_observation": "lowercase_category_overlap=3; X=3, ToN=3",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "service",
+      "x_iiotid_column": "Service",
+      "ton_iot_column": "service",
+      "kind": "categorical",
+      "x_missing_pct": 0.0,
+      "ton_missing_pct": 72.828,
+      "flag": "CHECK_SERVICE_DEFINITION_AND_MISSINGNESS",
+      "explanation": "Destination-port service vs Zeek detected service can differ; placeholders can dominate.",
+      "training_observation": "lowercase_category_overlap=2; X=17, ToN=8",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "flow_duration",
+      "x_iiotid_column": "Duration",
+      "ton_iot_column": "duration",
+      "kind": "numeric",
+      "x_missing_pct": 12.007,
+      "ton_missing_pct": 0.0,
+      "flag": "CHECK_DURATION_RULE",
+      "explanation": "X first-to-last packet vs Zeek productive-traffic duration; semantics may differ.",
+      "training_observation": "X_p50=0.025822; ToN_p50=1.9e-05; X_invalid=0; ToN_invalid=0",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "source_payload_bytes",
+      "x_iiotid_column": "Scr_bytes",
+      "ton_iot_column": "src_bytes",
+      "kind": "numeric",
+      "x_missing_pct": 29.396,
+      "ton_missing_pct": 0.0,
+      "flag": "CHECK_BYTE_DEFINITION",
+      "explanation": "X source bytes not conclusively payload bytes; Zeek orig_bytes is payload.",
+      "training_observation": "X_p50=156.0; ToN_p50=0.0; X_invalid=0; ToN_invalid=0",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "destination_payload_bytes",
+      "x_iiotid_column": "Des_bytes",
+      "ton_iot_column": "dst_bytes",
+      "kind": "numeric",
+      "x_missing_pct": 29.396,
+      "ton_missing_pct": 0.0,
+      "flag": "CHECK_BYTE_DEFINITION",
+      "explanation": "X destination bytes not conclusively payload bytes; Zeek resp_bytes is payload.",
+      "training_observation": "X_p50=72.0; ToN_p50=0.0; X_invalid=0; ToN_invalid=0",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "connection_state",
+      "x_iiotid_column": "Conn_state",
+      "ton_iot_column": "conn_state",
+      "kind": "categorical",
+      "x_missing_pct": 0.0,
+      "ton_missing_pct": 0.0,
+      "flag": "OBSERVED_STATE_ENCODING_MISMATCH",
+      "explanation": "X summary states may use 1/2/3; Zeek states include SF/S0/REJ.",
+      "training_observation": "lowercase_category_overlap=0; X=2, ToN=13",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "source_packets",
+      "x_iiotid_column": "Scr_pkts",
+      "ton_iot_column": "src_pkts",
+      "kind": "numeric",
+      "x_missing_pct": 17.587,
+      "ton_missing_pct": 0.0,
+      "flag": "CHECK_PACKET_DIRECTION",
+      "explanation": "Confirm source means Zeek originator; packet-counting rules also matter.",
+      "training_observation": "X_p50=2.0; ToN_p50=1.0; X_invalid=0; ToN_invalid=0",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "source_ip_bytes",
+      "x_iiotid_column": "Scr_ip_bytes",
+      "ton_iot_column": "src_ip_bytes",
+      "kind": "numeric",
+      "x_missing_pct": 17.587,
+      "ton_missing_pct": 0.0,
+      "flag": "CHECK_IP_TOTAL_LENGTH_AND_DIRECTION",
+      "explanation": "Both may use IP total_length; confirm direction and missing conventions.",
+      "training_observation": "X_p50=590.0; ToN_p50=52.0; X_invalid=1; ToN_invalid=0",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "destination_packets",
+      "x_iiotid_column": "Des_pkts",
+      "ton_iot_column": "dst_pkts",
+      "kind": "numeric",
+      "x_missing_pct": 17.587,
+      "ton_missing_pct": 0.0,
+      "flag": "CHECK_PACKET_DIRECTION",
+      "explanation": "Confirm destination means Zeek responder; packet-counting rules matter.",
+      "training_observation": "X_p50=1.0; ToN_p50=1.0; X_invalid=0; ToN_invalid=0",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    },
+    {
+      "concept": "destination_ip_bytes",
+      "x_iiotid_column": "Des_ip_bytes",
+      "ton_iot_column": "dst_ip_bytes",
+      "kind": "numeric",
+      "x_missing_pct": 17.587,
+      "ton_missing_pct": 0.0,
+      "flag": "CHECK_IP_TOTAL_LENGTH_AND_DIRECTION",
+      "explanation": "Both may use IP total_length; confirm direction and missing conventions.",
+      "training_observation": "X_p50=71.0; ToN_p50=40.0; X_invalid=0; ToN_invalid=0",
+      "same_meaning_verified": false,
+      "same_units_verified": false,
+      "source_direction_verified": false,
+      "gateway_extractable_verified": false,
+      "transfer_status": "NOT_VERIFIED"
+    }
+  ],
+  "references": {
+    "X_IIoTID_paper": "https://www.researchgate.net/publication/353673359_X-IIoTID_A_Connectivity-Agnostic_and_Device-Agnostic_Intrusion_Data_Set_for_Industrial_Internet_of_Things/download",
+    "X_IIoTID_repository": "https://github.com/Alhawawreh/X-IIoTID",
+    "ToN_IoT_UNSW": "https://research.unsw.edu.au/projects/toniot-datasets",
+    "Zeek_fields": "https://docs.zeek.org/en/lts/scripts/base/protocols/conn/main.zeek.html"
+  },
+  "warnings": [
+    "No semantic or unit equivalence proven automatically.",
+    "Only train CSV.GZ inputs were opened; validation/test data and manifest were not accessed.",
+    "Observed value ranges and category overlap alone do not establish same definitions.",
+    "Connection-state category mapping needs separate documented verification.",
+    "X source/destination byte fields may differ from Zeek payload byte fields.",
+    "ToN-IoT service missingness and capture-specific categories may create shortcuts.",
+    "No model was trained, retrained or scored.",
+    "Edge-IIoTset packet/protocol records were excluded from direct flow mapping."
+  ],
+  "next_manual_actions": [
+    "Confirm each candidate field definition and source/exporter version with source documentation.",
+    "Map protocol/service/connection-state values only with a justified scheme.",
+    "Confirm duration units, byte accounting, originator/responder direction and packet-count rules.",
+    "Decide a defensible shared subset and frozen evaluation protocol before any transfer training.",
+    "Keep the original validation/test partitions sealed."
+  ]
+}

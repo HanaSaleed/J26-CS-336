@@ -1,0 +1,7 @@
+dataset,concept,column,train_rows,missing_or_placeholder,missing_pct,distinct_categories,top_categories
+x_iiotid,protocol,Protocol,574585,154,0.027,3,udp:295600; tcp:277134; icmp:1697
+x_iiotid,service,Service,574585,0,0.0,17,http:166505; dns:155699; coap:136142; websocket:40895; other:40771; mqtt:11116; https:7237; modbus:4638; smtp:3595; ssh:2868
+x_iiotid,connection_state,Conn_state,574585,0,0.0,2,1:506799; 0:67786
+ton_iot,protocol,proto,147730,0,0.0,3,tcp:118590; udp:28943; icmp:197
+ton_iot,service,service,147730,107589,72.828,8,dns:26816; http:12289; ssl:340; ftp:339; gssapi:184; dce_rpc:132; smb:34; smb;gssapi:7
+ton_iot,connection_state,conn_state,147730,0,0.0,13,s0:41341; rej:37716; oth:22922; sf:18528; sh:11507; s1:7180; shr:3213; s3:2248; rstrh:1553; rstr:661
